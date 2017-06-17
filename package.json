@@ -2,11 +2,8 @@
   "name": "temporary-rocketlets-ts-definition",
   "version": "0.0.5",
   "description": "Temporary npm package which contains testing ts definitions for the Rocketlets.",
-  "main": "dist/index.js",
-  "typings": "dist/index",
-  "files": [
-    "dist"
-  ],
+  "main": "index.js",
+  "typings": "index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +23,7 @@
   "devDependencies": {
     "del": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-shell": "^0.6.3",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-tslint": "^8.1.1",
     "gulp-typescript": "^3.1.7",
