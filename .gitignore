@@ -1,0 +1,7 @@
+typings
+
+# ignore .js.map files
+*.js.map
+*.js
+dist
+node_modules
