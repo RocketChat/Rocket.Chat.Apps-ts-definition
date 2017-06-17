@@ -1,11 +1,11 @@
 {
   "name": "temporary-rocketlets-ts-definition",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Temporary npm package which contains testing ts definitions for the Rocketlets.",
   "main": "dist/src/index.js",
   "typings": "dist/src/index",
   "files": [
-    "dist/"
+    "dist/src"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
