@@ -11,8 +11,7 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "lib": ["es2017", "dom"],
-    "outDir": "dist",
-    "rootDir": "."
+    "outDir": "dist"
   },
   "exclude": [
     "node_modules",

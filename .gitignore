@@ -5,3 +5,4 @@ typings
 *.js
 dist
 node_modules
+npm-dist
