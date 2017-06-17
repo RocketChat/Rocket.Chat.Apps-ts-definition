@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "sourceMap": true,
-    "target": "es5",
+    "target": "es6",
     "module": "commonjs",
     "declaration": true,
     "noImplicitAny": false,
@@ -11,9 +11,11 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "lib": ["es2017", "dom"],
-    "outDir": "dist/"
+    "outDir": "dist",
+    "rootDir": "."
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ]
 }

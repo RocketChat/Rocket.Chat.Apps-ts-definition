@@ -2,8 +2,8 @@
   "name": "temporary-rocketlets-ts-definition",
   "version": "0.0.2",
   "description": "Temporary npm package which contains testing ts definitions for the Rocketlets.",
-  "main": "dist/index.js",
-  "typings": "dist/index",
+  "main": "dist/src/index.js",
+  "typings": "dist/src/index",
   "files": [
     "dist/"
   ],
