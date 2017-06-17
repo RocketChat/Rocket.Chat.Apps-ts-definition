@@ -35,9 +35,7 @@ gulp.task('npm-files', function _npmFileGathering() {
 });
 
 gulp.task('publish', ['default'], shell.task([
-    'cd dist',
-    'npm publish',
-    'npm pack'
+    'cd dist && pwd && npm publish && npm pack'
 ]));
 
 gulp.task('default', ['compile-ts', 'npm-files']);
