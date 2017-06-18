@@ -5,10 +5,12 @@ import { ISetting } from './interfaces/settings';
 import { IUser } from './interfaces/users';
 import { IRequest, IResponse, RequestMethod, ResponseStatus } from './interfaces/webhooks';
 
-export class BaseRocketlet {
+export abstract class BaseRocketlet {
     /**
      * Create a new Rocketlet, this is called whenever the server starts up and initiates the Rocketlets.
      * Note, your implementation of this class should call `super(name, id, version)` so we have it.
+     * Also, please use the `initialize()` method to do items instead of the constructor as the constructor
+     * *might* be called more than once but the `initialize()` will only be called once.
      */
     constructor(public name: string, public id: number, public version: string, public description: string) {
         console.log(`Constructed the Rocketlet ${this.name} (${this.id}) v${this.version}!`);
@@ -56,9 +58,7 @@ export class BaseRocketlet {
      *
      * @return {array} the settings this Rocketlet provides
      */
-    public getSettings(): Array<ISetting> {
-        return new Array<ISetting>();
-    }
+    public abstract getSettings(): Array<ISetting>;
 
     /**
      * Gets the setting from the persistant storage,
@@ -81,6 +81,14 @@ export class BaseRocketlet {
     public getSettingValue(id: string): any {
         return undefined;
     }
+
+    /**
+     * Method which will be called when the Rocketlet is initialized and will only be called once
+     * in the lifetime of one instance of this Rocketlet.
+     *
+     * @return boolean stating whether the Rocketlet should be marked as active or not.
+     */
+    public abstract initialize(): boolean;
 
     /**
      * Method called when before the message is sent to other clients.
