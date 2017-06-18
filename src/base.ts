@@ -10,7 +10,7 @@ export class BaseRocketlet {
      * Create a new Rocketlet, this is called whenever the server starts up and initiates the Rocketlets.
      * Note, your implementation of this class should call `super(name, id, version)` so we have it.
      */
-    constructor(public name: string, public id: number, public version: string) {
+    constructor(public name: string, public id: number, public version: string, public description: string) {
         console.log(`Constructed the Rocketlet ${this.name} (${this.id}) v${this.version}!`);
     }
 
@@ -19,7 +19,7 @@ export class BaseRocketlet {
      *
      * @return {string} the name
      */
-    public getName() {
+    public getName(): string {
         return this.name;
     }
 
@@ -28,7 +28,7 @@ export class BaseRocketlet {
      *
      * @return {string} the version
      */
-    public getVersion() {
+    public getVersion(): string {
         return this.version;
     }
 
@@ -37,8 +37,17 @@ export class BaseRocketlet {
      *
      * @return {number} the ID
      */
-    public getID() {
-        return this.version;
+    public getID(): number {
+        return this.id;
+    }
+
+    /**
+     * Gets the description of this Rocketlet, use this to describe what your Rocketlet does to the users.
+     *
+     * @return {string} the Rocketlet's description
+     */
+    public getDescription(): string {
+        return this.description;
     }
 
     /**
