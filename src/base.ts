@@ -58,7 +58,9 @@ export abstract class BaseRocketlet {
      *
      * @return {array} the settings this Rocketlet provides
      */
-    public abstract getSettings(): Array<ISetting>;
+    public getSettings(): Array<ISetting> {
+        return new Array<ISetting>();
+    }
 
     /**
      * Gets the setting from the persistant storage,
@@ -88,7 +90,31 @@ export abstract class BaseRocketlet {
      *
      * @return boolean stating whether the Rocketlet should be marked as active or not.
      */
-    public abstract initialize(): boolean;
+    public initialize(): void {
+        return;
+    }
+
+    /**
+     * Method which is called when this Rocketlet is enabled and can be called several
+     * times during this instance's life time. Once after the `ititialize()` is called,
+     * pending it doesn't throw an error, and then anytime the Rocketlet is enabled by the user.
+     * If this method, `onEnable()`, returns false, then this Rocketlet will not
+     * actually be enabled (ex: a setting isn't configured).
+     *
+     * @return whether the Rocketlet should be enabled or not
+     */
+    public onEnable(): boolean {
+        return true;
+    }
+
+    /**
+     * Method which is called when this Rocketlet is disabled and it can be called several times.
+     * If this Rocketlet was enabled and then the user disabled it, this method will be called.
+     * Please note, if an error is thrown this Rocketlet will be disabled forever until it is updated.
+     */
+    public onDisable(): void {
+        return;
+    }
 
     /**
      * Method called when before the message is sent to other clients.
