@@ -74,6 +74,7 @@ export abstract class BaseRocketlet {
      * @return the setting or undefined if it doesn't exist
      */
     public getSetting(id: string): ISetting {
+        // TODO: Determine how this can be "limited" to just the instance with the id, decorators? :thinking:
         return undefined;
     }
 
