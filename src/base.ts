@@ -12,8 +12,12 @@ export abstract class BaseRocketlet {
      * Also, please use the `initialize()` method to do items instead of the constructor as the constructor
      * *might* be called more than once but the `initialize()` will only be called once.
      */
-    constructor(public name: string, public id: number, public version: string, public description: string) {
-        console.log(`Constructed the Rocketlet ${this.name} (${this.id}) v${this.version}!`);
+    protected constructor(
+        private readonly name: string,
+        private readonly id: number,
+        private readonly version: string,
+        private readonly description: string) {
+            console.log(`Constructed the Rocketlet ${this.name} (${this.id}) v${this.version}!`);
     }
 
     /**
