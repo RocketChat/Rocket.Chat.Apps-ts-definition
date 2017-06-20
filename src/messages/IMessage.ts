@@ -1,3 +1,5 @@
+import { IMessageUser } from './IMessageUser';
+
 export interface IMessage {
     id: string;
     roomId: string;
@@ -5,10 +7,4 @@ export interface IMessage {
     sender: IMessageUser;
     createdAt: Date;
     updatedAt: Date;
-}
-
-export interface IMessageUser {
-    _id: string;
-    username: string;
-    name: string;
 }

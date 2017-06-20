@@ -1,11 +1,6 @@
-import { priorityMonitor, priorityNormal } from './decorators/priority';
-import { IMessage } from './interfaces/messages';
-import { IRoom } from './interfaces/rooms';
 import { ISetting } from './interfaces/settings';
-import { IUser } from './interfaces/users';
-import { IRequest, IResponse, RequestMethod, ResponseStatus } from './interfaces/webhooks';
 
-export abstract class BaseRocketlet {
+export abstract class Rocketlet {
     /**
      * Create a new Rocketlet, this is called whenever the server starts up and initiates the Rocketlets.
      * Note, your implementation of this class should call `super(name, id, version)` so we have it.
@@ -95,9 +90,7 @@ export abstract class BaseRocketlet {
      *
      * @return boolean stating whether the Rocketlet should be marked as active or not.
      */
-    public initialize(): void {
-        return;
-    }
+    public abstract initialize(): void;
 
     /**
      * Method which is called when this Rocketlet is enabled and can be called several
@@ -108,56 +101,12 @@ export abstract class BaseRocketlet {
      *
      * @return whether the Rocketlet should be enabled or not
      */
-    public onEnable(): boolean {
-        return true;
-    }
+    public abstract onEnable(): boolean;
 
     /**
      * Method which is called when this Rocketlet is disabled and it can be called several times.
      * If this Rocketlet was enabled and then the user disabled it, this method will be called.
      * Please note, if an error is thrown this Rocketlet will be disabled forever until it is updated.
      */
-    public onDisable(): void {
-        return;
-    }
-
-    /**
-     * Method called when before the message is sent to other clients.
-     * Return the message object with your changes to it.
-     *
-     * @param room The room where the message is being sent to
-     * @param user The user who is sending the message
-     * @param message The message which is being sent
-     */
-    @priorityNormal
-    public pre_messageSent(room: IRoom, user: IUser, message: IMessage): IMessage {
-        // Handle data before the message is saved to the database
-        return message;
-    }
-
-    /**
-     * Method called *after* the message is sent to the other clients.
-     *
-     * @param room The room where the message was sent to
-     * @param user The user who sent the message
-     * @param message The message which was sent
-     */
-    @priorityMonitor
-    public post_messageSent(room: IRoom, user: IUser, message: IMessage): void {
-        // Handle data *after* the message is saved to the database
-    }
-
-    /**
-     * Called whenever the publically accessible url for this Rocketlet is called,
-     * if you handle the methods differently then split it out so your code doesn't get too big.
-     *
-     * @param method the method this was called with (GET, POST, etc)
-     * @param request the actual request made
-     * @return the response to send to the client
-     */
-    public webhook_event(method: RequestMethod, request: IRequest): IResponse {
-        return {
-            status: ResponseStatus.UNIMPLEMENTED,
-        };
-    }
+    public abstract onDisable(): void;
 }
