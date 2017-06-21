@@ -11,8 +11,8 @@ export abstract class Rocketlet {
         private readonly version: string,
         private readonly description: string,
         private readonly requiredApiVersion: string) {
-            console.log(`Constructed the Rocketlet ${this.name} (${this.id})
-                v${this.version} which depends on the API v${requiredApiVersion}!`);
+            console.log(`Constructed the Rocketlet ${this.name} (${this.id})`,
+                `v${this.version} which depends on the API v${requiredApiVersion}!`);
     }
 
     /**
