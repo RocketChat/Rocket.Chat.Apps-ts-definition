@@ -1,8 +1,8 @@
-import { IRoom } from '../../rooms/IRoom';
-import { IUser } from '../../users/IUser';
-import { IMessage } from '../IMessage';
+import { IRoom } from '../rooms/index';
+import { IUser } from '../users/index';
+import { IMessage } from './IMessage';
 
-export interface IPreMessageSent {
+export interface IPreMessageSentHandler {
     /**
      * Method called when before the message is sent to other clients.
      * Return the message object with your changes to it.

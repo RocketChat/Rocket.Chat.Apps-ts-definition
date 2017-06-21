@@ -1,5 +1,5 @@
 export interface ISetting {
-    _id: string;
+    id: string;
     type: string;
     group: string;
     packageValue: any;
@@ -7,8 +7,7 @@ export interface ISetting {
     blocked: boolean;
     i18nLabel: string;
     i18nDescription: string;
-    ts: Date;
-    _updatedAt: Date;
+    updatedAt: Date;
     createdAt: Date;
     value: any;
 }

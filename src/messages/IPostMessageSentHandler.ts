@@ -1,8 +1,8 @@
-import { IRoom } from '../../rooms/IRoom';
-import { IUser } from '../../users/IUser';
-import { IMessage } from '../IMessage';
+import { IRoom } from '../rooms/index';
+import { IUser } from '../users/index';
+import { IMessage } from './IMessage';
 
-export interface IPostMessageSent {
+export interface IPostMessageSentHandler {
     /**
      * Method called *after* the message is sent to the other clients.
      *

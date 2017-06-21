@@ -1,5 +1,3 @@
-import { ISetting } from './interfaces/settings';
-
 export abstract class Rocketlet {
     /**
      * Create a new Rocketlet, this is called whenever the server starts up and initiates the Rocketlets.
@@ -11,8 +9,10 @@ export abstract class Rocketlet {
         private readonly name: string,
         private readonly id: number,
         private readonly version: string,
-        private readonly description: string) {
-            console.log(`Constructed the Rocketlet ${this.name} (${this.id}) v${this.version}!`);
+        private readonly description: string,
+        private readonly requiredApiVersion: string) {
+            console.log(`Constructed the Rocketlet ${this.name} (${this.id})
+                v${this.version} which depends on the API v${requiredApiVersion}!`);
     }
 
     /**
@@ -43,45 +43,13 @@ export abstract class Rocketlet {
     }
 
     /**
-     * Gets the description of this Rocketlet, use this to describe what your Rocketlet does to the users.
+     * Gets the API Version which this Rocketlet depends on (http://semver.org/).
+     * This property is used for the dependency injections.
      *
-     * @return {string} the Rocketlet's description
+     * @return {string} the required api version
      */
-    public getDescription(): string {
-        return this.description;
-    }
-
-    /**
-     * The Rocketlet should return an array of settings which it
-     * provies to the user to allow them to configure anything.
-     *
-     * @return {array} the settings this Rocketlet provides
-     */
-    public getSettings(): Array<ISetting> {
-        return new Array<ISetting>();
-    }
-
-    /**
-     * Gets the setting from the persistant storage,
-     * this will be provided to the Rocketlets and you don't have to implement it.
-     *
-     * @param id the id of the setting to retrieve
-     * @return the setting or undefined if it doesn't exist
-     */
-    public getSetting(id: string): ISetting {
-        // TODO: Determine how this can be "limited" to just the instance with the id, decorators? :thinking:
-        return undefined;
-    }
-
-    /**
-     * Gets the value of the setting from the persistant storage,
-     * this will be provided to the Rocketlets and you don't have to implement it.
-     *
-     * @param id the id of the setting to get the value for
-     * @return the value of the setting if it is defined, will be undefined if it doesn't exist
-     */
-    public getSettingValue(id: string): any {
-        return undefined;
+    public getRequiredApiVersion(): string {
+        return this.requiredApiVersion;
     }
 
     /**

@@ -1,9 +1,9 @@
-import { BaseRocketlet } from './base';
 import * as Decorators from './decorators';
+import * as Messages from './messages';
+import { Rocketlet } from './Rocketlet';
+import * as Rooms from './rooms';
+import * as Settings from './settings';
+import * as Users from './users';
+import * as Webhooks from './webhooks';
 
-export { Decorators, BaseRocketlet };
-export * from './interfaces/messages';
-export * from './interfaces/rooms';
-export * from './interfaces/settings';
-export * from './interfaces/users';
-export * from './interfaces/webhooks';
+export { Decorators, Messages, Rocketlet, Rooms, Settings, Users, Webhooks };

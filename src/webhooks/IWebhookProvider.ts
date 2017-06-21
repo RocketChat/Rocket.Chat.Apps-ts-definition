@@ -1,8 +1,8 @@
-import { IRequest } from '../IRequest';
-import { IResponse } from '../IResponse';
-import { RequestMethod } from '../RequestMethod';
+import { IRequest } from './IRequest';
+import { IResponse } from './IResponse';
+import { RequestMethod } from './RequestMethod';
 
-export interface IWebhook {
+export interface IWebhookProvider {
     /**
      * Called whenever the publically accessible url for this Rocketlet is called,
      * if you handle the methods differently then split it out so your code doesn't get too big.
