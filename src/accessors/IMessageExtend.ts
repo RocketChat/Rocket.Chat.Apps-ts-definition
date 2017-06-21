@@ -1,16 +1,14 @@
 /**
- * The RocketChatRead accessor provides methods for accessing
- * messages in a read-only-fashion.
+ * This accessor provides methods for manipulating messages in a non-destructive fashion
  */
 
+import { IMessageAttachment } from '../messages/IMessageAttachment';
 import { IMessage } from '../messages/index';
-import { IRoom } from '../rooms/IRoom';
-import { IUser } from '../users/IUser';
 
-export interface IMessageRead {
-    getById(id: string): IMessage;
+export interface IMessageExtend {
 
-    getSenderUser(messageId: string): IUser;
+    addAttachments(messageId: string, attachments: Array<IMessageAttachment>);
 
-    getRoom(messageId: string): IRoom;
+    addMetadata(messageId: string, metadata: object);
+
 }

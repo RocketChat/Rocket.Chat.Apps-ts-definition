@@ -1,13 +1,13 @@
 /**
- * The RocketChatRead accessor provides methods for accessing the
- * rooms in a read-only-fashion.
+ * This accessor provides methods for accessing
+ * users in a read-only-fashion.
  */
 
-import { IRoom } from '../rooms/index';
+import { IUser } from '../users/index';
 
-export interface IRoomRead {
-    getRoomById(roomId: string): IRoom;
+export interface IUserRead {
+    getById(id: string): IUser;
 
-    getRoomByName(roomName: string): IRoom;
+    getByUsername(username: string): IUser;
 
 }

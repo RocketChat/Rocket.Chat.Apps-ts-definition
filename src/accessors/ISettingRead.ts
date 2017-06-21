@@ -1,13 +1,10 @@
 /**
- * The RocketChatRead accessor provides methods for accessing
- * users in a read-only-fashion.
+ * This accessor provides methods for accessing
+ * settings in a read-only-fashion.
  */
 
-import { IUser } from '../users/index';
+import { ISetting } from '../settings/index';
 
-export interface IUserRead {
-    getUserById(id: string): IUser;
-
-    getUserByUsername(username: string): IUser;
-
+export interface ISettingRead {
+    getById(id: string): ISetting;
 }

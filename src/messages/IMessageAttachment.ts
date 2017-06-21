@@ -1,10 +1,4 @@
-import { IMessageUser } from './IMessageUser';
-
-export interface IMessage {
+// todo
+export interface IMessageAttachment {
     id: string;
-    roomId: string;
-    text: string;
-    sender: IMessageUser;
-    createdAt: Date;
-    updatedAt: Date;
 }
