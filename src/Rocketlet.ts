@@ -25,6 +25,15 @@ export abstract class Rocketlet {
     }
 
     /**
+     * Get the ID of this Rocketlet, please see <link> for how to obtain an ID for your Rocketlet.
+     *
+     * @return {number} the ID
+     */
+    public getID(): number {
+        return this.id;
+    }
+
+    /**
      * Get the version of this Rocketlet, using http://semver.org/.
      *
      * @return {string} the version
@@ -34,12 +43,12 @@ export abstract class Rocketlet {
     }
 
     /**
-     * Get the ID of this Rocketlet, please see <link> for how to obtain an ID for your Rocketlet.
+     * Get the description of this Rocketlet, mostly used to show to the clients/administrators.
      *
-     * @return {number} the ID
+     * @return {string} the description
      */
-    public getID(): number {
-        return this.id;
+    public getDescription(): string {
+        return this.description;
     }
 
     /**
