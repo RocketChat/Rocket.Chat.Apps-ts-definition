@@ -46,3 +46,6 @@ jspm_packages
 
 ## Ignore distribution folder
 dist/
+
+#IDE
+.idea
