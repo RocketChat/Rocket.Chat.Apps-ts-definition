@@ -1,3 +1,5 @@
+import { IAsset } from './IAsset';
+
 export interface IAssetProvider {
-    getAssets(): Array<string>;
+    getAssets(): Array<IAsset>;
 }

@@ -1,3 +1,4 @@
+import { IAsset } from './IAsset';
 import { IAssetProvider } from './IAssetProvider';
 
-export { IAssetProvider };
+export { IAsset, IAssetProvider };
