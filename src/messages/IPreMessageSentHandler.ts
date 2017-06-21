@@ -13,7 +13,7 @@ export interface IPreMessageSentHandler {
      * @param read An accessor to the environment
      * @return true: run the pre-logic
      */
-    isApplicable(message: IMessage, read: IRead): boolean;
+    isMessageApplicable(message: IMessage, read: IRead): boolean;
 
     /**
      * This method can be used to non-destructively modify the message
