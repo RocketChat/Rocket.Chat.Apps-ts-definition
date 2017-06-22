@@ -1,6 +1,6 @@
+import { IEnvironmentRead } from './IEnvironmentRead';
 import { IMessageRead } from './IMessageRead';
 import { IRoomRead } from './IRoomRead';
-import { ISettingRead } from './ISettingRead';
 import { IUserRead } from './IUserRead';
 
 /**
@@ -9,11 +9,11 @@ import { IUserRead } from './IUserRead';
  * It is safe to be injected in multiple places, idempotent and extensible
  */
 export interface IRead {
+    environment(): IEnvironmentRead;
+
     messages(): IMessageRead;
 
     rooms(): IRoomRead;
-
-    settings(): ISettingRead;
 
     users(): IUserRead;
 }
