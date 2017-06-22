@@ -1,6 +1,6 @@
-import { IIteratorResult } from './IIteratorResult';
-
 export interface IIterator<T> {
-    next(skip: number): IIteratorResult<T>;
+    next(packageSize?: number): Array<T>;
     [Symbol.iterator](): IIterator<T>;
+
+    hasMoreElements(): boolean;
 }
