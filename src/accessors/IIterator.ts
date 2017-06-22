@@ -1,9 +1,6 @@
-/**
- * Created by oliverjaegle on 22.06.17.
- */
+import { IIteratorResult } from './IIteratorResult';
 
 export interface IIterator<T> {
-    next(): Array<T>;
-
-    hasMoreElements(): boolean;
+    next(skip: number): IIteratorResult<T>;
+    [Symbol.iterator](): IIterator<T>;
 }
