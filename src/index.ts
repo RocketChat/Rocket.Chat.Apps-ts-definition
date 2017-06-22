@@ -1,3 +1,4 @@
+import * as Accessors from './accessors';
 import * as Assets from './assets';
 import * as Decorators from './decorators';
 import * as Messages from './messages';
