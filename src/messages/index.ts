@@ -2,6 +2,16 @@ import { IMessage } from './IMessage';
 import { IMessageAttachment } from './IMessageAttachment';
 import { IMessageUser } from './IMessageUser';
 import { IPostMessageSentHandler } from './IPostMessageSentHandler';
-import { IPreMessageSentHandler } from './IPreMessageSentHandler';
+import { IPreMessageSentEnrich } from './IPreMessageSentEnrich';
+import { IPreMessageSentModify } from './IPreMessageSentModify';
+import { IPreMessageSentPrevent } from './IPreMessageSentPrevent';
 
-export { IMessage, IMessageAttachment, IMessageUser, IPostMessageSentHandler, IPreMessageSentHandler };
+export {
+    IMessage,
+    IMessageAttachment,
+    IMessageUser,
+    IPostMessageSentHandler,
+    IPreMessageSentEnrich,
+    IPreMessageSentModify,
+    IPreMessageSentPrevent,
+};

@@ -1,14 +1,25 @@
+import { IHttp, IRead } from '../accessors';
 import { IRoom } from './IRoom';
-import { IRead } from '../accessors/IRead';
 
 export interface IPostRoomCreateHandler {
     /**
-     * Checks whether the handler actually shall execute.
-     * This method can basically implement a filter.
-     * @param room
-     * @param read
+     * Enables the handler to signal to the Rocketlets framework whether
+     * this handler should actually be executed for after the room
+     * has been created.
+     *
+     * @param room The room which was created
+     * @param read An accessor to the environment
+     * @param http An accessor to the outside world
+     * @return whether to run the execute or not
      */
-    checkPostRoomCreate(room: IRoom, read: IRead);
+    checkPostRoomCreate?(room: IRoom, read: IRead, http: IHttp);
 
-    postRoomCreate(room: IRoom): void;
+    /**
+     * Method called *after* the room has been created.
+     *
+     * @param room The room which was created
+     * @param read An accessor to the environment
+     * @param http An accessor to the outside world
+     */
+    executePostRoomCreate(room: IRoom, read: IRead, http: IHttp): void;
 }
