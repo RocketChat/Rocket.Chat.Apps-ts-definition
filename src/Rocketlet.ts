@@ -1,6 +1,6 @@
 import { IConfigurationExtend } from './accessors';
 import { IEnvironmentRead } from './accessors/IEnvironmentRead';
-import { IRocketChatAssociation } from './metadata/IRocketChatAssociation';
+import { IRocketletAuthor } from './IRocketletAuthor';
 
 export abstract class Rocketlet {
     /**
@@ -13,9 +13,10 @@ export abstract class Rocketlet {
                           private readonly id: number,
                           private readonly version: string,
                           private readonly description: string,
-                          private readonly requiredApiVersion: string) {
+                          private readonly requiredApiVersion: string,
+                          private readonly author: IRocketletAuthor) {
         console.log(`Constructed the Rocketlet ${this.name} (${this.id})`,
-            `v${this.version} which depends on the API v${requiredApiVersion}!`);
+            `v${this.version} which depends on the API v${requiredApiVersion}! Created by ${author.name}`);
     }
 
     /**
@@ -65,6 +66,15 @@ export abstract class Rocketlet {
     }
 
     /**
+     * Gets the information regarding the author/maintainer of this Rocketlet.
+     *
+     * @return author information
+     */
+    public getAuthorInfo(): IRocketletAuthor {
+        return this.author;
+    }
+
+    /**
      * This method defines in which relationship to Rocket.Chat this Rocketlet lives.
      * This information is consumed within the visualization (e. g. for each associated entity,
      * a different set of visualization options is applicable) and in the persistence.
@@ -73,7 +83,8 @@ export abstract class Rocketlet {
      * extended by this Rocketlet have one or multiple Rocketlet data items?
      *
      */
-    public abstract getRocketChatAssociation(): IRocketChatAssociation;
+    // TODO: Discuss what the purpose of this is, commenting out for now.
+    // public abstract getRocketChatAssociation(): IRocketChatAssociation;
 
     /**
      * Method which will be called when the Rocketlet is initialized and will only be called once
@@ -96,7 +107,9 @@ export abstract class Rocketlet {
      */
     // TODO: Config modify. This should actually be an implementation of configModify
     //        which ensures that only own configurations are being modified
-    public abstract onEnable(environment: IEnvironmentRead, configurationModify: object): boolean;
+    public onEnable(environment: IEnvironmentRead, configurationModify: object): boolean {
+        return true;
+    }
 
     /**
      * Method which is called when this Rocketlet is disabled and it can be called several times.
@@ -105,11 +118,15 @@ export abstract class Rocketlet {
      */
     // TODO: Config modify. This should actually be an implementation of configModify
     //        which ensures that only own configurations are being modified
-    public abstract onDisable(configurationModify: object): void;
+    public onDisable(configurationModify: object): void {
+        return;
+    }
 
     /**
      * Method will be called during initialization. It allows for adding custom configuration options and defaults
      * @param configuration
      */
-    protected abstract extendConfiguration(configuration: IConfigurationExtend): void;
+    protected extendConfiguration(configuration: IConfigurationExtend): void {
+        return;
+    }
 }
