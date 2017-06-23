@@ -1,3 +1,6 @@
+import { IConfigurationExtend } from './accessors';
+import { IEnvironmentRead } from './accessors/IEnvironmentRead';
+
 export abstract class Rocketlet {
     /**
      * Create a new Rocketlet, this is called whenever the server starts up and initiates the Rocketlets.
@@ -5,14 +8,13 @@ export abstract class Rocketlet {
      * Also, please use the `initialize()` method to do items instead of the constructor as the constructor
      * *might* be called more than once but the `initialize()` will only be called once.
      */
-    protected constructor(
-        private readonly name: string,
-        private readonly id: number,
-        private readonly version: string,
-        private readonly description: string,
-        private readonly requiredApiVersion: string) {
-            console.log(`Constructed the Rocketlet ${this.name} (${this.id})`,
-                `v${this.version} which depends on the API v${requiredApiVersion}!`);
+    protected constructor(private readonly name: string,
+                          private readonly id: number,
+                          private readonly version: string,
+                          private readonly description: string,
+                          private readonly requiredApiVersion: string) {
+        console.log(`Constructed the Rocketlet ${this.name} (${this.id})`,
+            `v${this.version} which depends on the API v${requiredApiVersion}!`);
     }
 
     /**
@@ -67,7 +69,9 @@ export abstract class Rocketlet {
      *
      * @return boolean stating whether the Rocketlet should be marked as active or not.
      */
-    public abstract initialize(): void;
+    public initialize(configurationExtend: IConfigurationExtend): void {
+        this.extendConfiguration(configurationExtend);
+    }
 
     /**
      * Method which is called when this Rocketlet is enabled and can be called several
@@ -78,12 +82,18 @@ export abstract class Rocketlet {
      *
      * @return whether the Rocketlet should be enabled or not
      */
-    public abstract onEnable(): boolean;
+    public abstract onEnable(environment: IEnvironmentRead, configurationModify: object): boolean; //todo: Config modify. This should actually be an implementation of configModify which ensures that only own configurations are being modified
 
     /**
      * Method which is called when this Rocketlet is disabled and it can be called several times.
      * If this Rocketlet was enabled and then the user disabled it, this method will be called.
      * Please note, if an error is thrown this Rocketlet will be disabled forever until it is updated.
      */
-    public abstract onDisable(): void;
+    public abstract onDisable(configurationModify: object): void; //todo: Config modify. This should actually be an implementation of configModify which ensures that only own configurations are being modified
+
+    /**
+     * Method will be called during initialization. It allows for adding custom configuration options and defaults
+     * @param configuration
+     */
+    protected abstract extendConfiguration(configuration: IConfigurationExtend): void;
 }
