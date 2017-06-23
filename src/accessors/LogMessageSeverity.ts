@@ -1,4 +1,4 @@
-export enum ILogMessageSeverity{
+export enum LogMessageSeverity {
     SUCCESS,
     INFORMATION,
     WARNING,

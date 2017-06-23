@@ -14,5 +14,5 @@ export interface IRoomRead {
 
     getMessages(roomId: string): IIterator<IMessage>;
 
-    getMembers(roomId: string): Array<IUser>;
+    getMembers(roomId: string): IIterator<IUser>;
 }
