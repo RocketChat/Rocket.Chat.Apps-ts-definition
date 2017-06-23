@@ -1,3 +1,4 @@
+import { IExecutionResult } from '../accessors';
 import { IHttp } from '../accessors/IHttp';
 import { IRead } from '../accessors/index';
 import { IMessage } from './IMessage';
@@ -19,5 +20,5 @@ export interface IPostMessageSentHandler {
      *
      * @param message The message which was sent
      */
-    communicatePostMessageSent(message: IMessage, read: IRead, http: IHttp): void;
+    communicatePostMessageSent(message: IMessage, read: IRead, http: IHttp): IExecutionResult;
 }

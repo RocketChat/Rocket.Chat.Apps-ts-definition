@@ -1,5 +1,5 @@
+import { IExecutionResult, IRead } from '../accessors';
 import { IRoom } from './IRoom';
-import { IRead } from '../accessors/IRead';
 
 export interface IPostRoomCreateHandler {
     /**
@@ -10,5 +10,5 @@ export interface IPostRoomCreateHandler {
      */
     checkPostRoomCreate(room: IRoom, read: IRead);
 
-    postRoomCreate(room: IRoom): void;
+    postRoomCreate(room: IRoom): IExecutionResult;
 }

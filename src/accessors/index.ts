@@ -1,5 +1,6 @@
 import { IConfigurationExtend } from './IConfigurationExtend';
 import { IEnvironmentRead } from './IEnvironmentRead';
+import { IExecutionResult } from './IExecutionResult';
 import { IIterator } from './IIterator';
 import { IMessageExtend } from './IMessageExtend';
 import { IMessageRead } from './IMessageRead';
@@ -9,6 +10,14 @@ import { ISettingRead } from './ISettingRead';
 import { IUserRead } from './IUserRead';
 
 export {
-    IConfigurationExtend, IEnvironmentRead, IIterator, IRead,
-    IMessageRead, IRoomRead, ISettingRead, IUserRead, IMessageExtend,
+    IConfigurationExtend,
+    IEnvironmentRead,
+    IExecutionResult,
+    IIterator,
+    IMessageExtend,
+    IMessageRead,
+    IRead,
+    IRoomRead,
+    ISettingRead,
+    IUserRead,
 };

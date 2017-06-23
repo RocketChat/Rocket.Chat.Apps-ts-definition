@@ -1,4 +1,4 @@
-import { IMessageExtend, IRead } from '../accessors/index';
+import { IExecutionResult, IMessageExtend, IRead } from '../accessors/index';
 import { IMessage } from './IMessage';
 
 export interface IPreMessageSentHandler {
@@ -20,7 +20,7 @@ export interface IPreMessageSentHandler {
      * @param read An accessor to the environment
      * @param extend An accessor for modifying the messages non-destructively
      */
-    extendMessage(message: IMessage, read: IRead, extend: IMessageExtend): void;
+    extendMessage(message: IMessage, read: IRead, extend: IMessageExtend): IExecutionResult;
 
     /**
      * This method allows for manipulation of the message to be sent

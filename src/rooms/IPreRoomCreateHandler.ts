@@ -1,4 +1,4 @@
-import { IRead } from '../accessors/index';
+import { IExecutionResult, IRead } from '../accessors/index';
 import { IRoom } from './IRoom';
 
 export interface IPreRoomCreateHandler {
@@ -11,5 +11,5 @@ export interface IPreRoomCreateHandler {
      */
     checkPreRoomCreate(room: IRoom, read: IRead): boolean;
 
-    preRoomCreate(room: IRoom): IRoom;
+    preRoomCreate(room: IRoom): IExecutionResult;
 }
