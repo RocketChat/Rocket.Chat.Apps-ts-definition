@@ -18,7 +18,6 @@ export {
     IMessageUser,
     IPostMessageSentHandler,
     IPreMessageSentEnrich,
-    IPreMessageSentHandler,
     IPreMessageSentModify,
     IPreMessageSentPrevent,
 };
