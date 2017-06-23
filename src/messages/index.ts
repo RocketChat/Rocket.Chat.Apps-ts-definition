@@ -5,7 +5,9 @@ import { IMessageAttachmentField } from './IMessageAttachmentField';
 import { IMessageAttachmentTitle } from './IMessageAttachmentTitle';
 import { IMessageUser } from './IMessageUser';
 import { IPostMessageSentHandler } from './IPostMessageSentHandler';
-import { IPreMessageSentHandler } from './IPreMessageSentHandler';
+import { IPreMessageSentEnrich } from './IPreMessageSentEnrich';
+import { IPreMessageSentModify } from './IPreMessageSentModify';
+import { IPreMessageSentPrevent } from './IPreMessageSentPrevent';
 
 export {
     IMessage,
@@ -15,5 +17,8 @@ export {
     IMessageAttachmentField,
     IMessageUser,
     IPostMessageSentHandler,
+    IPreMessageSentEnrich,
     IPreMessageSentHandler,
+    IPreMessageSentModify,
+    IPreMessageSentPrevent,
 };
