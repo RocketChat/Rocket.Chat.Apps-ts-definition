@@ -1,5 +1,5 @@
 # temporary-rocketlets-ts-definition
-This is the temporary home of the Rocketlets TypeScript definition repository.
+This is the temporary home (it'll be moved under the [Rocket.Chat organization](https://github.com/RocketChat) in the future) of the Rocketlets TypeScript definition repository.
 It started out as a place to test some ideas for it then quickly evolved to a discussion area.
 
 Please feel free to jump into any of the converstations, however please read the following links as they contain background information and ideas regarding Rocketlets.
