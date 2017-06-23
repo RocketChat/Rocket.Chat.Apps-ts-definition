@@ -1,4 +1,4 @@
-import { IPersistence, IPersistenceRead, IRead } from '../accessors';
+import { IExecutionResult, IPersistence, IPersistenceRead, IRead } from '../accessors';
 import { IRoom } from './IRoom';
 
 export interface IPreRoomCreateHandler {
@@ -11,5 +11,5 @@ export interface IPreRoomCreateHandler {
      */
     checkPreRoomCreate(room: IRoom, read: IRead, persistence: IPersistenceRead): boolean;
 
-    preRoomCreate(room: IRoom, persistence: IPersistence): IRoom;
+    preRoomCreate(room: IRoom, persistence: IPersistence): IExecutionResult;
 }

@@ -1,22 +1,28 @@
 import { ISetting } from '../settings/index';
 
 /**
- * This accessor provides methods for adding custom settings
+ * This accessor provides methods to change default setting options
  * of Rocket.Chat in a compatible way. Use it during initialization of your Rocketlet
  */
-
-export interface ISettingsExtend {
+export interface ISettingsModify {
 
     /**
-     * Adds a group into which settings can be added lateron
-     * @param name The technical name of the group to be referred to in the settings
+     * Hides an existing settings group
+     * @param name The technical name of the group
      */
-    provideGroup(name: string, label: string): void;
+    hideGroup(name: string): void;
 
     /**
-     * Adds a setting  which can be configured by an administrator
-     * Settings can only be added to groups which have been provided by this Rocketlet earlier
+     * Hides a setting. This does not influence the actual functionality (the setting will still
+     * have its value and can be programatically read), but the administrator will not be able to see it anymore
      * @param setting
      */
-    provideSetting(setting: ISetting): void;
+    hideSetting(id: string): void;
+
+    /**
+     * Modifies the configured value of another setting.
+     * Use it with caution
+     * @param setting
+     */
+    modifySetting(setting: ISetting): void;
 }

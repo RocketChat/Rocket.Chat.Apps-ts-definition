@@ -1,11 +1,13 @@
-import { ISetting } from '../settings/index';
+import { ISettingsExtend } from './ISettingsExtend';
+import { ISlashCommandsExtend } from './ISlashCommandsExtend';
 
 /**
- * This accessor provides methods for accessing
- * settings in a read-only-fashion.
+ * This accessor provides methods for enhancing all configuration aspects
+ * of Rocket.Chat in a compatible way. Use it during initialization of your Rocketlet
  */
-export interface ISettingRead {
-    getById(id: string): ISetting;
+export interface IConfigurationExtend {
 
-    getValueById(id: string): any;
+    settings(): ISettingsExtend;
+
+    slashCommands(): ISlashCommandsExtend;
 }

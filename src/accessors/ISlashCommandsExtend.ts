@@ -11,5 +11,5 @@ export interface ISlashCommandsExtend {
      * Adds a slash command which can be used during conversations lateron
      * @param slashCommand
      */
-    provideSlashCommand(slashCommand: ISlashCommandsExtend): void;
+    provideSlashCommand(slashCommand: ISlashCommand): void;
 }

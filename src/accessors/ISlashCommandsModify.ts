@@ -1,15 +1,20 @@
 import { ISlashCommand } from '../slashcommands';
 
 /**
- * This accessor provides methods for adding custom slash commands
- * of Rocket.Chat in a compatible way. Use it during initialization of your Rocketlet
+ * This accessor provides methods for modifying existing slash commands
+ * Use it during initialization of your Rocketlet
  */
-
-export interface ISlashCommandsExtend {
+export interface ISlashCommandsModify {
 
     /**
-     * Adds a slash command which can be used during conversations lateron
+     * changes how a slash command behaves
      * @param slashCommand
      */
-    provideSlashCommand(slashCommand: ISlashCommandsExtend): void;
+    modifySlashCommand(slashCommand: ISlashCommand);
+
+    /**
+     * Renders an existing slash command un-usable
+     * @param command the command shortcut (without the slash)
+     */
+    disableSlashCommand(command: string): void;
 }

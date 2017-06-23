@@ -1,3 +1,3 @@
-import { ISetting } from './ISetting';
+import { ISlashCommand } from './ISlashCommand';
 
-export { ISetting };
+export { ISlashCommand };

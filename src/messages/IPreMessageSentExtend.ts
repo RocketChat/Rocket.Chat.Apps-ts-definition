@@ -15,7 +15,7 @@ export interface IPreMessageSentExtend {
      * @param http An accessor to the outside world
      * @return whether to run the execute or not
      */
-    checkPreMessageSentEnrich?(message: IMessage, read: IRead, http: IHttp, persistence: IPersistenceRead): boolean;
+    checkPreMessageSentExtend?(message: IMessage, read: IRead, http: IHttp, persistence: IPersistenceRead): boolean;
 
     /**
      * Method which is to be used to non-destructively enrich the message.

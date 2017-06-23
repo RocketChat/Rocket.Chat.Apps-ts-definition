@@ -1,3 +1,10 @@
+import { ISettingRead } from './ISettingRead';
+
 /**
- * Created by oliverjaegle on 22.06.17.
+ * Allows read-access to configuration and other data which is not created by the normal user
  */
+export interface IEnvironmentRead {
+    settings(): ISettingRead;
+
+    environmentVariables(): object; // TODO:
+}
