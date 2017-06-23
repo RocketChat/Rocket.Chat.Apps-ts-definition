@@ -5,7 +5,7 @@ import { ISlashCommand } from '../slashcommands';
  * Use it during initialization of your Rocketlet
  */
 
-export interface ISlashCommandsExtend {
+export interface ISlashCommandsModify {
 
     /**
      * changes how a slash command behaves
