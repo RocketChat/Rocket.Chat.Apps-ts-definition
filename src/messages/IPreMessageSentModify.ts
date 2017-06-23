@@ -1,4 +1,4 @@
-import { IHttp, IRead } from '../accessors';
+import { IHttp, IPersistence, IPersistenceRead, IRead } from '../accessors';
 import { IMessage } from './IMessage';
 
 export interface IPreMessageSentModify {
@@ -12,7 +12,7 @@ export interface IPreMessageSentModify {
      * @param http An accessor to the outside world
      * @return whether to run the execute or not
      */
-    checkPreMessageSentModify?(message: IMessage, read: IRead, http: IHttp): boolean;
+    checkPreMessageSentModify?(message: IMessage, read: IRead, http: IHttp, persistence: IPersistenceRead): boolean;
 
     /**
      * Method which is to be used to destructively modify the message.
@@ -21,5 +21,5 @@ export interface IPreMessageSentModify {
      * @param read An accessor to the environment
      * @param http An accessor to the outside world
      */
-    executePreMessageSentModify(message: IMessage, read: IRead, http: IHttp): IMessage;
+    executePreMessageSentModify(message: IMessage, read: IRead, http: IHttp, persistence: IPersistence): IMessage;
 }

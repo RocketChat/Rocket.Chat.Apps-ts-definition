@@ -4,7 +4,6 @@ import { ISlashCommand } from '../slashcommands';
  * This accessor provides methods for modifying existing slash commands
  * Use it during initialization of your Rocketlet
  */
-
 export interface ISlashCommandsModify {
 
     /**

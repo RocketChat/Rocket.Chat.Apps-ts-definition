@@ -1,10 +1,10 @@
-import { IHttp, IMessageExtend, IRead } from '../accessors';
+import { IHttp, IMessageExtend, IPersistence, IPersistenceRead, IRead } from '../accessors';
 import { IMessage } from './IMessage';
 
 /**
  * Handler called when a Rocketlet wants to enrich a message.
  */
-export interface IPreMessageSentEnrich {
+export interface IPreMessageSentExtend {
     /**
      * Enables the handler to signal to the Rocketlets framework whether
      * this handler should actually be executed for the message
@@ -15,7 +15,7 @@ export interface IPreMessageSentEnrich {
      * @param http An accessor to the outside world
      * @return whether to run the execute or not
      */
-    checkPreMessageSentEnrich?(message: IMessage, read: IRead, http: IHttp): boolean;
+    checkPreMessageSentExtend?(message: IMessage, read: IRead, http: IHttp, persistence: IPersistenceRead): boolean;
 
     /**
      * Method which is to be used to non-destructively enrich the message.
@@ -26,5 +26,9 @@ export interface IPreMessageSentEnrich {
      * @param http An accessor to the outside world
      */
     // TODO: Determine a better result of this method
-    executePreMessageSentEnrich(message: IMessage, read: IRead, extend: IMessageExtend, http: IHttp): IMessage;
+    executePreMessageSentExtend(message: IMessage,
+                                read: IRead,
+                                extend: IMessageExtend,
+                                http: IHttp,
+                                persistence: IPersistence): IMessage;
 }

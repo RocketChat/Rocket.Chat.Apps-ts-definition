@@ -4,7 +4,6 @@ import { ISetting } from '../settings/index';
  * This accessor provides methods to change default setting options
  * of Rocket.Chat in a compatible way. Use it during initialization of your Rocketlet
  */
-
 export interface ISettingsModify {
 
     /**

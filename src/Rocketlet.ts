@@ -1,5 +1,6 @@
 import { IConfigurationExtend } from './accessors';
 import { IEnvironmentRead } from './accessors/IEnvironmentRead';
+import { IRocketChatAssociation } from './metadata/IRocketChatAssociation';
 
 export abstract class Rocketlet {
     /**
@@ -64,6 +65,17 @@ export abstract class Rocketlet {
     }
 
     /**
+     * This method defines in which relationship to Rocket.Chat this Rocketlet lives.
+     * This information is consumed within the visualization (e. g. for each associated entity,
+     * a different set of visualization options is applicable) and in the persistence.
+     *
+     * @return The entity referred to and the cardinality of this association (e. g. can a room
+     * extended by this Rocketlet have one or multiple Rocketlet data items?
+     *
+     */
+    public abstract getRocketChatAssociation(): IRocketChatAssociation;
+
+    /**
      * Method which will be called when the Rocketlet is initialized and will only be called once
      * in the lifetime of one instance of this Rocketlet.
      *
@@ -82,14 +94,18 @@ export abstract class Rocketlet {
      *
      * @return whether the Rocketlet should be enabled or not
      */
-    public abstract onEnable(environment: IEnvironmentRead, configurationModify: object): boolean; //todo: Config modify. This should actually be an implementation of configModify which ensures that only own configurations are being modified
+    // TODO: Config modify. This should actually be an implementation of configModify
+    //        which ensures that only own configurations are being modified
+    public abstract onEnable(environment: IEnvironmentRead, configurationModify: object): boolean;
 
     /**
      * Method which is called when this Rocketlet is disabled and it can be called several times.
      * If this Rocketlet was enabled and then the user disabled it, this method will be called.
      * Please note, if an error is thrown this Rocketlet will be disabled forever until it is updated.
      */
-    public abstract onDisable(configurationModify: object): void; //todo: Config modify. This should actually be an implementation of configModify which ensures that only own configurations are being modified
+    // TODO: Config modify. This should actually be an implementation of configModify
+    //        which ensures that only own configurations are being modified
+    public abstract onDisable(configurationModify: object): void;
 
     /**
      * Method will be called during initialization. It allows for adding custom configuration options and defaults

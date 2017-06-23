@@ -1,10 +1,9 @@
 import { ISetting } from '../settings/index';
 
-/**
+/*
  * This accessor provides methods for adding custom settings
  * of Rocket.Chat in a compatible way. Use it during initialization of your Rocketlet
  */
-
 export interface ISettingsExtend {
 
     /**

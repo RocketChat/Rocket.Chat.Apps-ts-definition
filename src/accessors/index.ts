@@ -8,6 +8,8 @@ import { IIteratorResult } from './IIteratorResult';
 import { ILogMessage } from './ILogMessage';
 import { IMessageExtend } from './IMessageExtend';
 import { IMessageRead } from './IMessageRead';
+import { IPersistence } from './IPersistence';
+import { IPersistenceRead } from './IPersistenceRead';
 import { IRead } from './IRead';
 import { IRoomRead } from './IRoomRead';
 import { ISettingRead } from './ISettingRead';
@@ -28,6 +30,8 @@ export {
     ILogMessage,
     IMessageExtend,
     IMessageRead,
+    IPersistence,
+    IPersistenceRead,
     IRead,
     IRoomRead,
     ISettingRead,
