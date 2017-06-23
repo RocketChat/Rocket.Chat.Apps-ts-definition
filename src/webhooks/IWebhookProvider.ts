@@ -10,5 +10,5 @@ export interface IWebhookProvider {
      * @param request the actual request made
      * @return the response to send to the client
      */
-    webhook_event(request: IRequest): IResponse;
+    executeWebhook(request: IRequest): IResponse;
 }
