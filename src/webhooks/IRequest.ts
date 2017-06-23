@@ -1,4 +1,7 @@
+import { RequestMethod } from './RequestMethod';
+
 export interface IRequest {
-    method: string;
+    method: RequestMethod;
+    headers: { [key: string]: string };
     content: any;
 }
