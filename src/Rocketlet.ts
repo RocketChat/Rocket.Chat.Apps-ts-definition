@@ -1,3 +1,4 @@
+import { IRocketChatAssociation } from './metadata/IRocketChatAssociation';
 export abstract class Rocketlet {
     /**
      * Create a new Rocketlet, this is called whenever the server starts up and initiates the Rocketlets.
@@ -5,14 +6,13 @@ export abstract class Rocketlet {
      * Also, please use the `initialize()` method to do items instead of the constructor as the constructor
      * *might* be called more than once but the `initialize()` will only be called once.
      */
-    protected constructor(
-        private readonly name: string,
-        private readonly id: number,
-        private readonly version: string,
-        private readonly description: string,
-        private readonly requiredApiVersion: string) {
-            console.log(`Constructed the Rocketlet ${this.name} (${this.id})`,
-                `v${this.version} which depends on the API v${requiredApiVersion}!`);
+    protected constructor(private readonly name: string,
+                          private readonly id: number,
+                          private readonly version: string,
+                          private readonly description: string,
+                          private readonly requiredApiVersion: string) {
+        console.log(`Constructed the Rocketlet ${this.name} (${this.id})`,
+            `v${this.version} which depends on the API v${requiredApiVersion}!`);
     }
 
     /**
@@ -60,6 +60,17 @@ export abstract class Rocketlet {
     public getRequiredApiVersion(): string {
         return this.requiredApiVersion;
     }
+
+    /**
+     * This method defines in which relationship to Rocket.Chat this Rocketlet lives.
+     * This information is consumed within the visualization (e. g. for each associated entity,
+     * a different set of visualization options is applicable) and in the persistence.
+     *
+     * @return The entity referred to and the cardinality of this association (e. g. can a room
+     * extended by this Rocketlet have one or multiple Rocketlet data items?
+     *
+     */
+    public abstract getRocketChatAssociation(): IRocketChatAssociation;
 
     /**
      * Method which will be called when the Rocketlet is initialized and will only be called once

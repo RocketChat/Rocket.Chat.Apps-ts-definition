@@ -1,4 +1,4 @@
-import { IRead } from '../accessors/index';
+import { IPersistence, IPersistenceRead, IRead } from '../accessors';
 import { IRoom } from './IRoom';
 
 export interface IPreRoomCreateHandler {
@@ -9,7 +9,7 @@ export interface IPreRoomCreateHandler {
      * @param room
      * @param read
      */
-    checkPreRoomCreate(room: IRoom, read: IRead): boolean;
+    checkPreRoomCreate(room: IRoom, read: IRead, persistence: IPersistenceRead): boolean;
 
-    preRoomCreate(room: IRoom): IRoom;
+    preRoomCreate(room: IRoom, persistence: IPersistence): IRoom;
 }
