@@ -1,8 +1,10 @@
+
 import { IConfigurationExtend } from './IConfigurationExtend';
 import { IEnvironmentRead } from './IEnvironmentRead';
 import { IExecutionResult } from './IExecutionResult';
 import { IHttp } from './IHttp';
 import { IIterator } from './IIterator';
+import { IIteratorResult } from './IIteratorResult';
 import { ILogMessage } from './ILogMessage';
 import { IMessageExtend } from './IMessageExtend';
 import { IMessageRead } from './IMessageRead';
@@ -22,6 +24,7 @@ export {
     IExecutionResult,
     IHttp,
     IIterator,
+    IIteratorResult,
     ILogMessage,
     IMessageExtend,
     IMessageRead,

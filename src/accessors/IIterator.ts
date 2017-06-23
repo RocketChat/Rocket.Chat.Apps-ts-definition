@@ -1,6 +1,12 @@
+import { IIteratorResult } from './IIteratorResult';
+
+/**
+ * An iterator interface which implements:
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol
+ */
 export interface IIterator<T> {
-    next(packageSize?: number): Array<T>;
+    next(): IIteratorResult<T>;
     [Symbol.iterator](): IIterator<T>;
 
-    hasMoreElements(): boolean;
+    hasMore(): boolean;
 }
