@@ -1,6 +1,7 @@
 import { IConfigurationExtend } from './accessors';
 import { IEnvironmentRead } from './accessors/IEnvironmentRead';
 import { IRocketletAuthor } from './IRocketletAuthor';
+import { IRocketChatAssociation } from './metadata/IRocketChatAssociation';
 
 export abstract class Rocketlet {
     /**
@@ -83,8 +84,7 @@ export abstract class Rocketlet {
      * extended by this Rocketlet have one or multiple Rocketlet data items?
      *
      */
-    // TODO: Discuss what the purpose of this is, commenting out for now.
-    // public abstract getRocketChatAssociation(): IRocketChatAssociation;
+    public abstract getRocketChatAssociations(): Array<IRocketChatAssociation>;
 
     /**
      * Method which will be called when the Rocketlet is initialized and will only be called once
