@@ -1,6 +1,7 @@
 import { IConfigurationExtend } from './accessors';
 import { IEnvironmentRead } from './accessors/IEnvironmentRead';
-import { IRocketletAuthor } from './IRocketletAuthor';
+import { IRocketletAuthorInfo } from './metadata/IRocketletAuthorInfo';
+import { IRocketletInfo } from './metadata/IRocketletInfo';
 
 export abstract class Rocketlet {
     /**
@@ -9,14 +10,10 @@ export abstract class Rocketlet {
      * Also, please use the `initialize()` method to do items instead of the constructor as the constructor
      * *might* be called more than once but the `initialize()` will only be called once.
      */
-    protected constructor(private readonly name: string,
-                          private readonly id: number,
-                          private readonly version: string,
-                          private readonly description: string,
-                          private readonly requiredApiVersion: string,
-                          private readonly author: IRocketletAuthor) {
-        console.log(`Constructed the Rocketlet ${this.name} (${this.id})`,
-            `v${this.version} which depends on the API v${requiredApiVersion}! Created by ${author.name}`);
+    protected constructor(private readonly info: IRocketletInfo) {
+        console.log(`Constructed the Rocketlet ${this.info.name} (${this.info.id})`,
+            `v${this.info.version} which depends on the API v${this.info.requiredApiVersion}!`,
+            `Created by ${this.info.author.name}`);
     }
 
     /**
@@ -25,7 +22,7 @@ export abstract class Rocketlet {
      * @return {string} the name
      */
     public getName(): string {
-        return this.name;
+        return this.info.name;
     }
 
     /**
@@ -34,7 +31,7 @@ export abstract class Rocketlet {
      * @return {number} the ID
      */
     public getID(): number {
-        return this.id;
+        return this.info.id;
     }
 
     /**
@@ -43,7 +40,7 @@ export abstract class Rocketlet {
      * @return {string} the version
      */
     public getVersion(): string {
-        return this.version;
+        return this.info.version;
     }
 
     /**
@@ -52,7 +49,7 @@ export abstract class Rocketlet {
      * @return {string} the description
      */
     public getDescription(): string {
-        return this.description;
+        return this.info.description;
     }
 
     /**
@@ -62,7 +59,7 @@ export abstract class Rocketlet {
      * @return {string} the required api version
      */
     public getRequiredApiVersion(): string {
-        return this.requiredApiVersion;
+        return this.info.requiredApiVersion;
     }
 
     /**
@@ -70,8 +67,8 @@ export abstract class Rocketlet {
      *
      * @return author information
      */
-    public getAuthorInfo(): IRocketletAuthor {
-        return this.author;
+    public getAuthorInfo(): IRocketletAuthorInfo {
+        return this.info.author;
     }
 
     /**

@@ -1,0 +1,12 @@
+{
+    //This is an example of how a rocketlet.json file will look like
+    "name": "Testing",
+    "description": "Testing description",
+    "id": 10,
+    "version": "1.0.0",
+    "requiredApiVersion": "0.0.1",
+    "author": {
+        "name": "Bradley Hilton",
+        "support": "https://github.com/graywolf336/temporary-rocketlets-ts-definition/"
+    }
+}
