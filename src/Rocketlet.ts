@@ -1,7 +1,6 @@
 import { IConfigurationExtend } from './accessors';
 import { IEnvironmentRead } from './accessors/IEnvironmentRead';
 import { IRocketletAuthor } from './IRocketletAuthor';
-import { IRocketChatAssociation } from './metadata/IRocketChatAssociation';
 
 export abstract class Rocketlet {
     /**
@@ -74,17 +73,6 @@ export abstract class Rocketlet {
     public getAuthorInfo(): IRocketletAuthor {
         return this.author;
     }
-
-    /**
-     * This method defines in which relationship to Rocket.Chat this Rocketlet lives.
-     * This information is consumed within the visualization (e. g. for each associated entity,
-     * a different set of visualization options is applicable) and in the persistence.
-     *
-     * @return The entity referred to and the cardinality of this association (e. g. can a room
-     * extended by this Rocketlet have one or multiple Rocketlet data items?
-     *
-     */
-    public abstract getRocketChatAssociations(): Array<IRocketChatAssociation>;
 
     /**
      * Method which will be called when the Rocketlet is initialized and will only be called once
