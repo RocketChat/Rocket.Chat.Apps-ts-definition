@@ -8,9 +8,11 @@ import { IIteratorResult } from './IIteratorResult';
 import { ILogMessage } from './ILogMessage';
 import { IMessageExtend } from './IMessageExtend';
 import { IMessageRead } from './IMessageRead';
-import { IPersistence } from './IRelatedPersistence';
-import { IPersistenceRead } from './IRelatedPersistenceRead';
+import { IPersistence } from './IPersistence';
+import { IPersistenceRead } from './IPersistenceRead';
 import { IRead } from './IRead';
+import { IRelatedPersistence } from './IRelatedPersistence';
+import { IRelatedPersistenceRead } from './IRelatedPersistenceRead';
 import { IRoomRead } from './IRoomRead';
 import { ISettingRead } from './ISettingRead';
 import { ISettingsExtend } from './ISettingsExtend';
@@ -33,6 +35,8 @@ export {
     IPersistence,
     IPersistenceRead,
     IRead,
+    IRelatedPersistence,
+    IRelatedPersistenceRead,
     IRoomRead,
     ISettingRead,
     ISettingsExtend,
