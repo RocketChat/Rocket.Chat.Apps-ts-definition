@@ -25,7 +25,26 @@
             "description": "The required version of the Rocketlet's API which this Rocketlet depends on. This uses the semver format.",
             "type": "string",
             "pattern": "\\bv?(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)(?:-[\\da-z\\-]+(?:\\.[\\da-z\\-]+)*)?(?:\\+[\\da-z\\-]+(?:\\.[\\da-z\\-]+)*)?\\b"
+        },
+        "author": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "The author's name who created this Rocketlet.",
+                    "type": "string"
+                },
+                "support": {
+                    "description": "The place where people can get support for this Rocketlet, whether email or website.",
+                    "type": "string"
+                },
+                "homepage": {
+                    "description": "The homepage for this Rocketlet, it can be a Github or the author's website.",
+                    "type": "string",
+                    "format": "uri"
+                }
+            },
+            "required": ["name", "support"]
         }
     },
-    "required": ["id", "name", "version", "description"]
+    "required": ["id", "name", "version", "description", "requiredApiVersion", "author"]
 }
