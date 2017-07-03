@@ -22,6 +22,7 @@
   "homepage": "https://github.com/graywolf336/temporary-rocketlets-ts-definition#readme",
   "devDependencies": {
     "del": "^3.0.0",
+    "eslint": "^4.1.1",
     "gulp": "^3.9.1",
     "gulp-shell": "^0.6.3",
     "gulp-sourcemaps": "^2.6.0",
