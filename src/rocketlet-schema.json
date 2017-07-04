@@ -7,7 +7,9 @@
         "id": {
             "description": "The Rocketlet's unique identifier. This is optional however if you are going to publish on the Rocketlet store, you will be assigned one.",
             "type": "string",
-            "minLength": 5
+            "pattern": "^[0-9a-fA-f]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+            "minLength": 36,
+            "maxLength": 36
         },
         "name": {
             "description": "The public visible name of this Rocketlet.",
