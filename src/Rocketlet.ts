@@ -26,11 +26,20 @@ export abstract class Rocketlet {
     }
 
     /**
+     * Gets the sluggified name of this Rocketlet.
+     *
+     * @return {string} the name slugged
+     */
+    public getNameSlug(): string {
+        return this.info.nameSlug;
+    }
+
+    /**
      * Get the ID of this Rocketlet, please see <link> for how to obtain an ID for your Rocketlet.
      *
      * @return {number} the ID
      */
-    public getID(): number {
+    public getID(): string {
         return this.info.id;
     }
 
