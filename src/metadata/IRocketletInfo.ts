@@ -8,4 +8,5 @@ export interface IRocketletInfo {
     description: string;
     requiredApiVersion: string;
     author: IRocketletAuthorInfo;
+    classFile: string;
 }
