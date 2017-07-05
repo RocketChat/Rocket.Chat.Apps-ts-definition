@@ -9,4 +9,15 @@ import * as Settings from './settings';
 import * as Users from './users';
 import * as Webhooks from './webhooks';
 
-export { Assets, Decorators, Messages, Metadata, Rocketlet, Rooms, Settings, Users, Webhooks };
+export {
+    Accessors,
+    Assets,
+    Decorators,
+    Messages,
+    Metadata,
+    Rocketlet,
+    Rooms,
+    Settings,
+    Users,
+    Webhooks,
+};
