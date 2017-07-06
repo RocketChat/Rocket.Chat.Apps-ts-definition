@@ -5,7 +5,8 @@ import { IExecutionResult } from './IExecutionResult';
 import { IHttp } from './IHttp';
 import { IIterator } from './IIterator';
 import { IIteratorResult } from './IIteratorResult';
-import { ILogMessage } from './ILogMessage';
+import { ILogEntry } from './ILogEntry';
+import { ILogger } from './ILogger';
 import { IMessageExtend } from './IMessageExtend';
 import { IMessageRead } from './IMessageRead';
 import { IPersistence } from './IPersistence';
@@ -29,7 +30,8 @@ export {
     IHttp,
     IIterator,
     IIteratorResult,
-    ILogMessage,
+    ILogEntry,
+    ILogger,
     IMessageExtend,
     IMessageRead,
     IPersistence,

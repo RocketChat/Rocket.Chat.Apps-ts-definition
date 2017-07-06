@@ -1,5 +1,5 @@
 import { IConfigurationExtend } from './accessors';
-import { IEnvironmentRead } from './accessors/IEnvironmentRead';
+import { IEnvironmentRead, ILogger } from './accessors';
 import { IRocketletAuthorInfo } from './metadata/IRocketletAuthorInfo';
 import { IRocketletInfo } from './metadata/IRocketletInfo';
 
@@ -10,8 +10,8 @@ export abstract class Rocketlet {
      * Also, please use the `initialize()` method to do items instead of the constructor as the constructor
      * *might* be called more than once but the `initialize()` will only be called once.
      */
-    protected constructor(private readonly info: IRocketletInfo) {
-        console.log(`Constructed the Rocketlet ${this.info.name} (${this.info.id})`,
+    protected constructor(private readonly info: IRocketletInfo, private readonly logger: ILogger) {
+        this.logger.debug(`Constructed the Rocketlet ${this.info.name} (${this.info.id})`,
             `v${this.info.version} which depends on the API v${this.info.requiredApiVersion}!`,
             `Created by ${this.info.author.name}`);
     }
@@ -81,12 +81,22 @@ export abstract class Rocketlet {
     }
 
     /**
+     * Gets the ILogger instance for this Rocketlet.
+     *
+     * @return the logger instance
+     */
+    public getLogger(): ILogger {
+        return this.logger;
+    }
+
+    /**
      * Method which will be called when the Rocketlet is initialized and will only be called once
      * in the lifetime of one instance of this Rocketlet.
      *
      * @return boolean stating whether the Rocketlet should be marked as active or not.
      */
     public initialize(configurationExtend: IConfigurationExtend): void {
+        this.getLogger().debug(`Initialized called.`);
         this.extendConfiguration(configurationExtend);
     }
 
@@ -102,6 +112,7 @@ export abstract class Rocketlet {
     // TODO: Config modify. This should actually be an implementation of configModify
     //        which ensures that only own configurations are being modified
     public onEnable(environment: IEnvironmentRead, configurationModify: object): boolean {
+        this.getLogger().debug(`OnEnable called.`);
         return true;
     }
 
@@ -113,6 +124,7 @@ export abstract class Rocketlet {
     // TODO: Config modify. This should actually be an implementation of configModify
     //        which ensures that only own configurations are being modified
     public onDisable(configurationModify: object): void {
+        this.getLogger().debug(`OnDisable called.`);
         return;
     }
 
@@ -121,6 +133,7 @@ export abstract class Rocketlet {
      * @param configuration
      */
     protected extendConfiguration(configuration: IConfigurationExtend): void {
+        this.getLogger().debug(`ExtendConfiguration called.`);
         return;
     }
 }
