@@ -1,4 +1,4 @@
-import { ILogMessage } from './ILogMessage';
+import { ILogEntry } from './ILogEntry';
 
 /**
  * All executions of pre- and post-exits are enabled to perform the modifications
@@ -7,5 +7,5 @@ import { ILogMessage } from './ILogMessage';
  */
 export interface IExecutionResult {
     failed: boolean;
-    logMessages: Array<ILogMessage>;
+    logMessages: Array<ILogEntry>;
 }
