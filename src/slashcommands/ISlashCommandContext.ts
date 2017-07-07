@@ -7,11 +7,11 @@ import { IUser } from '../users';
  */
 export interface ISlashCommandContext {
     /** The user who sent the command. */
-    sender: IUser;
+    getSender(): IUser;
 
     /** The room where the command was sent in. */
-    room: IRoom;
+    getRoom(): IRoom;
 
     /** The arguments passed into the command. */
-    args: Array<string>;
+    getArguments(): Array<string>;
 }

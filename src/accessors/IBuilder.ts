@@ -3,10 +3,37 @@ import { IRoom, RoomType } from '../rooms';
 import { IUser } from '../users';
 
 export interface IBuilder {
+    /**
+     * Builds a new message with the ability to pass in a message
+     * object to continue building on.
+     *
+     * @param msg (optional) the message to build on top of
+     */
     buildMessage(msg?: IMessage): IMessageBuilder;
-    modifyMessage(msgId: string): IMessageBuilder;
+
+    /**
+     * Modifies an existing message.
+     *
+     * @param msgId the id of the existing message to modfiy and build
+     * @param updater the user who is updating the message
+     */
+    modifyMessage(msgId: string, updater: IUser): IMessageBuilder;
+
+    /**
+     * Builds a new room with the ability to pass in a room object
+     * to continue building on.
+     *
+     * @param room (optional) the room to build on top of
+     */
     buildRoom(room?: IRoom): IRoomBuilder;
-    modifyRoom(roomId: string): IRoomBuilder;
+
+    /**
+     * Modifies an existing room.
+     *
+     * @param roomId the id of the existing room to modify and build
+     * @param updater the user who is updating the room
+     */
+    modifyRoom(roomId: string, updater: IUser): IRoomBuilder;
 }
 
 export interface IMessageBuilder {
@@ -77,6 +104,14 @@ export interface IMessageBuilder {
      * @param attachment the attachment to replace with
      */
     replaceAttachment(position: number, attachment: IMessageAttachment): IMessageBuilder;
+
+    /**
+     * Sets the user who is updating this message.
+     * This is required if you are modifying an existing message.
+     *
+     * @param user the updater
+     */
+    setUpdater(user: IUser): IMessageBuilder;
 
     /**
      * Gets the resulting message that has been built up to the point of calling it.
