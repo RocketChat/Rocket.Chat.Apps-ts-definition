@@ -4,6 +4,7 @@ const merge = require('merge2');
 const path = require('path');
 const shell = require('gulp-shell');
 const sourcemaps = require('gulp-sourcemaps');
+const tslint = require('gulp-tslint');
 const tsc = require('gulp-typescript');
 
 const tsp = tsc.createProject('tsconfig.json');
@@ -13,7 +14,11 @@ gulp.task('clean-generated', function _cleanTypescript() {
     return del(distFiles);
 });
 
-gulp.task('compile-ts', ['clean-generated'], function _compileTypescript() {
+gulp.task('lint-ts', function _lintTypescript() {
+    return tsp.src().pipe(tslint({ formatter: 'verbose' })).pipe(tslint.report());
+});
+
+gulp.task('compile-ts', ['clean-generated', 'lint-ts'], function _compileTypescript() {
     const result = tsp.src().pipe(sourcemaps.init()).pipe(tsp());
 
     return merge([
@@ -38,4 +43,4 @@ gulp.task('publish', ['default'], shell.task([
     'cd dist && pwd && npm publish && npm pack'
 ]));
 
-gulp.task('default', ['compile-ts', 'npm-files']);
+gulp.task('default', ['clean-generated', 'lint-ts', 'compile-ts', 'npm-files']);

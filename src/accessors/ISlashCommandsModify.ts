@@ -7,14 +7,17 @@ import { ISlashCommand } from '../slashcommands';
 export interface ISlashCommandsModify {
 
     /**
-     * changes how a slash command behaves
-     * @param slashCommand
+     * Changes how a slash command behaves, so you can provide a different item
+     * per configuration.
+     *
+     * @param slashCommand the modified slash command
      */
     modifySlashCommand(slashCommand: ISlashCommand);
 
     /**
-     * Renders an existing slash command un-usable
-     * @param command the command shortcut (without the slash)
+     * Renders an existing slash command un-usable.
+     *
+     * @param command the command's usage without the slash
      */
     disableSlashCommand(command: string): void;
 }

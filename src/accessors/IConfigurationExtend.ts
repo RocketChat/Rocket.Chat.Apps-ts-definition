@@ -7,7 +7,7 @@ import { ISlashCommandsExtend } from './ISlashCommandsExtend';
  */
 export interface IConfigurationExtend {
 
-    settings(): ISettingsExtend;
+    settings: ISettingsExtend;
 
-    slashCommands(): ISlashCommandsExtend;
+    slashCommands: ISlashCommandsExtend;
 }

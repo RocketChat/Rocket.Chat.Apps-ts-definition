@@ -1,5 +1,5 @@
 import { IConfigurationExtend } from './accessors';
-import { IEnvironmentRead, ILogger } from './accessors';
+import { IConfigurationModify, IEnvironmentRead, ILogger } from './accessors';
 import { IRocketletAuthorInfo } from './metadata/IRocketletAuthorInfo';
 import { IRocketletInfo } from './metadata/IRocketletInfo';
 
@@ -92,8 +92,6 @@ export abstract class Rocketlet {
     /**
      * Method which will be called when the Rocketlet is initialized and will only be called once
      * in the lifetime of one instance of this Rocketlet.
-     *
-     * @return boolean stating whether the Rocketlet should be marked as active or not.
      */
     public initialize(configurationExtend: IConfigurationExtend): void {
         this.getLogger().debug(`Initialized called.`);
@@ -109,9 +107,7 @@ export abstract class Rocketlet {
      *
      * @return whether the Rocketlet should be enabled or not
      */
-    // TODO: Config modify. This should actually be an implementation of configModify
-    //        which ensures that only own configurations are being modified
-    public onEnable(environment: IEnvironmentRead, configurationModify: object): boolean {
+    public onEnable(environment: IEnvironmentRead, configurationModify: IConfigurationModify): boolean {
         this.getLogger().debug(`OnEnable called.`);
         return true;
     }
@@ -121,9 +117,7 @@ export abstract class Rocketlet {
      * If this Rocketlet was enabled and then the user disabled it, this method will be called.
      * Please note, if an error is thrown this Rocketlet will be disabled forever until it is updated.
      */
-    // TODO: Config modify. This should actually be an implementation of configModify
-    //        which ensures that only own configurations are being modified
-    public onDisable(configurationModify: object): void {
+    public onDisable(configurationModify: IConfigurationModify): void {
         this.getLogger().debug(`OnDisable called.`);
         return;
     }

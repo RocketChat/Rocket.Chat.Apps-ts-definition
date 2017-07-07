@@ -7,7 +7,8 @@ import { ISetting } from '../settings/index';
 export interface ISettingsModify {
 
     /**
-     * Hides an existing settings group
+     * Hides an existing settings group.
+     *
      * @param name The technical name of the group
      */
     hideGroup(name: string): void;
@@ -15,13 +16,15 @@ export interface ISettingsModify {
     /**
      * Hides a setting. This does not influence the actual functionality (the setting will still
      * have its value and can be programatically read), but the administrator will not be able to see it anymore
-     * @param setting
+     *
+     * @param id the id of the setting to hide
      */
     hideSetting(id: string): void;
 
     /**
      * Modifies the configured value of another setting.
      * Use it with caution
+     *
      * @param setting
      */
     modifySetting(setting: ISetting): void;

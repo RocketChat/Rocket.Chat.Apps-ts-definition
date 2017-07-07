@@ -1,6 +1,11 @@
-// just guessing
+import { IHttp, IRead, ISettingRead } from '../accessors';
+
+/**
+ * Represents a slash command that is being provided.
+ */
 export interface ISlashCommand {
     command: string;
-    pattern: string;
-    function: () => boolean;
+    paramsExample: string;
+    i18nDescription: string;
+    executor(args: Array<string>, settings: ISettingRead, read: IRead, http: IHttp): void;
 }

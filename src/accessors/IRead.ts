@@ -1,19 +1,27 @@
 import { IEnvironmentRead } from './IEnvironmentRead';
 import { IMessageRead } from './IMessageRead';
 import { IRoomRead } from './IRoomRead';
+import { IServerSettingRead } from './IServerSettingRead';
 import { IUserRead } from './IUserRead';
 
 /**
- * The RocketChatRead accessor provides methods for accessing the
- * Rocketlet's environment in a read-only-fashion.
+ * The IRead accessor provides methods for accessing the
+ * Rocket.Chat's environment in a read-only-fashion.
  * It is safe to be injected in multiple places, idempotent and extensible
  */
 export interface IRead {
-    environment(): IEnvironmentRead;
+    /** Gets the IEnvironmentRead instance. */
+    getEnvironmentReader(): IEnvironmentRead;
 
-    messages(): IMessageRead;
+    /** Gets the IMessageRead instance. */
+    getMessageReader(): IMessageRead;
 
-    rooms(): IRoomRead;
+    /** Gets the IServerSettingRead instance. */
+    getServerSettingReader(): IServerSettingRead;
 
-    users(): IUserRead;
+    /** Gets the IRoomRead instance. */
+    getRoomReader(): IRoomRead;
+
+    /** Gets the IUserRead instance. */
+    getUserReader(): IUserRead;
 }

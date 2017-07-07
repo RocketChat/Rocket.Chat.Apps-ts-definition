@@ -1,5 +1,6 @@
 
 import { IConfigurationExtend } from './IConfigurationExtend';
+import { IConfigurationModify } from './IConfigurationModify';
 import { IEnvironmentRead } from './IEnvironmentRead';
 import { IExecutionResult } from './IExecutionResult';
 import { IHttp } from './IHttp';
@@ -15,6 +16,7 @@ import { IRead } from './IRead';
 import { IRelatedPersistence } from './IRelatedPersistence';
 import { IRelatedPersistenceRead } from './IRelatedPersistenceRead';
 import { IRoomRead } from './IRoomRead';
+import { IServerSettingRead } from './IServerSettingRead';
 import { ISettingRead } from './ISettingRead';
 import { ISettingsExtend } from './ISettingsExtend';
 import { ISettingsModify } from './ISettingsModify';
@@ -25,6 +27,7 @@ import { LogMessageSeverity } from './LogMessageSeverity';
 
 export {
     IConfigurationExtend,
+    IConfigurationModify,
     IEnvironmentRead,
     IExecutionResult,
     IHttp,
@@ -40,6 +43,7 @@ export {
     IRelatedPersistence,
     IRelatedPersistenceRead,
     IRoomRead,
+    IServerSettingRead,
     ISettingRead,
     ISettingsExtend,
     ISettingsModify,
