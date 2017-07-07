@@ -1,14 +1,16 @@
+import { IRoom } from '../rooms';
+import { IUser } from '../users';
 import { IMessageAttachment } from './IMessageAttachment';
-import { IMessageUser } from './IMessageUser';
 
 export interface IMessage {
     id: string;
-    roomId: string;
+    room: IRoom;
+    sender: IUser;
     text: string;
-    sender: IMessageUser;
-    createdAt: Date;
+    createdAt?: Date;
     updatedAt?: Date;
     emoji?: string;
     avatar?: string;
+    alias?: string;
     attachments?: Array<IMessageAttachment>;
 }
