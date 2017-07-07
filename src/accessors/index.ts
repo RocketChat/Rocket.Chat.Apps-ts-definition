@@ -1,4 +1,4 @@
-
+import { IBuilder, IMessageBuilder, IRoomBuilder } from './IBuilder';
 import { IConfigurationExtend } from './IConfigurationExtend';
 import { IConfigurationModify } from './IConfigurationModify';
 import { IEnvironmentRead } from './IEnvironmentRead';
@@ -26,6 +26,7 @@ import { IUserRead } from './IUserRead';
 import { LogMessageSeverity } from './LogMessageSeverity';
 
 export {
+    IBuilder,
     IConfigurationExtend,
     IConfigurationModify,
     IEnvironmentRead,
@@ -35,6 +36,7 @@ export {
     IIteratorResult,
     ILogEntry,
     ILogger,
+    IMessageBuilder,
     IMessageExtend,
     IMessageRead,
     IPersistence,
@@ -42,6 +44,7 @@ export {
     IRead,
     IRelatedPersistence,
     IRelatedPersistenceRead,
+    IRoomBuilder,
     IRoomRead,
     IServerSettingRead,
     ISettingRead,

@@ -1,11 +1,12 @@
 {
   "name": "temporary-rocketlets-ts-definition",
-  "version": "0.5.12",
+  "version": "0.5.13",
   "description": "Temporary npm package which contains testing ts definitions for the Rocketlets.",
   "main": "index.js",
   "typings": "index",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "start": "gulp",
+      "go-publish": "gulp publish"
   },
   "repository": {
     "type": "git",
