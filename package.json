@@ -1,12 +1,12 @@
 {
   "name": "temporary-rocketlets-ts-definition",
-  "version": "0.5.17",
+  "version": "0.5.18",
   "description": "Temporary npm package which contains testing ts definitions for the Rocketlets.",
   "main": "index.js",
   "typings": "index",
   "scripts": {
-      "start": "gulp",
-      "go-publish": "gulp publish"
+    "start": "gulp",
+    "go-publish": "gulp publish"
   },
   "repository": {
     "type": "git",
@@ -28,10 +28,10 @@
     "gulp-shell": "^0.6.3",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-tslint": "^8.1.1",
-    "gulp-typescript": "^3.1.7",
-    "merge2": "^1.0.3",
-    "tslint": "^5.4.3",
-    "typescript": "^2.3.4"
+    "gulp-typescript": "^3.2.0",
+    "merge2": "^1.1.0",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.1"
   },
   "dependencies": {
     "reflect-metadata": "^0.1.10"

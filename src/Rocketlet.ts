@@ -1,9 +1,10 @@
 import { IConfigurationExtend } from './accessors';
 import { IConfigurationModify, IEnvironmentRead, ILogger } from './accessors';
+import { IRocketlet } from './IRocketlet';
 import { IRocketletAuthorInfo } from './metadata/IRocketletAuthorInfo';
 import { IRocketletInfo } from './metadata/IRocketletInfo';
 
-export abstract class Rocketlet {
+export abstract class Rocketlet implements IRocketlet {
     /**
      * Create a new Rocketlet, this is called whenever the server starts up and initiates the Rocketlets.
      * Note, your implementation of this class should call `super(name, id, version)` so we have it.
