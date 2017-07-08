@@ -2,7 +2,7 @@ import { ISettingsModify } from './ISettingsModify';
 import { ISlashCommandsModify } from './ISlashCommandsModify';
 
 export interface IConfigurationModify {
-    settings: ISettingsModify;
+    readonly settings: ISettingsModify;
 
-    slashCommands: ISlashCommandsModify;
+    readonly slashCommands: ISlashCommandsModify;
 }
