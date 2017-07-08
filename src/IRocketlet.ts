@@ -69,28 +69,4 @@ export interface IRocketlet {
      * @return the logger instance
      */
     getLogger(): ILogger;
-
-    /**
-     * Method which will be called when the Rocketlet is initialized and will only be called once
-     * in the lifetime of one instance of this Rocketlet.
-     */
-    initialize(configurationExtend: IConfigurationExtend): void;
-
-    /**
-     * Method which is called when this Rocketlet is enabled and can be called several
-     * times during this instance's life time. Once after the `ititialize()` is called,
-     * pending it doesn't throw an error, and then anytime the Rocketlet is enabled by the user.
-     * If this method, `onEnable()`, returns false, then this Rocketlet will not
-     * actually be enabled (ex: a setting isn't configured).
-     *
-     * @return whether the Rocketlet should be enabled or not
-     */
-    onEnable(environment: IEnvironmentRead, configurationModify: IConfigurationModify): boolean;
-
-    /**
-     * Method which is called when this Rocketlet is disabled and it can be called several times.
-     * If this Rocketlet was enabled and then the user disabled it, this method will be called.
-     * Please note, if an error is thrown this Rocketlet will be disabled forever until it is updated.
-     */
-    onDisable(configurationModify: IConfigurationModify): void;
 }
