@@ -8,8 +8,10 @@ import { ISlashCommand } from '../slashcommands';
 export interface ISlashCommandsExtend {
 
     /**
-     * Adds a slash command which can be used during conversations lateron
-     * @param slashCommand
+     * Adds a slash command which can be used during conversations lateron.
+     * Should a command already exists an error will be thrown.
+     *
+     * @param slashCommand the command information
      */
     provideSlashCommand(slashCommand: ISlashCommand): void;
 }

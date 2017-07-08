@@ -81,6 +81,15 @@ export abstract class Rocketlet {
     }
 
     /**
+     * Gets the entirity of the Rocketlet's information.
+     *
+     * @return Rocketlet information
+     */
+    public getInfo(): IRocketletInfo {
+        return this.info;
+    }
+
+    /**
      * Gets the ILogger instance for this Rocketlet.
      *
      * @return the logger instance
