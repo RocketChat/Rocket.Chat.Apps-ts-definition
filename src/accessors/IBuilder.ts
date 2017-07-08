@@ -2,6 +2,10 @@ import { IMessage, IMessageAttachment } from '../messages';
 import { IRoom, RoomType } from '../rooms';
 import { IUser } from '../users';
 
+/**
+ * This accesor provides a nice builder interface for creating
+ * the various objects and then submitting them.
+ */
 export interface IBuilder {
     /**
      * Builds a new message with the ability to pass in a message

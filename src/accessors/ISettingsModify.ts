@@ -2,10 +2,10 @@ import { ISetting } from '../settings/index';
 
 /**
  * This accessor provides methods to change default setting options
- * of Rocket.Chat in a compatible way. Use it during initialization of your Rocketlet
+ * of Rocket.Chat in a compatible way. It is provided during
+ * your Rocketlet's "onEnable".
  */
 export interface ISettingsModify {
-
     /**
      * Hides an existing settings group.
      *
@@ -22,10 +22,10 @@ export interface ISettingsModify {
     hideSetting(id: string): void;
 
     /**
-     * Modifies the configured value of another setting.
-     * Use it with caution
+     * Modifies the configured value of another setting, please use it with caution as an invalid
+     * setting configuration could cause a Rocket.Chat instance to become unstable.
      *
-     * @param setting
+     * @param setting the modified setting (id must be provided)
      */
     modifySetting(setting: ISetting): void;
 }
