@@ -104,7 +104,6 @@ export abstract class Rocketlet implements IRocketlet {
      * in the lifetime of one instance of this Rocketlet.
      */
     public initialize(configurationExtend: IConfigurationExtend): void {
-        this.getLogger().debug(`Initialized called.`);
         this.extendConfiguration(configurationExtend);
     }
 
@@ -118,7 +117,6 @@ export abstract class Rocketlet implements IRocketlet {
      * @return whether the Rocketlet should be enabled or not
      */
     public onEnable(environment: IEnvironmentRead, configurationModify: IConfigurationModify): boolean {
-        this.getLogger().debug(`OnEnable called.`);
         return true;
     }
 
@@ -128,7 +126,6 @@ export abstract class Rocketlet implements IRocketlet {
      * Please note, if an error is thrown this Rocketlet will be disabled forever until it is updated.
      */
     public onDisable(configurationModify: IConfigurationModify): void {
-        this.getLogger().debug(`OnDisable called.`);
         return;
     }
 
@@ -137,7 +134,6 @@ export abstract class Rocketlet implements IRocketlet {
      * @param configuration
      */
     protected extendConfiguration(configuration: IConfigurationExtend): void {
-        this.getLogger().debug(`ExtendConfiguration called.`);
         return;
     }
 }
