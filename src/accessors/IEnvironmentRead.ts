@@ -1,10 +1,27 @@
+import { IEnvironmentalVariableRead } from './IEnvironmentalVariableRead';
+import { IServerSettingRead } from './IServerSettingRead';
 import { ISettingRead } from './ISettingRead';
 
 /**
- * Allows read-access to configuration and other data which is not created by the normal user
+ * Allows read-access to the Rocketlet's settings,
+ * the certain server's settings along with environmental
+ * variables all of which are not user created.
  */
 export interface IEnvironmentRead {
-    settings(): ISettingRead;
+    /** Gets an instance of the Rocketlet's settings reader. */
+    getSettings(): ISettingRead;
 
-    environmentVariables(): object; // TODO:
+    /**
+     * Gets an instance of the Server's Settings reader.
+     * Please note: Due to security concerns, only a subset of settings
+     * are accessible.
+     */
+    getServerSettings(): IServerSettingRead;
+
+    /**
+     * Gets an instance of the Environmental Variables reader.
+     * Please note: Due to security concerns, only a subset of
+     * them are readable.
+     */
+    getEnvironmentVariables(): IEnvironmentalVariableRead;
 }

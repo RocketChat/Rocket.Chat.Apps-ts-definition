@@ -6,8 +6,9 @@ import { ISlashCommandsModify } from './ISlashCommandsModify';
  * of Rocket.Chat. It is provided during "onEnable" of your Rocketlet.
  */
 export interface IConfigurationModify {
-    /** Accessor for modifying the settings inside of Rocket.Chat */
+    /** Accessor for modifying the settings inside of Rocket.Chat. */
     readonly settings: ISettingsModify;
 
+    /** Accessor for modifying the slash commands inside of Rocket.Chat. */
     readonly slashCommands: ISlashCommandsModify;
 }

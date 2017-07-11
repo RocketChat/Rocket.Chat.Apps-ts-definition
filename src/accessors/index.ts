@@ -1,6 +1,7 @@
-import { IBuilder, IMessageBuilder, IRoomBuilder } from './IBuilder';
+import { IBuilder, IMessageBuilder, IModifyBuilder, INewBuilder, IRoomBuilder } from './IBuilder';
 import { IConfigurationExtend } from './IConfigurationExtend';
 import { IConfigurationModify } from './IConfigurationModify';
+import { IEnvironmentalVariableRead } from './IEnvironmentalVariableRead';
 import { IEnvironmentRead } from './IEnvironmentRead';
 import { IExecutionResult } from './IExecutionResult';
 import { IHttp } from './IHttp';
@@ -29,6 +30,7 @@ export {
     IBuilder,
     IConfigurationExtend,
     IConfigurationModify,
+    IEnvironmentalVariableRead,
     IEnvironmentRead,
     IExecutionResult,
     IHttp,
@@ -39,6 +41,8 @@ export {
     IMessageBuilder,
     IMessageExtend,
     IMessageRead,
+    IModifyBuilder,
+    INewBuilder,
     IPersistence,
     IPersistenceRead,
     IRead,

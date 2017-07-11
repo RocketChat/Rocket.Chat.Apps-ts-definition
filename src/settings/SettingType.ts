@@ -1,5 +1,5 @@
 export enum SettingType {
-    STRING,
-    BOOLEAN,
-    NUMBER,
+    STRING = 'string',
+    BOOLEAN = 'boolean',
+    NUMBER = 'number',
 }

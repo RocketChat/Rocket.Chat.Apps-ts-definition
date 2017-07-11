@@ -1,4 +1,4 @@
-import { IBuilder, IHttp, IRead, ISettingRead } from '../accessors';
+import { IBuilder, IHttp, IRead } from '../accessors';
 import { ISlashCommandContext } from './ISlashCommandContext';
 
 /**
@@ -8,5 +8,5 @@ export interface ISlashCommand {
     command: string;
     paramsExample: string;
     i18nDescription: string;
-    executor(context: ISlashCommandContext, builder: IBuilder, settings: ISettingRead, read: IRead, http: IHttp): void;
+    executor(context: ISlashCommandContext, builder: IBuilder, read: IRead, http: IHttp): void;
 }

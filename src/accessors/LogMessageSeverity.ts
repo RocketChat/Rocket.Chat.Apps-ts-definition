@@ -1,8 +1,8 @@
 export enum LogMessageSeverity {
-    DEBUG,
-    INFORMATION,
-    LOG,
-    WARNING,
-    ERROR,
-    SUCCESS,
+    DEBUG = 'debug',
+    INFORMATION = 'info',
+    LOG = 'log',
+    WARNING = 'warning',
+    ERROR = 'error',
+    SUCCESS = 'success',
 }

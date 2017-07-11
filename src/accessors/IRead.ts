@@ -1,7 +1,6 @@
 import { IEnvironmentRead } from './IEnvironmentRead';
 import { IMessageRead } from './IMessageRead';
 import { IRoomRead } from './IRoomRead';
-import { IServerSettingRead } from './IServerSettingRead';
 import { IUserRead } from './IUserRead';
 
 /**
@@ -10,14 +9,11 @@ import { IUserRead } from './IUserRead';
  * It is safe to be injected in multiple places, idempotent and extensible
  */
 export interface IRead {
-    /** Gets the IEnvironmentRead instance. */
+    /** Gets the IEnvironmentRead instance, contains settings and environmental variables. */
     getEnvironmentReader(): IEnvironmentRead;
 
     /** Gets the IMessageRead instance. */
     getMessageReader(): IMessageRead;
-
-    /** Gets the IServerSettingRead instance. */
-    getServerSettingReader(): IServerSettingRead;
 
     /** Gets the IRoomRead instance. */
     getRoomReader(): IRoomRead;

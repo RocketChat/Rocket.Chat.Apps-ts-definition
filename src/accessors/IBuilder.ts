@@ -3,8 +3,9 @@ import { IRoom, RoomType } from '../rooms';
 import { IUser } from '../users';
 
 /**
- * This accesor provides a nice builder interface for creating
- * the various objects and then submitting them.
+ * This accesor provides a nice builder interface for
+ * not only creating but also modifying the
+ * various objects and then submitting them.
  */
 export interface IBuilder {
     /**
@@ -16,6 +17,14 @@ export interface IBuilder {
     buildMessage(msg?: IMessage): IMessageBuilder;
 
     /**
+     * Builds a new room with the ability to pass in a room object
+     * to continue building on.
+     *
+     * @param room (optional) the room to build on top of
+     */
+    buildRoom(room?: IRoom): IRoomBuilder;
+
+    /**
      * Modifies an existing message.
      *
      * @param msgId the id of the existing message to modfiy and build
@@ -24,12 +33,48 @@ export interface IBuilder {
     modifyMessage(msgId: string, updater: IUser): IMessageBuilder;
 
     /**
+     * Modifies an existing room.
+     *
+     * @param roomId the id of the existing room to modify and build
+     * @param updater the user who is updating the room
+     */
+    modifyRoom(roomId: string, updater: IUser): IRoomBuilder;
+}
+
+/**
+ * This accesor provides a nice builder interface for creating
+ * the various objects and then submitting them.
+ */
+export interface INewBuilder {
+    /**
+     * Builds a new message with the ability to pass in a message
+     * object to continue building on.
+     *
+     * @param msg (optional) the message to build on top of
+     */
+    buildMessage(msg?: IMessage): IMessageBuilder;
+
+    /**
      * Builds a new room with the ability to pass in a room object
      * to continue building on.
      *
      * @param room (optional) the room to build on top of
      */
     buildRoom(room?: IRoom): IRoomBuilder;
+}
+
+/**
+ * This accesor provides a nice builder interface for modifying
+ * the various objects and then saving them them.
+ */
+export interface IModifyBuilder {
+    /**
+     * Modifies an existing message.
+     *
+     * @param msgId the id of the existing message to modfiy and build
+     * @param updater the user who is updating the message
+     */
+    modifyMessage(msgId: string, updater: IUser): IMessageBuilder;
 
     /**
      * Modifies an existing room.
@@ -108,6 +153,14 @@ export interface IMessageBuilder {
      * @param attachment the attachment to replace with
      */
     replaceAttachment(position: number, attachment: IMessageAttachment): IMessageBuilder;
+
+    /**
+     * Removes an attachment at the given position (index).
+     * If there is no attachment at that position, there will be an error thrown.
+     *
+     * @param position the index of the attachment to remove
+     */
+    removeAttachment(position: number): IMessageBuilder;
 
     /**
      * Sets the user who is updating this message.
