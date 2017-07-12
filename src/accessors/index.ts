@@ -1,4 +1,4 @@
-import { IBuilder, IMessageBuilder, IModifyBuilder, INewBuilder, IRoomBuilder } from './IBuilder';
+// import { IBuilder, IMessageBuilder, IModifyBuilder, INewBuilder, IRoomBuilder } from './IBuilder';
 import { IConfigurationExtend } from './IConfigurationExtend';
 import { IConfigurationModify } from './IConfigurationModify';
 import { IEnvironmentalVariableRead } from './IEnvironmentalVariableRead';
@@ -9,8 +9,16 @@ import { IIterator } from './IIterator';
 import { IIteratorResult } from './IIteratorResult';
 import { ILogEntry } from './ILogEntry';
 import { ILogger } from './ILogger';
-import { IMessageExtend } from './IMessageExtend';
 import { IMessageRead } from './IMessageRead';
+import {
+    IMessageBuilder,
+    IMessageExtend,
+    IModify,
+    IModifyExtend,
+    IModifyUpdate,
+    IRoomBuilder,
+    IRoomExtend,
+} from './IModify';
 import { IPersistence } from './IPersistence';
 import { IPersistenceRead } from './IPersistenceRead';
 import { IRead } from './IRead';
@@ -27,7 +35,7 @@ import { IUserRead } from './IUserRead';
 import { LogMessageSeverity } from './LogMessageSeverity';
 
 export {
-    IBuilder,
+    // IBuilder,
     IConfigurationExtend,
     IConfigurationModify,
     IEnvironmentalVariableRead,
@@ -41,8 +49,11 @@ export {
     IMessageBuilder,
     IMessageExtend,
     IMessageRead,
-    IModifyBuilder,
-    INewBuilder,
+    // IModifyBuilder,
+    // INewBuilder,
+    IModify,
+    IModifyExtend,
+    IModifyUpdate,
     IPersistence,
     IPersistenceRead,
     IRead,

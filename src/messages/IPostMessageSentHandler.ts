@@ -1,4 +1,4 @@
-import { IExecutionResult, IHttp, IRead } from '../accessors';
+import { IExecutionResult, IHttp, IModify, IRead } from '../accessors';
 import { IMessage } from './IMessage';
 
 export interface IPostMessageSentHandler {
@@ -22,5 +22,5 @@ export interface IPostMessageSentHandler {
      * @param http An accessor to the outside world
      * @return the execution result
      */
-    executePostMessageSent(message: IMessage, read: IRead, http: IHttp): IExecutionResult;
+    executePostMessageSent(message: IMessage, read: IRead, http: IHttp, modify: IModify): IExecutionResult;
 }

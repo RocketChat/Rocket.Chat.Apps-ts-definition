@@ -1,4 +1,4 @@
-import { IExecutionResult, IHttp, IPersistence, IPersistenceRead, IRead } from '../accessors';
+import { IExecutionResult, IHttp, IModify, IPersistence, IPersistenceRead, IRead } from '../accessors';
 import { IRoom } from './IRoom';
 
 export interface IPostRoomCreateHandler {
@@ -22,5 +22,9 @@ export interface IPostRoomCreateHandler {
      * @param http An accessor to the outside world
      * @return the result of this execution
      */
-    executePostRoomCreate(room: IRoom, read: IRead, http: IHttp, persistence: IPersistence): IExecutionResult;
+    executePostRoomCreate(room: IRoom,
+                          read: IRead,
+                          http: IHttp,
+                          persistence: IPersistence,
+                          modify: IModify): IExecutionResult;
 }

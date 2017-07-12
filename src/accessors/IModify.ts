@@ -2,87 +2,79 @@ import { IMessage, IMessageAttachment } from '../messages';
 import { IRoom, RoomType } from '../rooms';
 import { IUser } from '../users';
 
-/**
- * This accesor provides a nice builder interface for
- * not only creating but also modifying the
- * various objects and then submitting them.
- */
-export interface IBuilder {
-    /**
-     * Builds a new message with the ability to pass in a message
-     * object to continue building on.
-     *
-     * @param msg (optional) the message to build on top of
-     */
-    buildMessage(msg?: IMessage): IMessageBuilder;
+export interface IModify {
+    update(): IModifyUpdate;
 
-    /**
-     * Builds a new room with the ability to pass in a room object
-     * to continue building on.
-     *
-     * @param room (optional) the room to build on top of
-     */
-    buildRoom(room?: IRoom): IRoomBuilder;
+    extend(): IModifyExtend;
+}
 
-    /**
-     * Modifies an existing message.
-     *
-     * @param msgId the id of the existing message to modfiy and build
-     * @param updater the user who is updating the message
-     */
-    modifyMessage(msgId: string, updater: IUser): IMessageBuilder;
-
+export interface IModifyUpdate {
     /**
      * Modifies an existing room.
-     *
+     * Raises an exception if a non-existent roomId is supplied
      * @param roomId the id of the existing room to modify and build
      * @param updater the user who is updating the room
      */
-    modifyRoom(roomId: string, updater: IUser): IRoomBuilder;
-}
+    room(roomId: string, updater: IUser): IRoomBuilder;
 
-/**
- * This accesor provides a nice builder interface for creating
- * the various objects and then submitting them.
- */
-export interface INewBuilder {
-    /**
-     * Builds a new message with the ability to pass in a message
-     * object to continue building on.
-     *
-     * @param msg (optional) the message to build on top of
-     */
-    buildMessage(msg?: IMessage): IMessageBuilder;
-
-    /**
-     * Builds a new room with the ability to pass in a room object
-     * to continue building on.
-     *
-     * @param room (optional) the room to build on top of
-     */
-    buildRoom(room?: IRoom): IRoomBuilder;
-}
-
-/**
- * This accesor provides a nice builder interface for modifying
- * the various objects and then saving them them.
- */
-export interface IModifyBuilder {
     /**
      * Modifies an existing message.
-     *
-     * @param msgId the id of the existing message to modfiy and build
+     * Raises an exception if a non-existent messageId is supplied
+     * @param messageId the id of the existing message to modfiy and build
      * @param updater the user who is updating the message
      */
-    modifyMessage(msgId: string, updater: IUser): IMessageBuilder;
+    message(messageId: string, updater: IUser): IMessageBuilder;
+
+    // user(): IUpdateUser;
+}
+
+export interface IModifyExtend {
+    /**
+     * Builds a new room to continue building on.
+     */
+    createRoom(): IRoomBuilder;
 
     /**
-     * Modifies an existing room.
-     *
-     * @param roomId the id of the existing room to modify and build
-     * @param updater the user who is updating the room
+     * Modifies a room in a non-destructive way: Properties can be added to it,
+     * but existing properties cannot be changed
+     * @param roomId The technical id of the room to be extended
      */
-    modifyRoom(roomId: string, updater: IUser): IRoomBuilder;
+    extendRoom(roomId: string): IRoomExtend;
+
+    createMessage(): IMessageBuilder;
+
+    /**
+     * Modifies a message in a non-destructive way: Properties can be added to it,
+     * but existing properties cannot be changed
+     * @param messageId The technical id of the Message to be extended
+     */
+    extendMessage(messageId: string): IMessageExtend;
+
+    // user(): IExtendUser;
+}
+
+export interface IRoomExtend {
+    addProperty(name: string, value: object);
+
+    addMember(user: IUser);
+
+    /**
+     * A specialization of addProperty: Add metadata enabling interaction with the plugin
+     * @param metadata
+     */
+    addPluginMetadata(metadata: object);
+}
+
+export interface IMessageExtend {
+    addProperty(name: string, value: object);
+
+    addAttachments(attachments: Array<IMessageAttachment>);
+
+    /**
+     * A specialization of addProperty: Add metadata enabling interaction with the plugin
+     * @param metadata
+     */
+    addPluginMetadata(metadata: object);
 }
 
 export interface IMessageBuilder {
