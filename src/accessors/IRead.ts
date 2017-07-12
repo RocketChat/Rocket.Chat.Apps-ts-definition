@@ -1,5 +1,6 @@
 import { IEnvironmentRead } from './IEnvironmentRead';
 import { IMessageRead } from './IMessageRead';
+import { IPersistenceRead } from './IPersistenceRead';
 import { IRoomRead } from './IRoomRead';
 import { IUserRead } from './IUserRead';
 
@@ -14,6 +15,8 @@ export interface IRead {
 
     /** Gets the IMessageRead instance. */
     getMessageReader(): IMessageRead;
+
+    getPersistance(): IPersistenceRead;
 
     /** Gets the IRoomRead instance. */
     getRoomReader(): IRoomRead;
