@@ -1,4 +1,4 @@
-import { ISettingsModify } from './ISettingsModify';
+import { IServerSettingsModify } from './IServerSettingsModify';
 import { ISlashCommandsModify } from './ISlashCommandsModify';
 
 /**
@@ -7,7 +7,7 @@ import { ISlashCommandsModify } from './ISlashCommandsModify';
  */
 export interface IConfigurationModify {
     /** Accessor for modifying the settings inside of Rocket.Chat. */
-    readonly settings: ISettingsModify;
+    readonly serverSettings: IServerSettingsModify;
 
     /** Accessor for modifying the slash commands inside of Rocket.Chat. */
     readonly slashCommands: ISlashCommandsModify;

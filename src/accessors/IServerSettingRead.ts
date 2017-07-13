@@ -32,4 +32,12 @@ export interface IServerSettingRead {
      * @return array of the exposed settings
      */
     getAll(): Array<ISetting>;
+
+    /**
+     * Checks if the server setting for the id provided is readable,
+     * will return true or false and won't throw an error.
+     *
+     * @param id the server setting id
+     */
+    isReadableById(id: string): boolean;
 }
