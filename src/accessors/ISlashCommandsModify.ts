@@ -6,8 +6,9 @@ import { ISlashCommand } from '../slashcommands';
  */
 export interface ISlashCommandsModify {
     /**
-     * Changes how a slash command behaves, so you can provide a different item
-     * per configuration.
+     * Modifies an existing command. The command must either be your Rocketlet's
+     * own command or a system command. One Rocketlet can not modify another
+     * Rocketlet's command.
      *
      * @param slashCommand the modified slash command
      */
