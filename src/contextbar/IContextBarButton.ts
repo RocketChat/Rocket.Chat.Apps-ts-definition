@@ -13,8 +13,12 @@ export interface IContextBarButton {
      */
     icon: string;
 
-    /** The position your button should show up. */
-    order: number;
+    /**
+     * The default position your button should show up.
+     * Server administrators can adjust the order of the buttons
+     * installed on their servers, which is why it is default.
+     */
+    defaultOrder: number;
 
     /** The types of rooms which this button should be assigned to. */
     assignedTo: Array<RoomType>; // TODO: Determine if this would be too expensive as a function
