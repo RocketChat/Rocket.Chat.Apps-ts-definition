@@ -1,6 +1,6 @@
 import { RoomType } from '../rooms/RoomType';
 
-export interface IContextBarButton {
+export interface IContextualBarButton {
     /** A unique identifier for your button.  */
     id: string;
 

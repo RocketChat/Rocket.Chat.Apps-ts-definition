@@ -8,9 +8,15 @@
  */
 export interface IAsset {
     /**
+     * Whether this asset is enabled or not. When tried to access, this will return
+     * a "resource temporarily unavailable" status (503).
+     */
+    enabled: boolean;
+
+    /**
      * The location of this asset inside of the Rocketlet package.
-     * It is a relative location from the root of the Rocketlet's
-     * package.
+     * It is a relative location from the `assetFolder` set in your
+     * Rocketlet's manifest file.
      */
     path: string;
 
