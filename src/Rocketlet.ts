@@ -7,9 +7,8 @@ import { IRocketletInfo } from './metadata/IRocketletInfo';
 export abstract class Rocketlet implements IRocketlet {
     /**
      * Create a new Rocketlet, this is called whenever the server starts up and initiates the Rocketlets.
-     * Note, your implementation of this class should call `super(name, id, version)` so we have it.
-     * Also, please use the `initialize()` method to do items instead of the constructor as the constructor
-     * *might* be called more than once but the `initialize()` will only be called once.
+     * Note, your implementation of this class should call `super(info, logger)` so we have it.
+     * Use the `initialize()` method to register configuration items instead of in the constructor.
      */
     protected constructor(private readonly info: IRocketletInfo, private readonly logger: ILogger) {
         this.logger.debug(`Constructed the Rocketlet ${this.info.name} (${this.info.id})`,
@@ -101,7 +100,8 @@ export abstract class Rocketlet implements IRocketlet {
 
     /**
      * Method which will be called when the Rocketlet is initialized. This is the recommended place
-     * to add settings and slash commands. If an error is thrown, all commands will be unregistered.
+     * to add settings and slash commands. If an error is thrown, everything which has been provided
+     * will be unregistered/removed and the Rocketlet will be disabled.
      */
     public initialize(configurationExtend: IConfigurationExtend): void {
         this.extendConfiguration(configurationExtend);
