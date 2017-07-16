@@ -11,5 +11,5 @@ export interface IContextualBarButtonsExtend {
     /**
      * Adds a new button to the context bar.
      */
-    addButton(button: IContextualBarButton): void;
+    add(button: IContextualBarButton): void;
 }
