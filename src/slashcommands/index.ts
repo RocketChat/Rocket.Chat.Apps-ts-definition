@@ -1,4 +1,4 @@
 import { ISlashCommand } from './ISlashCommand';
-import { ISlashCommandContext } from './ISlashCommandContext';
+import { SlashCommandContext } from './SlashCommandContext';
 
-export { ISlashCommand, ISlashCommandContext };
+export { ISlashCommand, SlashCommandContext };
