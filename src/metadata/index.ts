@@ -1,4 +1,5 @@
 import { IRocketletAuthorInfo } from './IRocketletAuthorInfo';
 import { IRocketletInfo } from './IRocketletInfo';
+import { RocketChatAssociationModel } from './RocketChatAssociationModel';
 
-export { IRocketletAuthorInfo, IRocketletInfo };
+export { IRocketletAuthorInfo, IRocketletInfo, RocketChatAssociationModel };
