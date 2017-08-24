@@ -1,6 +1,25 @@
+/**
+ * Defines assets which are referenced by other
+ * items within your Rocketlet. This is to ensure
+ * that the asset exists when other items are
+ * being registered. You can also define an asset
+ * should you want to restrict it's access to
+ * people who are not logged in.
+ */
 export interface IAsset {
-    name: string;
+    /**
+     * Whether this asset is enabled or not. When tried to access, this will return
+     * a "resource temporarily unavailable" status (503).
+     */
+    enabled: boolean;
+
+    /**
+     * The location of this asset inside of the Rocketlet package.
+     * It is a relative location from the `assetFolder` set in your
+     * Rocketlet's manifest file.
+     */
     path: string;
-    type: string;
+
+    /** Whether this asset can be accessed when a request to it is not authenicated. */
     public: boolean;
 }

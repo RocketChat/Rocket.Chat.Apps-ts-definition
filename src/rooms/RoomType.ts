@@ -1,6 +1,6 @@
 export enum RoomType {
-    CHANNEL = 'c',
-    PRIVATE_GROUP = 'p',
-    DIRECT_MESSAGE = 'd',
-    LIVE_CHAT = 'lc',
+    CHANNEL,
+    PRIVATE_GROUP,
+    DIRECT_MESSAGE,
+    LIVE_CHAT,
 }

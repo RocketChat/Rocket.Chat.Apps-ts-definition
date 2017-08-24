@@ -1,6 +1,8 @@
+import { IAssetExtend } from './IAssetExtend';
 import { IBuilder, IMessageBuilder, IModifyBuilder, INewBuilder, IRoomBuilder } from './IBuilder';
 import { IConfigurationExtend } from './IConfigurationExtend';
 import { IConfigurationModify } from './IConfigurationModify';
+import { IContextualBarButtonsExtend } from './IContextualBarButtonsExtend';
 import { IEnvironmentalVariableRead } from './IEnvironmentalVariableRead';
 import { IEnvironmentRead } from './IEnvironmentRead';
 import { IExecutionResult } from './IExecutionResult';
@@ -27,9 +29,11 @@ import { IUserRead } from './IUserRead';
 import { LogMessageSeverity } from './LogMessageSeverity';
 
 export {
+    IAssetExtend,
     IBuilder,
     IConfigurationExtend,
     IConfigurationModify,
+    IContextualBarButtonsExtend,
     IEnvironmentalVariableRead,
     IEnvironmentRead,
     IExecutionResult,
