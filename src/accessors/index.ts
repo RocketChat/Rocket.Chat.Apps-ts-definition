@@ -21,8 +21,6 @@ import {
 import { IPersistence } from './IPersistence';
 import { IPersistenceRead } from './IPersistenceRead';
 import { IRead } from './IRead';
-import { IRelatedPersistence } from './IRelatedPersistence';
-import { IRelatedPersistenceRead } from './IRelatedPersistenceRead';
 import { IRoomRead } from './IRoomRead';
 import { IServerSettingRead } from './IServerSettingRead';
 import { IServerSettingsModify } from './IServerSettingsModify';
@@ -53,8 +51,6 @@ export {
     IPersistence,
     IPersistenceRead,
     IRead,
-    IRelatedPersistence,
-    IRelatedPersistenceRead,
     IRoomBuilder,
     IRoomExtender,
     IRoomRead,
