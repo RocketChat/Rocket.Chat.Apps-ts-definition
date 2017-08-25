@@ -1,4 +1,3 @@
-// import { IBuilder, IMessageBuilder, IModifyBuilder, INewBuilder, IRoomBuilder } from './IBuilder';
 import { IConfigurationExtend } from './IConfigurationExtend';
 import { IConfigurationModify } from './IConfigurationModify';
 import { IEnvironmentalVariableRead } from './IEnvironmentalVariableRead';
@@ -12,12 +11,12 @@ import { ILogger } from './ILogger';
 import { IMessageRead } from './IMessageRead';
 import {
     IMessageBuilder,
-    IMessageExtend,
+    IMessageExtender,
     IModify,
-    IModifyExtend,
-    IModifyUpdate,
+    IModifyExtender,
+    IModifyUpdater,
     IRoomBuilder,
-    IRoomExtend,
+    IRoomExtender,
 } from './IModify';
 import { IPersistence } from './IPersistence';
 import { IPersistenceRead } from './IPersistenceRead';
@@ -35,7 +34,6 @@ import { IUserRead } from './IUserRead';
 import { LogMessageSeverity } from './LogMessageSeverity';
 
 export {
-    // IBuilder,
     IConfigurationExtend,
     IConfigurationModify,
     IEnvironmentalVariableRead,
@@ -47,19 +45,18 @@ export {
     ILogEntry,
     ILogger,
     IMessageBuilder,
-    IMessageExtend,
+    IMessageExtender,
     IMessageRead,
-    // IModifyBuilder,
-    // INewBuilder,
     IModify,
-    IModifyExtend,
-    IModifyUpdate,
+    IModifyExtender,
+    IModifyUpdater,
     IPersistence,
     IPersistenceRead,
     IRead,
     IRelatedPersistence,
     IRelatedPersistenceRead,
     IRoomBuilder,
+    IRoomExtender,
     IRoomRead,
     IServerSettingRead,
     IServerSettingsModify,

@@ -1,4 +1,4 @@
-import { IHttp, IMessageExtend, IPersistence, IRead } from '../accessors';
+import { IHttp, IMessageExtender, IPersistence, IRead } from '../accessors';
 import { IMessage } from './IMessage';
 
 /**
@@ -27,7 +27,7 @@ export interface IPreMessageSentExtend {
      */
     // TODO: Determine a better result of this method
     executePreMessageSentExtend(message: IMessage,
-                                extend: IMessageExtend,
+                                extend: IMessageExtender,
                                 read: IRead,
                                 http: IHttp,
                                 persistence: IPersistence): IMessage;

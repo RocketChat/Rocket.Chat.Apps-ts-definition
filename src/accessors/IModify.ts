@@ -3,15 +3,16 @@ import { IRoom, RoomType } from '../rooms';
 import { IUser } from '../users';
 
 export interface IModify {
-    update(): IModifyUpdate;
+    getUpdater(): IModifyUpdater;
 
-    extend(): IModifyExtend;
+    getExtender(): IModifyExtender;
 }
 
-export interface IModifyUpdate {
+export interface IModifyUpdater {
     /**
      * Modifies an existing room.
      * Raises an exception if a non-existent roomId is supplied
+     *
      * @param roomId the id of the existing room to modify and build
      * @param updater the user who is updating the room
      */
@@ -20,6 +21,7 @@ export interface IModifyUpdate {
     /**
      * Modifies an existing message.
      * Raises an exception if a non-existent messageId is supplied
+     *
      * @param messageId the id of the existing message to modfiy and build
      * @param updater the user who is updating the message
      */
@@ -28,7 +30,7 @@ export interface IModifyUpdate {
     // user(): IUpdateUser;
 }
 
-export interface IModifyExtend {
+export interface IModifyExtender {
     /**
      * Builds a new room to continue building on.
      */
@@ -39,7 +41,7 @@ export interface IModifyExtend {
      * but existing properties cannot be changed
      * @param roomId The technical id of the room to be extended
      */
-    extendRoom(roomId: string): IRoomExtend;
+    extendRoom(roomId: string): IRoomExtender;
 
     createMessage(): IMessageBuilder;
 
@@ -48,12 +50,12 @@ export interface IModifyExtend {
      * but existing properties cannot be changed
      * @param messageId The technical id of the Message to be extended
      */
-    extendMessage(messageId: string): IMessageExtend;
+    extendMessage(messageId: string): IMessageExtender;
 
     // user(): IExtendUser;
 }
 
-export interface IRoomExtend {
+export interface IRoomExtender {
     addProperty(name: string, value: object);
 
     addMember(user: IUser);
@@ -65,7 +67,7 @@ export interface IRoomExtend {
     addPluginMetadata(metadata: object);
 }
 
-export interface IMessageExtend {
+export interface IMessageExtender {
     addProperty(name: string, value: object);
 
     addAttachments(attachments: Array<IMessageAttachment>);

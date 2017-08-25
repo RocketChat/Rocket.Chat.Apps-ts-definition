@@ -1,5 +1,4 @@
-import { IHttp, IPersistence, IRead } from '../accessors';
-import { IMessageBuilder } from '../accessors/IBuilder';
+import { IHttp, IMessageBuilder, IPersistence, IRead } from '../accessors';
 import { IMessage } from './IMessage';
 
 export interface IPreMessageSentModify {
@@ -22,6 +21,7 @@ export interface IPreMessageSentModify {
      * @param builder The builder for modifying the message via methods
      * @param read An accessor to the environment
      * @param http An accessor to the outside world
+     * @param persistence An accessor to the Rocketlet's persistence
      */
     executePreMessageSentModify(message: IMessage, builder: IMessageBuilder, read: IRead, http: IHttp, persistence: IPersistence): IMessage;
 }
