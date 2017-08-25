@@ -39,6 +39,24 @@ export interface IBuilder {
      * @param updater the user who is updating the room
      */
     modifyRoom(roomId: string, updater: IUser): IRoomBuilder;
+
+    /**
+     * Finishes and sends the message, the builder instance
+     * will no longer be valid and to build a new message you
+     * will have to get a new message builder instance.
+     *
+     * @param builder the message builder instance
+     */
+    finishMessage(builder: IMessageBuilder): IMessage;
+
+    /**
+     * Finishes and creates the room, the builder instance
+     * will no longer be valid and to build a new room you
+     * will have to get a new room builder instance.
+     *
+     * @param builder the room builder instance
+     */
+    finishRoom(builder: IRoomBuilder): IRoom;
 }
 
 /**
@@ -55,12 +73,30 @@ export interface INewBuilder {
     buildMessage(msg?: IMessage): IMessageBuilder;
 
     /**
+     * Finishes and sends the message, the builder instance
+     * will no longer be valid and to build a new message you
+     * will have to get a new message builder instance.
+     *
+     * @param builder the message builder instance
+     */
+    sendMessage(builder: IMessageBuilder): IMessage;
+
+    /**
      * Builds a new room with the ability to pass in a room object
      * to continue building on.
      *
      * @param room (optional) the room to build on top of
      */
     buildRoom(room?: IRoom): IRoomBuilder;
+
+    /**
+     * Finishes and creates the room, the builder instance
+     * will no longer be valid and to build a new room you
+     * will have to get a new room builder instance.
+     *
+     * @param builder the room builder instance
+     */
+    createRoom(builder: IRoomBuilder): IRoom;
 }
 
 /**
@@ -175,15 +211,6 @@ export interface IMessageBuilder {
      * Note: modifying the returned value will have no effect.
      */
     getMessage(): IMessage;
-
-    /**
-     * Finishes the building and will send/update the message, unless told otherwise.
-     * Please note, that a room and sender must be associated otherwise this
-     * will fail and throw an error.
-     *
-     * @param preventSending (optional) only build the message and don't send/update it
-     */
-    finish(preventSending?: boolean): IMessage;
 }
 
 export interface IRoomBuilder {
@@ -237,13 +264,4 @@ export interface IRoomBuilder {
      * Note: modifying the returned value will have no effect.
      */
     getRoom(): IRoom;
-
-    /**
-     * Finishes the building and will create/update the room, unless told otherwise.
-     * Please note, a room creator, name, and type must be set otherwise this
-     * will fail and throw an error.
-     *
-     * @param preventSaving (optional) only build the room and don't save/update it
-     */
-    finish(preventSaving?: boolean): IRoom;
 }

@@ -26,9 +26,9 @@ import { IRelatedPersistence } from './IRelatedPersistence';
 import { IRelatedPersistenceRead } from './IRelatedPersistenceRead';
 import { IRoomRead } from './IRoomRead';
 import { IServerSettingRead } from './IServerSettingRead';
+import { IServerSettingsModify } from './IServerSettingsModify';
 import { ISettingRead } from './ISettingRead';
 import { ISettingsExtend } from './ISettingsExtend';
-import { ISettingsModify } from './ISettingsModify';
 import { ISlashCommandsExtend } from './ISlashCommandsExtend';
 import { ISlashCommandsModify } from './ISlashCommandsModify';
 import { IUserRead } from './IUserRead';
@@ -62,9 +62,9 @@ export {
     IRoomBuilder,
     IRoomRead,
     IServerSettingRead,
+    IServerSettingsModify,
     ISettingRead,
     ISettingsExtend,
-    ISettingsModify,
     ISlashCommandsExtend,
     ISlashCommandsModify,
     IUserRead,

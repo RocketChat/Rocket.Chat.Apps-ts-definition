@@ -100,8 +100,8 @@ export abstract class Rocketlet implements IRocketlet {
     }
 
     /**
-     * Method which will be called when the Rocketlet is initialized and will only be called once
-     * in the lifetime of one instance of this Rocketlet.
+     * Method which will be called when the Rocketlet is initialized. This is the recommended place
+     * to add settings and slash commands. If an error is thrown, all commands will be unregistered.
      */
     public initialize(configurationExtend: IConfigurationExtend): void {
         this.extendConfiguration(configurationExtend);
