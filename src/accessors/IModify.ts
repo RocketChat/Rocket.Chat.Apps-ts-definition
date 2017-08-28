@@ -90,9 +90,9 @@ export interface IModifyCreator {
      * Finishes the creating process, saving the object to the database.
      *
      * @param builder the builder instance
-     * @return whether it was successful or not
+     * @return the resulting `id` of the resulting object
      */
-    finish(builder: IMessageBuilder | IRoomBuilder): boolean;
+    finish(builder: IMessageBuilder | IRoomBuilder): string;
 }
 
 export interface IMessageExtender {
