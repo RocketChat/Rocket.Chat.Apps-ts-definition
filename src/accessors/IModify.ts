@@ -3,7 +3,7 @@ import { IRoom, RoomType } from '../rooms';
 import { IUser } from '../users';
 
 export interface IModify {
-    getCreater(): IModifyCreator;
+    getCreator(): IModifyCreator;
 
     getExtender(): IModifyExtender;
 
@@ -12,15 +12,6 @@ export interface IModify {
 
 export interface IModifyUpdater {
     /**
-     * Modifies an existing room.
-     * Raises an exception if a non-existent roomId is supplied
-     *
-     * @param roomId the id of the existing room to modify and build
-     * @param updater the user who is updating the room
-     */
-    room(roomId: string, updater: IUser): IRoomBuilder;
-
-    /**
      * Modifies an existing message.
      * Raises an exception if a non-existent messageId is supplied
      *
@@ -28,6 +19,15 @@ export interface IModifyUpdater {
      * @param updater the user who is updating the message
      */
     message(messageId: string, updater: IUser): IMessageBuilder;
+
+    /**
+     * Modifies an existing room.
+     * Raises an exception if a non-existent roomId is supplied
+     *
+     * @param roomId the id of the existing room to modify and build
+     * @param updater the user who is updating the room
+     */
+    room(roomId: string, updater: IUser): IRoomBuilder;
 
     /**
      * Finishes the updating process, saving the object to the database.
@@ -40,18 +40,22 @@ export interface IModifyUpdater {
 
 export interface IModifyExtender {
     /**
-     * Modifies a room in a non-destructive way: Properties can be added to it,
-     * but existing properties cannot be changed
-     * @param roomId The technical id of the room to be extended
-     */
-    extendRoom(roomId: string): IRoomExtender;
-
-    /**
      * Modifies a message in a non-destructive way: Properties can be added to it,
-     * but existing properties cannot be changed
-     * @param messageId The technical id of the Message to be extended
+     * but existing properties cannot be changed.
+     *
+     * @param messageId the id of the message to be extended
+     * @return the extender instance for the message
      */
     extendMessage(messageId: string): IMessageExtender;
+
+    /**
+     * Modifies a room in a non-destructive way: Properties can be added to it,
+     * but existing properties cannot be changed.
+     *
+     * @param roomId the id of the room to be extended
+     * @return the extender instance for the room
+     */
+    extendRoom(roomId: string): IRoomExtender;
 
     /**
      * Finishes the extending process, saving the object to the database.
@@ -64,15 +68,6 @@ export interface IModifyExtender {
 
 export interface IModifyCreator {
     /**
-     * Starts the process for building a new room.
-     *
-     * @param data (optional) the initial data to pass into the builder,
-     *          the `id` property will be ignored
-     * @return an IRoomBuilder instance
-     */
-    startRoom(data?: IRoom): IRoomBuilder;
-
-    /**
      * Starts the process for building a new message object.
      *
      * @param data (optional) the initial data to pass into the builder,
@@ -82,24 +77,21 @@ export interface IModifyCreator {
     startMessage(data?: IMessage): IMessageBuilder;
 
     /**
+     * Starts the process for building a new room.
+     *
+     * @param data (optional) the initial data to pass into the builder,
+     *          the `id` property will be ignored
+     * @return an IRoomBuilder instance
+     */
+    startRoom(data?: IRoom): IRoomBuilder;
+
+    /**
      * Finishes the creating process, saving the object to the database.
      *
      * @param builder the builder instance
      * @return whether it was successful or not
      */
     finish(builder: IMessageBuilder | IRoomBuilder): boolean;
-}
-
-export interface IRoomExtender {
-    addProperty(name: string, value: object): IRoomExtender;
-
-    addMember(user: IUser): IRoomExtender;
-
-    /**
-     * A specialization of addProperty: Add metadata enabling interaction with the plugin
-     * @param metadata
-     */
-    addPluginMetadata(metadata: object): IRoomExtender;
 }
 
 export interface IMessageExtender {
@@ -112,6 +104,18 @@ export interface IMessageExtender {
      * @param metadata
      */
     addPluginMetadata(metadata: object): IMessageExtender;
+}
+
+export interface IRoomExtender {
+    addProperty(name: string, value: object): IRoomExtender;
+
+    addMember(user: IUser): IRoomExtender;
+
+    /**
+     * A specialization of addProperty: Add metadata enabling interaction with the plugin
+     * @param metadata
+     */
+    addPluginMetadata(metadata: object): IRoomExtender;
 }
 
 /**
