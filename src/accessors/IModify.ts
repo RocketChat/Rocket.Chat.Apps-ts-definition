@@ -1,4 +1,5 @@
 import { IMessage, IMessageAttachment } from '../messages';
+import { RocketChatAssociationModel } from '../metadata';
 import { IRoom, RoomType } from '../rooms';
 import { IUser } from '../users';
 
@@ -95,6 +96,8 @@ export interface IModifyCreator {
 }
 
 export interface IMessageExtender {
+    kind: RocketChatAssociationModel.MESSAGE;
+
     addProperty(name: string, value: object): IMessageExtender;
 
     addAttachments(attachments: Array<IMessageAttachment>): IMessageExtender;
@@ -107,6 +110,8 @@ export interface IMessageExtender {
 }
 
 export interface IRoomExtender {
+    kind: RocketChatAssociationModel.ROOM;
+
     addProperty(name: string, value: object): IRoomExtender;
 
     addMember(user: IUser): IRoomExtender;
@@ -124,6 +129,8 @@ export interface IRoomExtender {
  * be able to successfully save the message object.
  */
 export interface IMessageBuilder {
+    kind: RocketChatAssociationModel.MESSAGE;
+
     /**
      * Sets the room where this message should be sent to.
      *
@@ -221,6 +228,8 @@ export interface IMessageBuilder {
  * be able to successfully save the room object.
  */
 export interface IRoomBuilder {
+    kind: RocketChatAssociationModel.ROOM;
+
     /**
      * Sets the creator of the room.
      *
