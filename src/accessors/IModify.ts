@@ -3,9 +3,11 @@ import { IRoom, RoomType } from '../rooms';
 import { IUser } from '../users';
 
 export interface IModify {
-    getUpdater(): IModifyUpdater;
+    getCreater(): IModifyCreator;
 
     getExtender(): IModifyExtender;
+
+    getUpdater(): IModifyUpdater;
 }
 
 export interface IModifyUpdater {
@@ -32,18 +34,11 @@ export interface IModifyUpdater {
 
 export interface IModifyExtender {
     /**
-     * Builds a new room to continue building on.
-     */
-    createRoom(): IRoomBuilder;
-
-    /**
      * Modifies a room in a non-destructive way: Properties can be added to it,
      * but existing properties cannot be changed
      * @param roomId The technical id of the room to be extended
      */
     extendRoom(roomId: string): IRoomExtender;
-
-    createMessage(): IMessageBuilder;
 
     /**
      * Modifies a message in a non-destructive way: Properties can be added to it,
@@ -51,8 +46,22 @@ export interface IModifyExtender {
      * @param messageId The technical id of the Message to be extended
      */
     extendMessage(messageId: string): IMessageExtender;
+}
 
-    // user(): IExtendUser;
+export interface IModifyCreator {
+    /**
+     * Starts the process for building a new room.
+     *
+     * @return an IRoomBuilder instance
+     */
+    startRoom(): IRoomBuilder;
+
+    /**
+     * Starts the process for building a new message object.
+     *
+     * @return an IMessageBuilder instance
+     */
+    startMessage(): IMessageBuilder;
 }
 
 export interface IRoomExtender {
@@ -173,7 +182,8 @@ export interface IMessageBuilder {
     /**
      * Finishes the building and will send/update the message, unless told otherwise.
      * Please note, that a room and sender must be associated otherwise this
-     * will fail and throw an error.
+     * will fail and throw an error. Should `true` be passed into this method, it will
+     * act exactly like `getMessage()`.
      *
      * @param preventSending (optional) only build the message and don't send/update it
      */
@@ -235,7 +245,8 @@ export interface IRoomBuilder {
     /**
      * Finishes the building and will create/update the room, unless told otherwise.
      * Please note, a room creator, name, and type must be set otherwise this
-     * will fail and throw an error.
+     * will fail and throw an error.Should `true` be passed into this method, it will
+     * act exactly like `getRoom()`.
      *
      * @param preventSaving (optional) only build the room and don't save/update it
      */
