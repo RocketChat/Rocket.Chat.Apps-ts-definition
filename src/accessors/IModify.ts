@@ -29,7 +29,13 @@ export interface IModifyUpdater {
      */
     message(messageId: string, updater: IUser): IMessageBuilder;
 
-    // user(): IUpdateUser;
+    /**
+     * Finishes the updating process, saving the object to the database.
+     *
+     * @param builder the builder instance
+     * @return whether it was successful or not
+     */
+    finish(builder: IMessageBuilder | IRoomBuilder): boolean;
 }
 
 export interface IModifyExtender {
@@ -46,48 +52,73 @@ export interface IModifyExtender {
      * @param messageId The technical id of the Message to be extended
      */
     extendMessage(messageId: string): IMessageExtender;
+
+    /**
+     * Finishes the extending process, saving the object to the database.
+     *
+     * @param extender the extender instance
+     * @return whether it was successful or not
+     */
+    finish(extender: IRoomExtender | IMessageExtender): boolean;
 }
 
 export interface IModifyCreator {
     /**
      * Starts the process for building a new room.
      *
+     * @param data (optional) the initial data to pass into the builder,
+     *          the `id` property will be ignored
      * @return an IRoomBuilder instance
      */
-    startRoom(): IRoomBuilder;
+    startRoom(data?: IRoom): IRoomBuilder;
 
     /**
      * Starts the process for building a new message object.
      *
+     * @param data (optional) the initial data to pass into the builder,
+     *          the `id` property will be ignored
      * @return an IMessageBuilder instance
      */
-    startMessage(): IMessageBuilder;
+    startMessage(data?: IMessage): IMessageBuilder;
+
+    /**
+     * Finishes the creating process, saving the object to the database.
+     *
+     * @param builder the builder instance
+     * @return whether it was successful or not
+     */
+    finish(builder: IMessageBuilder | IRoomBuilder): boolean;
 }
 
 export interface IRoomExtender {
-    addProperty(name: string, value: object);
+    addProperty(name: string, value: object): IRoomExtender;
 
-    addMember(user: IUser);
+    addMember(user: IUser): IRoomExtender;
 
     /**
      * A specialization of addProperty: Add metadata enabling interaction with the plugin
      * @param metadata
      */
-    addPluginMetadata(metadata: object);
+    addPluginMetadata(metadata: object): IRoomExtender;
 }
 
 export interface IMessageExtender {
-    addProperty(name: string, value: object);
+    addProperty(name: string, value: object): IMessageExtender;
 
-    addAttachments(attachments: Array<IMessageAttachment>);
+    addAttachments(attachments: Array<IMessageAttachment>): IMessageExtender;
 
     /**
      * A specialization of addProperty: Add metadata enabling interaction with the plugin
      * @param metadata
      */
-    addPluginMetadata(metadata: object);
+    addPluginMetadata(metadata: object): IMessageExtender;
 }
 
+/**
+ * Interface for building out a message.
+ * Please note, that a room and sender must be associated otherwise you will NOT
+ * be able to successfully save the message object.
+ */
 export interface IMessageBuilder {
     /**
      * Sets the room where this message should be sent to.
@@ -178,18 +209,13 @@ export interface IMessageBuilder {
      * Note: modifying the returned value will have no effect.
      */
     getMessage(): IMessage;
-
-    /**
-     * Finishes the building and will send/update the message, unless told otherwise.
-     * Please note, that a room and sender must be associated otherwise this
-     * will fail and throw an error. Should `true` be passed into this method, it will
-     * act exactly like `getMessage()`.
-     *
-     * @param preventSending (optional) only build the message and don't send/update it
-     */
-    finish(preventSending?: boolean): IMessage;
 }
 
+/**
+ * Interface for building out a room.
+ * Please note, a room creator, name, and type must be set otherwise you will NOT
+ * be able to successfully save the room object.
+ */
 export interface IRoomBuilder {
     /**
      * Sets the creator of the room.
@@ -241,14 +267,4 @@ export interface IRoomBuilder {
      * Note: modifying the returned value will have no effect.
      */
     getRoom(): IRoom;
-
-    /**
-     * Finishes the building and will create/update the room, unless told otherwise.
-     * Please note, a room creator, name, and type must be set otherwise this
-     * will fail and throw an error.Should `true` be passed into this method, it will
-     * act exactly like `getRoom()`.
-     *
-     * @param preventSaving (optional) only build the room and don't save/update it
-     */
-    finish(preventSaving?: boolean): IRoom;
 }
