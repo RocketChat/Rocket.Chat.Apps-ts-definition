@@ -8,9 +8,9 @@ import { IIterator } from './IIterator';
  * rooms in a read-only-fashion.
  */
 export interface IRoomRead {
-    getById(id: string): IRoom;
+    getById(id: string): IRoom | undefined;
 
-    getByName(name: string): IRoom;
+    getByName(name: string): IRoom | undefined;
 
     getMessages(roomId: string): IIterator<IMessage>;
 

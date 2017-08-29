@@ -7,9 +7,9 @@ import { IUser } from '../users/IUser';
  * messages in a read-only-fashion.
  */
 export interface IMessageRead {
-    getById(id: string): IMessage;
+    getById(id: string): IMessage | undefined;
 
-    getSenderUser(messageId: string): IUser;
+    getSenderUser(messageId: string): IUser | undefined;
 
-    getRoom(messageId: string): IRoom;
+    getRoom(messageId: string): IRoom | undefined;
 }
