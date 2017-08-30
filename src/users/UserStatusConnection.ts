@@ -1,6 +1,7 @@
 export enum UserStatusConnection {
-    OFFLINE,
-    ONLINE,
-    AWAY,
-    INVISIBLE,
+    OFFLINE = 'offline',
+    ONLINE = 'online',
+    AWAY = 'away',
+    BUSY = 'busy',
+    INVISIBLE = 'invisible',
 }

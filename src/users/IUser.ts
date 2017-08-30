@@ -7,11 +7,13 @@ export interface IUser {
     username: string;
     emails: Array<IUserEmail>;
     type: UserType;
+    isEnabled: boolean;
     name: string;
     roles: Array<string>;
-    lastLogin: Date;
+    status: string;
     statusConnection: UserStatusConnection;
     utcOffset: number;
     createdAt: Date;
     updatedAt: Date;
+    lastLoginAt: Date;
 }
