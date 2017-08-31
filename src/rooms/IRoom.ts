@@ -3,8 +3,8 @@ import { RoomType } from './RoomType';
 
 export interface IRoom {
     id: string;
-    displayName: string;
-    slugifiedName?: string;
+    displayName?: string;
+    slugifiedName: string;
     type: RoomType;
     creator: IUser;
     usernames: Array<string>;

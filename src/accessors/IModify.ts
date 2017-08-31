@@ -231,19 +231,19 @@ export interface IRoomBuilder {
     kind: RocketChatAssociationModel.ROOM;
 
     /**
-     * Sets the creator of the room.
+     * Sets the display name of this room.
      *
-     * @param creator the user who created the room
+     * @param name the display name of the room
      */
-    setCreator(creator: IUser): IRoomBuilder;
+    setDisplayName(name: string): IRoomBuilder;
 
     /**
-     * Sets the name of this room, it must align to the rules of Rocket.Chat room
-     * names otherwise there will be an error thrown.
+     * Sets the slugified name of this room, it must align to the rules of Rocket.Chat room
+     * names otherwise there will be an error thrown (no spaces, special characters, etc).
      *
-     * @param name the name of the room
+     * @param name the slugified name
      */
-    setName(name: string): IRoomBuilder;
+    setSlugifiedName(name: string): IRoomBuilder;
 
     /**
      * Sets the room's type.
@@ -253,13 +253,11 @@ export interface IRoomBuilder {
     setType(type: RoomType): IRoomBuilder;
 
     /**
-     * Sets whether this room should be a default room or not.
-     * This means that new users will automatically join this room
-     * when they join the server.
+     * Sets the creator of the room.
      *
-     * @param isDefault room should be default or not
+     * @param creator the user who created the room
      */
-    setDefault(isDefault: boolean): IRoomBuilder;
+    setCreator(creator: IUser): IRoomBuilder;
 
     /**
      * Adds a user to the room, these are by username until further notice.
@@ -271,9 +269,54 @@ export interface IRoomBuilder {
     /**
      * Sets the usernames of who are joined to the room.
      *
-     * @param users the list of usernames
+     * @param usernames the list of usernames
      */
-    setUsers(users: Array<string>): IRoomBuilder;
+    setUsernames(usernames: Array<string>): IRoomBuilder;
+
+    /**
+     * Sets whether this room should be a default room or not.
+     * This means that new users will automatically join this room
+     * when they join the server.
+     *
+     * @param isDefault room should be default or not
+     */
+    setDefault(isDefault: boolean): IRoomBuilder;
+
+    /**
+     * Sets whether this room should be in read only state or not.
+     * This means that users without the required permission to talk when
+     * a room is muted will not be able to talk but instead will only be
+     * able to read the contents of the room.
+     *
+     * @param isReadOnly whether it should be read only or not
+     */
+    setReadOnly(isReadOnly: boolean): IRoomBuilder;
+
+    /**
+     * Sets whether this room should display the system messages (like user join, etc)
+     * or not. This means that whenever a system event, such as joining or leaving, happens
+     * then Rocket.Chat won't send the message to the channel.
+     *
+     * @param displaySystemMessages whether the messages should display or not
+     */
+    setDisplayingOfSystemMessages(displaySystemMessages: boolean): IRoomBuilder;
+
+    /**
+     * Adds a custom field to the room.
+     * Note: This will replace an existing field with the same key should it exist already.
+     *
+     * @param key the name of the key
+     * @param value the value of the custom field
+     */
+    addCustomField(key: string, value: object): IRoomBuilder;
+
+    /**
+     * Sets the entire custom field property to an object provided. This will overwrite
+     * every existing key/values which are unrecoverable.
+     *
+     * @param fields the data to set
+     */
+    setCustomFields(fields: { [key: string]: object }): IRoomBuilder;
 
     /**
      * Gets the resulting room that has been built up to the point of calling this method.
