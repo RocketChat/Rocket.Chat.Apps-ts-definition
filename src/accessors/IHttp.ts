@@ -1,10 +1,36 @@
 /**
- *
- * there should actually already exist such an interface in some library.
- * I would actually wrap it in order to have an implementation adding more comfort, such as adding a response header
+ * The Http package allows users to call out to an external web service.
+ * Based off of: https://github.com/meteor-typings/meteor/blob/master/1.4/main.d.ts#L869
  */
 export interface IHttp {
-    get(): boolean;
+    get(url: string, options?: IHttpRequest): IHttpResponse;
 
-    put(): boolean;
+    put(url: string, options?: IHttpRequest): IHttpResponse;
+
+    post(url: string, options?: IHttpRequest): IHttpResponse;
+
+    del(url: string, options?: IHttpRequest): IHttpResponse;
+}
+
+export interface IHttpRequest {
+    content?: string;
+    data?: any;
+    query?: string;
+    params?: {
+        [key: string]: string,
+    };
+    auth?: string;
+    headers?: {
+        [key: string]: string,
+    };
+    timeout?: number;
+}
+
+export interface IHttpResponse {
+    statusCode: number;
+    headers?: {
+        [key: string]: string,
+    };
+    content?: string;
+    data?: any;
 }

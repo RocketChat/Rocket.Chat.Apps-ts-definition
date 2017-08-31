@@ -1,5 +1,5 @@
-import { IRequest } from './IRequest';
-import { IResponse } from './IResponse';
+import { IWebhookRequest } from './IRequest';
+import { IWebhookResponse } from './IResponse';
 import { RequestMethod } from './RequestMethod';
 
 export interface IWebhookProvider {
@@ -10,5 +10,5 @@ export interface IWebhookProvider {
      * @param request the actual request made
      * @return the response to send to the client
      */
-    executeWebhook(request: IRequest): IResponse;
+    executeWebhook(request: IWebhookRequest): IWebhookResponse;
 }

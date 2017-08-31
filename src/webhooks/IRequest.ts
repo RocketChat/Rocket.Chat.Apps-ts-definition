@@ -1,6 +1,6 @@
 import { RequestMethod } from './RequestMethod';
 
-export interface IRequest {
+export interface IWebhookRequest {
     method: RequestMethod;
     headers: { [key: string]: string };
     content: any;

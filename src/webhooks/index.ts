@@ -1,7 +1,7 @@
-import { IRequest } from './IRequest';
-import { IResponse } from './IResponse';
+import { IWebhookRequest } from './IRequest';
+import { IWebhookResponse } from './IResponse';
 import { IWebhookProvider } from './IWebhookProvider';
 import { RequestMethod } from './RequestMethod';
 import { ResponseStatus } from './ResponseStatus';
 
-export { IRequest, RequestMethod, IResponse, ResponseStatus, IWebhookProvider };
+export { IWebhookRequest, RequestMethod, IWebhookResponse, ResponseStatus, IWebhookProvider };

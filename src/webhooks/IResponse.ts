@@ -1,4 +1,4 @@
-export interface IResponse {
+export interface IWebhookResponse {
     status: number;
     content?: any;
 }
