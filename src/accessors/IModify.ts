@@ -45,18 +45,20 @@ export interface IModifyExtender {
      * but existing properties cannot be changed.
      *
      * @param messageId the id of the message to be extended
+     * @param updater the user who is updating/extending the message
      * @return the extender instance for the message
      */
-    extendMessage(messageId: string): IMessageExtender;
+    extendMessage(messageId: string, updater: IUser): IMessageExtender;
 
     /**
      * Modifies a room in a non-destructive way: Properties can be added to it,
      * but existing properties cannot be changed.
      *
      * @param roomId the id of the room to be extended
+     * @param updater the user who is updating/extending the room
      * @return the extender instance for the room
      */
-    extendRoom(roomId: string): IRoomExtender;
+    extendRoom(roomId: string, updater: IUser): IRoomExtender;
 
     /**
      * Finishes the extending process, saving the object to the database.
@@ -121,6 +123,12 @@ export interface IMessageExtender {
      * @param attachments an array of attachments
      */
     addAttachments(attachments: Array<IMessageAttachment>): IMessageExtender;
+
+    /**
+     * Gets the resulting message that has been extended at the point of calling it.
+     * Note: modifying the returned value will have no effect.
+     */
+    getMessage(): IMessage;
 }
 
 export interface IRoomExtender {
@@ -142,6 +150,12 @@ export interface IRoomExtender {
      * @param user the user which is to be added to the room
      */
     addMember(user: IUser): IRoomExtender;
+
+    /**
+     * Gets the resulting room that has been extended at the point of calling this.
+     * Note: modifying the returned value will have no effect.
+     */
+    getRoom(): IRoom;
 }
 
 /**
