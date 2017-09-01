@@ -98,29 +98,50 @@ export interface IModifyCreator {
 export interface IMessageExtender {
     kind: RocketChatAssociationModel.MESSAGE;
 
-    addProperty(name: string, value: object): IMessageExtender;
-
-    addAttachments(attachments: Array<IMessageAttachment>): IMessageExtender;
+    /**
+     * Adds a custom field to the message.
+     * Note: This key can not already exist or it will throw an error.
+     * Note: The key must not contain a period in it, an error will be thrown.
+     *
+     * @param key the name of the custom field
+     * @param value the value of this custom field
+     */
+    addCustomField(key: string, value: any): IMessageExtender;
 
     /**
-     * A specialization of addProperty: Add metadata enabling interaction with the plugin
-     * @param metadata
+     * Adds a single attachment to the message.
+     *
+     * @param attachment the item to add
      */
-    addPluginMetadata(metadata: object): IMessageExtender;
+    addAttachment(attachment: IMessageAttachment): IMessageExtender;
+
+    /**
+     * Adds all of the provided attachments to the message.
+     *
+     * @param attachments an array of attachments
+     */
+    addAttachments(attachments: Array<IMessageAttachment>): IMessageExtender;
 }
 
 export interface IRoomExtender {
     kind: RocketChatAssociationModel.ROOM;
 
-    addProperty(name: string, value: object): IRoomExtender;
-
-    addMember(user: IUser): IRoomExtender;
+    /**
+     * Adds a custom field to the room.
+     * Note: This key can not already exist or it will throw an error.
+     * Note: The key must not contain a period in it, an error will be thrown.
+     *
+     * @param key the name of the custom field
+     * @param value the value of this custom field
+     */
+    addCustomField(key: string, value: any): IRoomExtender;
 
     /**
-     * A specialization of addProperty: Add metadata enabling interaction with the plugin
-     * @param metadata
+     * Adds a user to the room.
+     *
+     * @param user the user which is to be added to the room
      */
-    addPluginMetadata(metadata: object): IRoomExtender;
+    addMember(user: IUser): IRoomExtender;
 }
 
 /**
@@ -130,6 +151,14 @@ export interface IRoomExtender {
  */
 export interface IMessageBuilder {
     kind: RocketChatAssociationModel.MESSAGE;
+
+    /**
+     * Provides a convient way to set the data for the message.
+     * Note: Providing an "id" field here will be ignored.
+     *
+     * @param message the message data to set
+     */
+    setData(message: IMessage): IMessageBuilder;
 
     /**
      * Sets the room where this message should be sent to.
@@ -229,6 +258,14 @@ export interface IMessageBuilder {
  */
 export interface IRoomBuilder {
     kind: RocketChatAssociationModel.ROOM;
+
+    /**
+     * Provides a convient way to set the data for the room.
+     * Note: Providing an "id" field here will be ignored.
+     *
+     * @param room the room data to set
+     */
+    setData(room: IRoom): IRoomBuilder;
 
     /**
      * Sets the display name of this room.
