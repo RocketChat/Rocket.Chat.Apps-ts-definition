@@ -5,7 +5,19 @@ import { ISetting } from '../settings/index';
  * Rocketlet settings in a read-only-fashion.
  */
 export interface ISettingRead {
+    /**
+     * Gets the Rocketlet's setting by the provided id.
+     * Does not throw an error but instead will return undefined it doesn't exist.
+     *
+     * @param id the id of the setting
+     */
     getById(id: string): ISetting;
 
+    /**
+     * Gets the Rocketlet's setting value by the provided id.
+     * Note: this will throw an error if the setting doesn't exist
+     *
+     * @param id the id of the setting value to get
+     */
     getValueById(id: string): any;
 }
