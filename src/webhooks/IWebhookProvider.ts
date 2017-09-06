@@ -1,6 +1,5 @@
 import { IWebhookRequest } from './IRequest';
 import { IWebhookResponse } from './IResponse';
-import { RequestMethod } from './RequestMethod';
 
 export interface IWebhookProvider {
     /**

@@ -1,3 +1,6 @@
+import { IPersistence } from './IPersistence';
+import { IRead } from './IRead';
+
 /**
  * The Http package allows users to call out to an external web service.
  * Based off of: https://github.com/meteor-typings/meteor/blob/master/1.4/main.d.ts#L869
@@ -5,11 +8,18 @@
 export interface IHttp {
     get(url: string, options?: IHttpRequest): IHttpResponse;
 
-    put(url: string, options?: IHttpRequest): IHttpResponse;
-
     post(url: string, options?: IHttpRequest): IHttpResponse;
 
+    put(url: string, options?: IHttpRequest): IHttpResponse;
+
     del(url: string, options?: IHttpRequest): IHttpResponse;
+}
+
+export enum RequestMethod {
+    GET,
+    POST,
+    PUT,
+    DELETE,
 }
 
 export interface IHttpRequest {
@@ -27,10 +37,66 @@ export interface IHttpRequest {
 }
 
 export interface IHttpResponse {
+    url: string;
+    method: RequestMethod;
     statusCode: number;
     headers?: {
         [key: string]: string,
     };
     content?: string;
     data?: any;
+}
+
+export interface IHttpExtend {
+    /**
+     * A method for providing a single header which is added to every request.
+     *
+     * @param key the name of the header
+     * @param value the header's content
+     */
+    provideDefaultHeader(key: string, value: string): void;
+
+    /**
+     * A method for providing more than one header which are added to every request.
+     *
+     * @param headers an object with strings as the keys (header name) and strings as values (header content)
+     */
+    provideDefaultHeaders(headers: { [key: string]: string }): void;
+
+    /**
+     * A method for providing a single query parameter which is added to every request.
+     *
+     * @param key the name of the query parameter
+     * @param value the query parameter's content
+     */
+    provideDefaultParam(key: string, value: string): void;
+
+    /**
+     * A method for providing more than one query parameters which are added to every request.
+     *
+     * @param headers an object with strings as the keys (parameter name) and strings as values (parameter content)
+     */
+    provideDefaultParams(params: { [key: string]: string }): void;
+
+    /**
+     * Method for providing a function which is called before every request is called out to the final destination.
+     *
+     * @param handler the instance of the IHttpPreRequestHandler
+     */
+    providePreRequestHandler(handler: IHttpPreRequestHandler): void;
+
+    /**
+     * Method for providing a function which is called after every response is got from the url and before the result is returned.
+     *
+     * @param handler the instance of the IHttpPreResponseHandler
+     */
+    providePreResponseHandler(handler: IHttpPreResponseHandler): void;
+}
+
+export interface IHttpPreRequestHandler {
+    executePreHttpRequest(url: string, request: IHttpRequest, read: IRead, persistence: IPersistence): IHttpRequest;
+}
+
+export interface IHttpPreResponseHandler {
+    executePreHttpRequest(response: IHttpResponse, read: IRead, persistence: IPersistence): IHttpRequest;
 }

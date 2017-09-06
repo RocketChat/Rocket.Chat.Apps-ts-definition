@@ -12,7 +12,7 @@ export interface ISlashCommandsModify {
      *
      * @param slashCommand the modified slash command
      */
-    modifySlashCommand(slashCommand: ISlashCommand);
+    modifySlashCommand(slashCommand: ISlashCommand): void;
 
     /**
      * Renders an existing slash command un-usable.

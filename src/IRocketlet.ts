@@ -1,6 +1,3 @@
-import { IConfigurationExtend } from './accessors/IConfigurationExtend';
-import { IConfigurationModify } from './accessors/IConfigurationModify';
-import { IEnvironmentRead } from './accessors/IEnvironmentRead';
 import { ILogger } from './accessors/ILogger';
 import { IRocketletAuthorInfo } from './metadata/IRocketletAuthorInfo';
 import { IRocketletInfo } from './metadata/IRocketletInfo';

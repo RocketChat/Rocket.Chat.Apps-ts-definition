@@ -3,7 +3,15 @@ import { IConfigurationModify } from './IConfigurationModify';
 import { IEnvironmentalVariableRead } from './IEnvironmentalVariableRead';
 import { IEnvironmentRead } from './IEnvironmentRead';
 import { IExecutionResult } from './IExecutionResult';
-import { IHttp } from './IHttp';
+import {
+    IHttp,
+    IHttpExtend,
+    IHttpPreRequestHandler,
+    IHttpPreResponseHandler,
+    IHttpRequest,
+    IHttpResponse,
+    RequestMethod,
+} from './IHttp';
 import { IIterator } from './IIterator';
 import { IIteratorResult } from './IIteratorResult';
 import { ILogEntry } from './ILogEntry';
@@ -39,6 +47,11 @@ export {
     IEnvironmentRead,
     IExecutionResult,
     IHttp,
+    IHttpExtend,
+    IHttpPreRequestHandler,
+    IHttpPreResponseHandler,
+    IHttpRequest,
+    IHttpResponse,
     IIterator,
     IIteratorResult,
     ILogEntry,
@@ -64,4 +77,5 @@ export {
     ISlashCommandsModify,
     IUserRead,
     LogMessageSeverity,
+    RequestMethod,
 };
