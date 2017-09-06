@@ -1,4 +1,5 @@
 {
+    "typescript.referencesCodeLens.enabled": true,
     "json.schemas": [
         {
             "fileMatch": [
