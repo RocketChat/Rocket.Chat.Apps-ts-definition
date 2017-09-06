@@ -11,10 +11,12 @@ export interface ISetting {
     value?: any;
     /** Whether this setting is required or not. */
     required: boolean;
-    /** The name of the group where to put this setting under. */
-    group?: string;
+    /** Whether this setting is a public setting or not - administrators can see ones which are not public but users can't. */
+    public: boolean;
     /** Whether this setting should be hidden from the user/administrator's eyes (can't be hidden and required). */
     hidden?: boolean;
+    /** The name of the group where to put this setting under. */
+    group?: string;
     /** Name of the setting in the form of a i18n string. */
     i18nLabel: string;
     /** Description of the setting in the form of a i18n string. */
