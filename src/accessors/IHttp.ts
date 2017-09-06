@@ -124,5 +124,5 @@ export interface IHttpPreRequestHandler {
 }
 
 export interface IHttpPreResponseHandler {
-    executePreHttpRequest(response: IHttpResponse, read: IRead, persistence: IPersistence): IHttpRequest;
+    executePreHttpResponse(response: IHttpResponse, read: IRead, persistence: IPersistence): IHttpRequest;
 }
