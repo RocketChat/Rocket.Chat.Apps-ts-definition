@@ -16,10 +16,10 @@ export interface IHttp {
 }
 
 export enum RequestMethod {
-    GET,
-    POST,
-    PUT,
-    DELETE,
+    GET = 'get',
+    POST = 'post',
+    PUT = 'put',
+    DELETE = 'delete',
 }
 
 export interface IHttpRequest {
@@ -80,6 +80,7 @@ export interface IHttpExtend {
 
     /**
      * Method for providing a function which is called before every request is called out to the final destination.
+     * This can be called more than once which means there can be more than one handler. The order provided is the order called.
      *
      * @param handler the instance of the IHttpPreRequestHandler
      */
@@ -87,10 +88,35 @@ export interface IHttpExtend {
 
     /**
      * Method for providing a function which is called after every response is got from the url and before the result is returned.
+     * This can be called more than once which means there can be more than one handler. The order provided is the order called.
      *
      * @param handler the instance of the IHttpPreResponseHandler
      */
     providePreResponseHandler(handler: IHttpPreResponseHandler): void;
+
+    /**
+     * A method for getting all of the default headers provided, the value is a readonly and any modifications done will be ignored.
+     * Please use the provider methods for adding them.
+     */
+    getDefaultHeaders(): Map<string, string>;
+
+    /**
+     * A method for getting all of the default parameters provided, the value is a readonly and any modifications done will be ignored.
+     * Please use the provider methods for adding them.
+     */
+    getDefaultParams(): Map<string, string>;
+
+    /**
+     * A method for getting all of the pre-request handlers provided, the value is a readonly and any modifications done will be ignored.
+     * Please use the provider methods for adding them.
+     */
+    getPreRequestHandlers(): Array<IHttpPreRequestHandler>;
+
+    /**
+     * A method for getting all of the pre-response handlers provided, the value is a readonly and any modifications done will be ignored.
+     * Please use the provider methods for adding them.
+     */
+    getPreResponseHandlers(): Array<IHttpPreResponseHandler>;
 }
 
 export interface IHttpPreRequestHandler {
