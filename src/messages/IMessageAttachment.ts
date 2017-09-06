@@ -6,8 +6,6 @@ import { IMessageAttachmentTitle } from './IMessageAttachmentTitle';
  * Interface which represents an attachment which can be added to a message.
  */
 export interface IMessageAttachment {
-    /** A unquie id for this attachment. */
-    id: string;
     /** Causes the image, audio, and video sections to be hidding when this is true. */
     collapsed?: boolean;
     /** The color you want the order on the left side to be, supports any valid background-css value. */
