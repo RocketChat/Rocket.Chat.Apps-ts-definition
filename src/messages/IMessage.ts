@@ -6,13 +6,14 @@ export interface IMessage {
     id?: string;
     room: IRoom;
     sender: IUser;
-    text: string;
+    text?: string;
     createdAt?: Date;
     updatedAt?: Date;
-    updater?: IUser;
+    editor?: IUser;
+    editedAt?: Date;
     emoji?: string;
-    avatar?: string;
+    avatarUrl?: string;
     alias?: string;
     attachments?: Array<IMessageAttachment>;
-    customFields: { [key: string]: any };
+    customFields?: { [key: string]: any };
 }

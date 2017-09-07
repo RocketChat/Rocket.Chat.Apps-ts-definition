@@ -32,11 +32,11 @@ export interface IModifyUpdater {
 
     /**
      * Finishes the updating process, saving the object to the database.
+     * Note: If there is an issue or error while updating, this will throw an error.
      *
      * @param builder the builder instance
-     * @return whether it was successful or not
      */
-    finish(builder: IMessageBuilder | IRoomBuilder): boolean;
+    finish(builder: IMessageBuilder | IRoomBuilder): void;
 }
 
 export interface IModifyExtender {
@@ -62,11 +62,11 @@ export interface IModifyExtender {
 
     /**
      * Finishes the extending process, saving the object to the database.
+     * Note: If there is an issue or error while updating, this will throw an error.
      *
      * @param extender the extender instance
-     * @return whether it was successful or not
      */
-    finish(extender: IRoomExtender | IMessageExtender): boolean;
+    finish(extender: IRoomExtender | IMessageExtender): void;
 }
 
 export interface IModifyCreator {
@@ -251,12 +251,12 @@ export interface IMessageBuilder {
     removeAttachment(position: number): IMessageBuilder;
 
     /**
-     * Sets the user who is updating this message.
+     * Sets the user who is editing this message.
      * This is required if you are modifying an existing message.
      *
-     * @param user the updater
+     * @param user the editor
      */
-    setUpdater(user: IUser): IMessageBuilder;
+    setEditor(user: IUser): IMessageBuilder;
 
     /**
      * Gets the resulting message that has been built up to the point of calling it.
