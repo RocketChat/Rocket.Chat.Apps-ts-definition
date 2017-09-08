@@ -15,8 +15,10 @@ export interface ISetting {
     public: boolean;
     /** Whether this setting should be hidden from the user/administrator's eyes (can't be hidden and required). */
     hidden?: boolean;
-    /** The name of the group where to put this setting under. */
-    group?: string;
+    /** The selectable values when the setting's type is "select". */
+    values?: Array<ISettingSelectValue>;
+    /** The name of the section where to put this setting under. */
+    section?: string;
     /** Name of the setting in the form of a i18n string. */
     i18nLabel: string;
     /** Description of the setting in the form of a i18n string. */
@@ -25,4 +27,9 @@ export interface ISetting {
     createdAt?: Date;
     /** The last time the setting was updated at. */
     updatedAt?: Date;
+}
+
+export interface ISettingSelectValue {
+    key: string;
+    i18nLabel: string;
 }

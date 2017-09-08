@@ -1,5 +1,9 @@
 export enum SettingType {
-    STRING = 'string',
     BOOLEAN = 'boolean',
-    NUMBER = 'number',
+    CODE = 'code',
+    COLOR = 'color',
+    FONT = 'font',
+    NUMBER = 'int',
+    SELECT = 'select',
+    STRING = 'string',
 }
