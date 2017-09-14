@@ -3,6 +3,7 @@ import { IConfigurationModify, IEnvironmentRead, ILogger } from './accessors';
 import { IRocketlet } from './IRocketlet';
 import { IRocketletAuthorInfo } from './metadata/IRocketletAuthorInfo';
 import { IRocketletInfo } from './metadata/IRocketletInfo';
+import { ISetting } from './settings';
 
 export abstract class Rocketlet implements IRocketlet {
     /**
@@ -126,6 +127,16 @@ export abstract class Rocketlet implements IRocketlet {
      * Please note, if an error is thrown this Rocketlet will be disabled forever until it is updated.
      */
     public onDisable(configurationModify: IConfigurationModify): void {
+        return;
+    }
+
+    /**
+     * Method which is called whenever a setting which belongs to this Rocketlet has been updated
+     * by an external system and not this Rocketlet itself. The setting passed is the newly updated one.
+     *
+     * @param setting the setting which was updated
+     */
+    public onSettingUpdated(setting: ISetting): void {
         return;
     }
 

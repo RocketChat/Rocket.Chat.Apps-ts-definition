@@ -23,6 +23,8 @@ export interface ISetting {
     i18nLabel: string;
     /** Description of the setting in the form of a i18n string. */
     i18nDescription?: string;
+    /** An optional alert messages which is shown to the user on this setting. */
+    i18nAlert?: string;
     /** Date in which this setting was created. */
     createdAt?: Date;
     /** The last time the setting was updated at. */
