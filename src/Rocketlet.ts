@@ -135,8 +135,9 @@ export abstract class Rocketlet implements IRocketlet {
      * by an external system and not this Rocketlet itself. The setting passed is the newly updated one.
      *
      * @param setting the setting which was updated
+     * @param configurationModify the accessor to modifiy the system
      */
-    public onSettingUpdated(setting: ISetting): void {
+    public onSettingUpdated(setting: ISetting, configurationModify: IConfigurationModify): void {
         return;
     }
 
