@@ -41,13 +41,14 @@ export interface IPersistence {
      * @param id the data record's id
      * @param data the actual data to store, must be an object otherwise it will error out
      */
-    update(id: string, data: object): void;
+    update(id: string, data: object, upsert?: boolean): void;
 
     /**
      * Removes a record by the provided id and returns the removed record.
      *
      * @param id of the record to remove
      * @return the data record which was removed
+     * @upsert Whether a record shall be created if the id to be updated does not exist
      */
     remove(id: string): object;
 
