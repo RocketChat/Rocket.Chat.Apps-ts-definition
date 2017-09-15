@@ -20,4 +20,11 @@ export interface ISlashCommandsModify {
      * @param command the command's usage without the slash
      */
     disableSlashCommand(command: string): void;
+
+    /**
+     * Enables an existing slash command to be usable again.
+     *
+     * @param command the command's usage without the slash
+     */
+    enableSlashCommand(command: string): void;
 }
