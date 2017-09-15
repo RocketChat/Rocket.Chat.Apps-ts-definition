@@ -104,8 +104,8 @@ export abstract class Rocketlet implements IRocketlet {
      * Method which will be called when the Rocketlet is initialized. This is the recommended place
      * to add settings and slash commands. If an error is thrown, all commands will be unregistered.
      */
-    public initialize(configurationExtend: IConfigurationExtend): void {
-        this.extendConfiguration(configurationExtend);
+    public initialize(configurationExtend: IConfigurationExtend, environmentRead: IEnvironmentRead): void {
+        this.extendConfiguration(configurationExtend, environmentRead);
     }
 
     /**
@@ -144,7 +144,7 @@ export abstract class Rocketlet implements IRocketlet {
      * Method will be called during initialization. It allows for adding custom configuration options and defaults
      * @param configuration
      */
-    protected extendConfiguration(configuration: IConfigurationExtend): void {
+    protected extendConfiguration(configuration: IConfigurationExtend, environmentRead: IEnvironmentRead): void {
         return;
     }
 }
