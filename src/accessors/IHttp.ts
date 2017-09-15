@@ -129,7 +129,7 @@ export interface IHttpPreResponseHandler {
     executePreHttpResponse(response: IHttpResponse, read: IRead, persistence: IPersistence): IHttpResponse;
 }
 
-export enum HttpStatusCodes {
+export enum HttpStatusCode {
     CONTINUE = 100,
     SWITCHING_PROTOCOLS = 101,
     OK = 200,

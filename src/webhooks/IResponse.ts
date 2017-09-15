@@ -1,4 +1,6 @@
+import { HttpStatusCode } from '../accessors';
+
 export interface IWebhookResponse {
-    status: number;
+    status: HttpStatusCode;
     content?: any;
 }

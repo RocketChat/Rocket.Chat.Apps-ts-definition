@@ -4,6 +4,7 @@ import { IEnvironmentalVariableRead } from './IEnvironmentalVariableRead';
 import { IEnvironmentRead } from './IEnvironmentRead';
 import { IExecutionResult } from './IExecutionResult';
 import {
+    HttpStatusCode,
     IHttp,
     IHttpExtend,
     IHttpPreRequestHandler,
@@ -41,6 +42,7 @@ import { IUserRead } from './IUserRead';
 import { LogMessageSeverity } from './LogMessageSeverity';
 
 export {
+    HttpStatusCode,
     IConfigurationExtend,
     IConfigurationModify,
     IEnvironmentalVariableRead,
