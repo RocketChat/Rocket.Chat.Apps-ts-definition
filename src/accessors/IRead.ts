@@ -17,7 +17,7 @@ export interface IRead {
     getMessageReader(): IMessageRead;
 
     /** Gets the IPersistenceRead instance. */
-    getPersistanceReader(): IPersistenceRead;
+    getPersistenceReader(): IPersistenceRead;
 
     /** Gets the IRoomRead instance. */
     getRoomReader(): IRoomRead;
