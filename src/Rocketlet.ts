@@ -1,5 +1,11 @@
-import { IConfigurationExtend } from './accessors';
-import { IConfigurationModify, IEnvironmentRead, ILogger } from './accessors';
+import {
+    IConfigurationExtend,
+    IConfigurationModify,
+    IEnvironmentRead,
+    IHttp,
+    ILogger,
+    IRead,
+} from './accessors';
 import { IRocketlet } from './IRocketlet';
 import { IRocketletAuthorInfo } from './metadata/IRocketletAuthorInfo';
 import { IRocketletInfo } from './metadata/IRocketletInfo';
@@ -136,8 +142,10 @@ export abstract class Rocketlet implements IRocketlet {
      *
      * @param setting the setting which was updated
      * @param configurationModify the accessor to modifiy the system
+     * @param reader the reader accessor
+     * @param http an accessor to the outside world
      */
-    public onSettingUpdated(setting: ISetting, configurationModify: IConfigurationModify): void {
+    public onSettingUpdated(setting: ISetting, configurationModify: IConfigurationModify, read: IRead, http: IHttp): void {
         return;
     }
 
