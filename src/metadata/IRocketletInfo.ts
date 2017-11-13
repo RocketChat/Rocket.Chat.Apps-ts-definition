@@ -9,4 +9,7 @@ export interface IRocketletInfo {
     requiredApiVersion: string;
     author: IRocketletAuthorInfo;
     classFile: string;
+    iconFile: string;
+    /** Base64 string of the Rocketlet's icon. */
+    iconFileContent?: string;
 }

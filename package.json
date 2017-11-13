@@ -1,6 +1,6 @@
 {
   "name": "temporary-rocketlets-ts-definition",
-  "version": "0.6.30",
+  "version": "0.6.31",
   "description": "Temporary npm package which contains testing ts definitions for the Rocketlets.",
   "main": "index.js",
   "typings": "index",
