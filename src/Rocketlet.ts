@@ -9,9 +9,12 @@ import {
 import { IRocketlet } from './IRocketlet';
 import { IRocketletAuthorInfo } from './metadata/IRocketletAuthorInfo';
 import { IRocketletInfo } from './metadata/IRocketletInfo';
+import { RocketletStatus } from './RocketletStatus';
 import { ISetting } from './settings';
 
 export abstract class Rocketlet implements IRocketlet {
+    private status: RocketletStatus = RocketletStatus.UNKNOWN;
+
     /**
      * Create a new Rocketlet, this is called whenever the server starts up and initiates the Rocketlets.
      * Note, your implementation of this class should call `super(name, id, version)` so we have it.
@@ -22,6 +25,12 @@ export abstract class Rocketlet implements IRocketlet {
         this.logger.debug(`Constructed the Rocketlet ${this.info.name} (${this.info.id})`,
             `v${this.info.version} which depends on the API v${this.info.requiredApiVersion}!`,
             `Created by ${this.info.author.name}`);
+
+        this.setStatus(RocketletStatus.CONSTRUCTED);
+    }
+
+    public getStatus(): RocketletStatus {
+        return this.status;
     }
 
     /**
@@ -155,5 +164,15 @@ export abstract class Rocketlet implements IRocketlet {
      */
     protected extendConfiguration(configuration: IConfigurationExtend, environmentRead: IEnvironmentRead): void {
         return;
+    }
+
+    /**
+     * Sets the status this Rocketlet is now at, use only when 100% true (it's protected for a reason).
+     *
+     * @param status the new status of this Rocketlet
+     */
+    protected setStatus(status: RocketletStatus): void {
+        this.logger.debug(`The status is now: ${ status }`);
+        this.status = status;
     }
 }

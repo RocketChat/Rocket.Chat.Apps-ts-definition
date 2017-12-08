@@ -1,8 +1,16 @@
 import { ILogger } from './accessors/ILogger';
 import { IRocketletAuthorInfo } from './metadata/IRocketletAuthorInfo';
 import { IRocketletInfo } from './metadata/IRocketletInfo';
+import { RocketletStatus } from './RocketletStatus';
 
 export interface IRocketlet {
+    /**
+     * Gets the status of this Rocketlet.
+     *
+     * @return {RocketletStatus} the status/state of the Rocketlet
+     */
+    getStatus(): RocketletStatus;
+
     /**
      * Get the name of this Rocketlet.
      *
