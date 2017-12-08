@@ -16,3 +16,28 @@ export enum RocketletStatus {
     /** The Rocketlet was disabled due to other circumstances. */
     DISABLED = 'disabled',
 }
+
+export class RocketletStatusUtilsDef {
+    public isEnabled(status: RocketletStatus): boolean {
+        switch (status) {
+            case RocketletStatus.AUTO_ENABLED:
+            case RocketletStatus.MANUALLY_ENABLED:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    public isDisabled(status: RocketletStatus): boolean {
+        switch (status) {
+            case RocketletStatus.ERROR_DISABLED:
+            case RocketletStatus.MANUALLY_DISABLED:
+            case RocketletStatus.DISABLED:
+                return true;
+            default:
+                return false;
+        }
+    }
+}
+
+export const RocketletStatusUtils = new RocketletStatusUtilsDef();
