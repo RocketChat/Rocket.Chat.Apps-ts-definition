@@ -57,9 +57,9 @@ export interface IPersistence {
      * Removes all of the records in persistent storage which are associated with the provided information.
      *
      * @param association the information about the association for the records to be removed
-     * @return the removed records
+     * @return amount of records removed
      */
-    removeByAssociation(association: RocketChatAssociationRecord): Array<object>;
+    removeByAssociation(association: RocketChatAssociationRecord): number;
 
     /**
      * Removes all of the records in persistent storage which are associated with the provided information.
@@ -67,7 +67,7 @@ export interface IPersistence {
      * of the associations to be considered a match.
      *
      * @param associations the information about the associations for the records to be removed
-     * @return the removed records
+     * @return amount of records removed
      */
-    removeByAssociations(associations: Array<RocketChatAssociationRecord>): Array<object>;
+    removeByAssociations(associations: Array<RocketChatAssociationRecord>): number;
 }

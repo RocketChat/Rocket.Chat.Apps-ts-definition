@@ -139,7 +139,6 @@ export abstract class Rocketlet implements IRocketlet {
     /**
      * Method which is called when this Rocketlet is disabled and it can be called several times.
      * If this Rocketlet was enabled and then the user disabled it, this method will be called.
-     * Please note, if an error is thrown this Rocketlet will be disabled forever until it is updated.
      */
     public onDisable(configurationModify: IConfigurationModify): void {
         return;
