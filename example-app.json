@@ -7,7 +7,7 @@
     "requiredApiVersion": "0.0.1",
     "author": {
         "name": "Bradley Hilton",
-        "support": "https://github.com/graywolf336/temporary-apps-ts-definition/"
+        "support": "https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition"
     },
     "classFile": "ExampleApp.ts"
 }
