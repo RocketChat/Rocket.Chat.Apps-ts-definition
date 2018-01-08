@@ -7,7 +7,7 @@ export interface ISetting {
     type: SettingType;
     /** What is the default value (allows a reset button). */
     packageValue: any;
-    /** Will be the value of this setting. Should nothing be set here the "packageValue" will be used. */
+    /** Will be the value of this setting. If nothing is set here, then the "packageValue" will be used. */
     value?: any;
     /** Whether this setting is required or not. */
     required: boolean;
@@ -25,6 +25,8 @@ export interface ISetting {
     i18nDescription?: string;
     /** An optional alert messages which is shown to the user on this setting. */
     i18nAlert?: string;
+    /** An optional placeholder which will be shown in the form input field, should be an i18n string. */
+    i18nPlaceholder?: string;
     /** Date in which this setting was created. */
     createdAt?: Date;
     /** The last time the setting was updated at. */
