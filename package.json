@@ -13,6 +13,8 @@
     "url": "git+https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition.git"
   },
   "keywords": [
+    "rocket.chat",
+    "team chat",
     "apps"
   ],
   "author": "Bradley Hilton <bradley.hilton@rocket.chat>",
