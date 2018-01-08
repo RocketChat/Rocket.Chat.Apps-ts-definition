@@ -1,15 +1,15 @@
-import { IRocketletAuthorInfo } from './IRocketletAuthorInfo';
+import { IAppAuthorInfo } from './IAppAuthorInfo';
 
-export interface IRocketletInfo {
+export interface IAppInfo {
     id: string;
     name: string;
     nameSlug: string;
     version: string;
     description: string;
     requiredApiVersion: string;
-    author: IRocketletAuthorInfo;
+    author: IAppAuthorInfo;
     classFile: string;
     iconFile: string;
-    /** Base64 string of the Rocketlet's icon. */
+    /** Base64 string of the App's icon. */
     iconFileContent?: string;
 }

@@ -2,7 +2,7 @@ import { ISlashCommand } from '../slashcommands';
 
 /**
  * This accessor provides methods for adding custom slash commands.
- * It is provided during the initialization of your Rocketlet
+ * It is provided during the initialization of your App
  */
 
 export interface ISlashCommandsExtend {

@@ -1,7 +1,7 @@
 {
-  "name": "temporary-rocketlets-ts-definition",
-  "version": "0.6.34",
-  "description": "Temporary npm package which contains testing ts definitions for the Rocketlets.",
+  "name": "@rocket.chat/apps-ts-definition",
+  "version": "0.7.0",
+  "description": "Contains the TypeScript definitions for the Rocket.Chat Applications.",
   "main": "index.js",
   "typings": "index",
   "scripts": {
@@ -10,17 +10,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/graywolf336/temporary-rocketlets-ts-definition.git"
+    "url": "git+https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition.git"
   },
   "keywords": [
-    "rocketlets"
+    "rocket.chat",
+    "team chat",
+    "apps"
   ],
   "author": "Bradley Hilton <bradley.hilton@rocket.chat>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/graywolf336/temporary-rocketlets-ts-definition/issues"
+    "url": "https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/issues"
   },
-  "homepage": "https://github.com/graywolf336/temporary-rocketlets-ts-definition#readme",
+  "homepage": "https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition#readme",
   "devDependencies": {
     "del": "^3.0.0",
     "eslint": "^4.2.0",

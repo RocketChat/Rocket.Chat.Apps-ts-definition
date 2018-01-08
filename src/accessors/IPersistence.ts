@@ -1,13 +1,13 @@
 import { RocketChatAssociationRecord } from '../metadata';
 
 /**
- * Provides an accessor write data to the Rocketlet's persistent storage.
- * A Rocketlet only has access to its own persistent storage and does not
- * have access to any other Rocketlet's.
+ * Provides an accessor write data to the App's persistent storage.
+ * A App only has access to its own persistent storage and does not
+ * have access to any other App's.
  */
 export interface IPersistence {
     /**
-     * Creates a new record in the Rocketlet's persistent storage, returning the resulting "id".
+     * Creates a new record in the App's persistent storage, returning the resulting "id".
      *
      * @param data the actual data to store, must be an object otherwise it will error out.
      * @return the resulting record's id
@@ -15,7 +15,7 @@ export interface IPersistence {
     create(data: object): string;
 
     /**
-     * Creates a new record in the Rocketlet's persistent storage with the associated information
+     * Creates a new record in the App's persistent storage with the associated information
      * being provided.
      *
      * @param data the actual data to store, must be an object otherwise it will error out
@@ -25,7 +25,7 @@ export interface IPersistence {
     createWithAssociation(data: object, association: RocketChatAssociationRecord): string;
 
     /**
-     * Creates a new record in the Rocketlet's persistent storage with the data being
+     * Creates a new record in the App's persistent storage with the data being
      * associated with more than one Rocket.Chat record.
      *
      * @param data the actual data to store, must be an object otherwise it will error out
@@ -35,7 +35,7 @@ export interface IPersistence {
     createWithAssociations(data: object, associations: Array<RocketChatAssociationRecord>): string;
 
     /**
-     * Updates an existing record with the data provided in the Rocketlet's persistent storage.
+     * Updates an existing record with the data provided in the App's persistent storage.
      * This will throw an error if the record doesn't currently exist or if the data is not an object.
      *
      * @param id the data record's id

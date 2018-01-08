@@ -3,7 +3,7 @@ import { IMessage } from './IMessage';
 
 export interface IPostMessageSentHandler {
     /**
-     * Enables the handler to signal to the Rocketlets framework whether
+     * Enables the handler to signal to the Apps framework whether
      * this handler should actually be executed for after the message
      * has been sent.
      *

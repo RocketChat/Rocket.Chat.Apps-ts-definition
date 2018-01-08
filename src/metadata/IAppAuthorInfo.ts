@@ -1,4 +1,4 @@
-export interface IRocketletAuthorInfo {
+export interface IAppAuthorInfo {
     name: string;
     support: string;
     homepage: string;

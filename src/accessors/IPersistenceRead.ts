@@ -1,13 +1,13 @@
 import { RocketChatAssociationRecord } from '../metadata';
 
 /**
- * Provides a read-only accessor for the Rocketlet's persistent storage.
- * A Rocketlet only has access to its own persistent storage and does not
- * have access to any other Rocketlet's.
+ * Provides a read-only accessor for the App's persistent storage.
+ * A App only has access to its own persistent storage and does not
+ * have access to any other App's.
  */
 export interface IPersistenceRead {
     /**
-     * Retrieves a record from the Rocketlet's persistent storage by the provided id.
+     * Retrieves a record from the App's persistent storage by the provided id.
      * A "falsey" value (undefined or null or false) is returned should nothing exist
      * in the storage by the provided id.
      *
@@ -17,7 +17,7 @@ export interface IPersistenceRead {
     read(id: string): object;
 
     /**
-     * Retrieves a record from the Rocketlet's persistent storage by the provided id.
+     * Retrieves a record from the App's persistent storage by the provided id.
      * An empty array is returned should there be no records associated with the
      * data provided.
      *
@@ -27,7 +27,7 @@ export interface IPersistenceRead {
     readByAssociation(association: RocketChatAssociationRecord): Array<object>;
 
     /**
-     * Retrieves a record from the Rocketlet's persistent storage by the provided id.
+     * Retrieves a record from the App's persistent storage by the provided id.
      * Providing more than one association record acts like an AND which means a record
      * in persistent storage must have all of the associations to be considered a match.
      * An empty array is returned should there be no records associated with the

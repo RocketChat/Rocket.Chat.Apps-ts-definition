@@ -3,7 +3,7 @@ import { IMessage } from './IMessage';
 
 export interface IPreMessageSentModify {
     /**
-     * Enables the handler to signal to the Rocketlets framework whether
+     * Enables the handler to signal to the Apps framework whether
      * this handler should actually be executed for the message
      * about to be sent.
      *
@@ -21,7 +21,7 @@ export interface IPreMessageSentModify {
      * @param builder The builder for modifying the message via methods
      * @param read An accessor to the environment
      * @param http An accessor to the outside world
-     * @param persistence An accessor to the Rocketlet's persistence
+     * @param persistence An accessor to the App's persistence
      */
     executePreMessageSentModify(message: IMessage, builder: IMessageBuilder, read: IRead, http: IHttp, persistence: IPersistence): IMessage;
 }

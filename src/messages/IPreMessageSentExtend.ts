@@ -2,11 +2,11 @@ import { IHttp, IMessageExtender, IPersistence, IRead } from '../accessors';
 import { IMessage } from './IMessage';
 
 /**
- * Handler called when a Rocketlet wants to enrich a message.
+ * Handler called when a App wants to enrich a message.
  */
 export interface IPreMessageSentExtend {
     /**
-     * Enables the handler to signal to the Rocketlets framework whether
+     * Enables the handler to signal to the Apps framework whether
      * this handler should actually be executed for the message
      * about to be sent.
      *

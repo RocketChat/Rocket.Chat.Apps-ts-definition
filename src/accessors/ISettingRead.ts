@@ -2,11 +2,11 @@ import { ISetting } from '../settings/index';
 
 /**
  * This accessor provides methods for accessing
- * Rocketlet settings in a read-only-fashion.
+ * App settings in a read-only-fashion.
  */
 export interface ISettingRead {
     /**
-     * Gets the Rocketlet's setting by the provided id.
+     * Gets the App's setting by the provided id.
      * Does not throw an error but instead will return undefined it doesn't exist.
      *
      * @param id the id of the setting
@@ -14,7 +14,7 @@ export interface ISettingRead {
     getById(id: string): ISetting;
 
     /**
-     * Gets the Rocketlet's setting value by the provided id.
+     * Gets the App's setting value by the provided id.
      * Note: this will throw an error if the setting doesn't exist
      *
      * @param id the id of the setting value to get

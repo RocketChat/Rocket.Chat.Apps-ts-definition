@@ -1,5 +1,5 @@
 {
-    //This is an example of how a rocketlet.json file will look like
+    //This is an example of how a app.json file will look like
     "name": "Testing",
     "nameSlug": "testing",
     "description": "Testing description",
@@ -7,7 +7,7 @@
     "requiredApiVersion": "0.0.1",
     "author": {
         "name": "Bradley Hilton",
-        "support": "https://github.com/graywolf336/temporary-rocketlets-ts-definition/"
+        "support": "https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition"
     },
-    "classFile": "ExampleRocketlet.ts"
+    "classFile": "ExampleApp.ts"
 }

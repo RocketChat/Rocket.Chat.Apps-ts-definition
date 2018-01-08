@@ -3,7 +3,7 @@ import { ISetting } from '../settings';
 /**
  * This accessor provides methods to change default setting options
  * of Rocket.Chat in a compatible way. It is provided during
- * your Rocketlet's "onEnable".
+ * your App's "onEnable".
  */
 export interface IServerSettingsModify {
     /**
