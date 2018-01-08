@@ -3,12 +3,12 @@ import { IServerSettingRead } from './IServerSettingRead';
 import { ISettingRead } from './ISettingRead';
 
 /**
- * Allows read-access to the Rocketlet's settings,
+ * Allows read-access to the App's settings,
  * the certain server's settings along with environmental
  * variables all of which are not user created.
  */
 export interface IEnvironmentRead {
-    /** Gets an instance of the Rocketlet's settings reader. */
+    /** Gets an instance of the App's settings reader. */
     getSettings(): ISettingRead;
 
     /**

@@ -2,7 +2,7 @@ import { ISetting } from '../settings/ISetting';
 
 /**
  * Reader for the settings inside of the server (Rocket.Chat).
- * Only a subset of them are exposed to Rocketlets.
+ * Only a subset of them are exposed to Apps.
  */
 export interface IServerSettingRead {
     /**
@@ -27,7 +27,7 @@ export interface IServerSettingRead {
 
     /**
      * Gets all of the server settings which are exposed
-     * to the Rocketlets.
+     * to the Apps.
      *
      * @return array of the exposed settings
      */

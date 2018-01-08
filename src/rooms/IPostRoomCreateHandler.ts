@@ -3,7 +3,7 @@ import { IRoom } from './IRoom';
 
 export interface IPostRoomCreateHandler {
     /**
-     * Enables the handler to signal to the Rocketlets framework whether
+     * Enables the handler to signal to the Apps framework whether
      * this handler should actually be executed for after the room
      * has been created.
      *

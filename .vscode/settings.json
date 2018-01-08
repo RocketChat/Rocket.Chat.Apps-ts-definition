@@ -3,9 +3,9 @@
     "json.schemas": [
         {
             "fileMatch": [
-                "*rocketlet.json"
+                "*app.json"
             ],
-            "url": "./src/rocketlet-schema.json"
+            "url": "./src/app-schema.json"
         }
     ]
 }
