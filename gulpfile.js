@@ -40,7 +40,7 @@ gulp.task('npm-files', function _npmFileGathering() {
 });
 
 gulp.task('publish', ['default'], shell.task([
-    'cd dist && pwd && npm publish && npm pack'
+    'cd dist && pwd && npm publish --access public && npm pack'
 ]));
 
 gulp.task('default', ['clean-generated', 'lint-ts', 'compile-ts', 'npm-files']);
