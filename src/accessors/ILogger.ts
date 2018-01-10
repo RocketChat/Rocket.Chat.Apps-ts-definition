@@ -1,3 +1,4 @@
+import { AppMethod } from '../metadata/AppMethod';
 import { ILogEntry } from './ILogEntry';
 
 /**
@@ -6,12 +7,7 @@ import { ILogEntry } from './ILogEntry';
  * allow people to easily see what happened (users) or debug what went wrong.
  */
 export interface ILogger {
-    debugEntries: Array<ILogEntry>;
-    infoEntries: Array<ILogEntry>;
-    logEntries: Array<ILogEntry>;
-    warnEntries: Array<ILogEntry>;
-    errorEntries: Array<ILogEntry>;
-    successEntries: Array<ILogEntry>;
+    method: AppMethod;
 
     debug(...items: Array<any>): void;
     info(...items: Array<any>): void;
@@ -19,4 +15,7 @@ export interface ILogger {
     warn(...items: Array<any>): void;
     error(...items: Array<any>): void;
     success(...items: Array<any>): void;
+
+    getMethod(): AppMethod;
+    getEntries(): Array<ILogEntry>;
 }

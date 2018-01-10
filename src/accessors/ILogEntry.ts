@@ -7,7 +7,7 @@ export interface ILogEntry {
     /** The function name who did this logging, this is automatically added (can be null). */
     caller?: string;
     /** The severity rate, this is automatically added. */
-    severity?: LogMessageSeverity;
+    severity: LogMessageSeverity;
     /** When this entry was made. */
     timestamp: Date;
     /** The items which were logged. */
