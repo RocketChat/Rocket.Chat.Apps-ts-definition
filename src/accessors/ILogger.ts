@@ -16,6 +16,14 @@ export interface ILogger {
     error(...items: Array<any>): void;
     success(...items: Array<any>): void;
 
-    getMethod(): AppMethod;
+    /** Gets the entries logged. */
     getEntries(): Array<ILogEntry>;
+    /** Gets the method which this logger is for. */
+    getMethod(): AppMethod;
+    /** Gets when this logger was constructed. */
+    getStartTime(): Date;
+    /** Gets the end time, usually Date.now(). */
+    getEndTime(): Date;
+    /** Gets the amount of time this was a logger, start - Date.now(). */
+    getTotalTime(): number;
 }
