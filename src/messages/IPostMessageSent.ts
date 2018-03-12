@@ -10,7 +10,7 @@ export interface IPostMessageSent {
      * @param message The message which was sent
      * @param read An accessor to the environment
      * @param http An accessor to the outside world
-     * @return whether to run the executor function
+     * @returns whether to run the executor function
      */
     checkPostMessageSent?(message: IMessage, read: IRead, http: IHttp): boolean;
 
@@ -20,7 +20,7 @@ export interface IPostMessageSent {
      * @param message The message which was sent
      * @param read An accessor to the environment
      * @param http An accessor to the outside world
-     * @return the execution result
+     * @returns the execution result
      */
     executePostMessageSent(message: IMessage, read: IRead, http: IHttp, persistence: IPersistence): IExecutionResult;
 }

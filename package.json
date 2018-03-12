@@ -7,7 +7,7 @@
   "scripts": {
     "start": "gulp",
     "go-publish": "gulp publish",
-    "gen-doc": "typedoc --mode file --out docs/ src/"
+    "gen-doc": "typedoc --mode file --excludePrivate --target ES6 --name 'Rocket.Chat Apps TypeScript Definition' --out docs/ src/"
   },
   "repository": {
     "type": "git",

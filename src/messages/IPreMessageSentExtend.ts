@@ -13,7 +13,7 @@ export interface IPreMessageSentExtend {
      * @param message The message which is being sent
      * @param read An accessor to the environment
      * @param http An accessor to the outside world
-     * @return whether to run the execute or not
+     * @returns whether to run the execute or not
      */
     checkPreMessageSentExtend?(message: IMessage, read: IRead, http: IHttp): boolean;
 
@@ -24,8 +24,9 @@ export interface IPreMessageSentExtend {
      * @param extend An accessor for modifying the messages non-destructively
      * @param read An accessor to the environment
      * @param http An accessor to the outside world
+     * @param persistence An accessor to the App's persistence storage
+     * @returns the resulting message
      */
-    // TODO: Determine a better result of this method
     executePreMessageSentExtend(message: IMessage,
                                 extend: IMessageExtender,
                                 read: IRead,

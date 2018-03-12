@@ -10,7 +10,7 @@ export interface IPreMessageSentModify {
      * @param message The message which is being sent
      * @param read An accessor to the environment
      * @param http An accessor to the outside world
-     * @return whether to run the execute or not
+     * @returns whether to run the execute or not
      */
     checkPreMessageSentModify?(message: IMessage, read: IRead, http: IHttp): boolean;
 
@@ -22,6 +22,7 @@ export interface IPreMessageSentModify {
      * @param read An accessor to the environment
      * @param http An accessor to the outside world
      * @param persistence An accessor to the App's persistence
+     * @returns the resulting message
      */
     executePreMessageSentModify(message: IMessage, builder: IMessageBuilder, read: IRead, http: IHttp, persistence: IPersistence): IMessage;
 }
