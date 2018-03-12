@@ -1,4 +1,4 @@
-import { IExecutionResult, IHttp, IPersistence, IRead } from '../accessors';
+import { IHttp, IPersistence, IRead } from '../accessors';
 import { IMessage } from './IMessage';
 
 export interface IPostMessageSent {
@@ -20,7 +20,6 @@ export interface IPostMessageSent {
      * @param message The message which was sent
      * @param read An accessor to the environment
      * @param http An accessor to the outside world
-     * @returns the execution result
      */
-    executePostMessageSent(message: IMessage, read: IRead, http: IHttp, persistence: IPersistence): IExecutionResult;
+    executePostMessageSent(message: IMessage, read: IRead, http: IHttp, persistence: IPersistence): void;
 }
