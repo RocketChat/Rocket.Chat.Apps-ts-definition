@@ -65,7 +65,26 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<h1 id="rocket-chat-apps-typescript-definitions">Rocket.Chat Apps TypeScript Definitions</h1>
-				<p>More information coming soon....</p>
+				<h2 id="handlers">Handlers</h2>
+				<p>Handlers are essentially &quot;listeners&quot; for different events, except there are various ways to handle an event.
+					When something happens there is <code>pre</code> and <code>post</code> handlers.
+					The set of <code>pre</code> handlers happens before the event is finalized.
+					The set of <code>post</code> handlers happens after the event is finalized.
+				With that said, the rule of thumb is that if you are going to modify, extend, or change the data backing the event then that should be done in the <code>pre</code> handlers. If you are simply wanting to listen for when something happens and not modify anything, then the <code>post</code> is the way to go.</p>
+				<p>The order in which they happen is:</p>
+				<ul>
+					<li>Pre<strong>Event</strong>Prevent</li>
+					<li>Pre<strong>Event</strong>Extend</li>
+					<li>Pre<strong>Event</strong>Modify</li>
+					<li>Post<strong>Event</strong></li>
+				</ul>
+				<p>Here is an explanation of what each of them means:</p>
+				<ul>
+					<li><strong>Prevent</strong>: This is ran to determine whether the event should be prevented or not.</li>
+					<li><strong>Extend</strong>: This is ran to allow extending the data without being destructive of the data (adding an attachment to a message for example).</li>
+					<li><strong>Modify</strong>: This is ran and allows for destructive changes to the data (change any and everything).</li>
+					<li>Post<strong>Event</strong>: Is mostly for simple listening and no changes can be made to the data.</li>
+				</ul>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -223,7 +242,7 @@
 						<a href="interfaces/ipersistenceread.html" class="tsd-kind-icon">IPersistence<wbr>Read</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/ipostmessagesenthandler.html" class="tsd-kind-icon">IPost<wbr>Message<wbr>Sent<wbr>Handler</a>
+						<a href="interfaces/ipostmessagesent.html" class="tsd-kind-icon">IPost<wbr>Message<wbr>Sent</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/ipostroomcreatehandler.html" class="tsd-kind-icon">IPost<wbr>Room<wbr>Create<wbr>Handler</a>

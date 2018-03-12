@@ -3,7 +3,7 @@ import { IMessageAttachment } from './IMessageAttachment';
 import { IMessageAttachmentAuthor } from './IMessageAttachmentAuthor';
 import { IMessageAttachmentField } from './IMessageAttachmentField';
 import { IMessageAttachmentTitle } from './IMessageAttachmentTitle';
-import { IPostMessageSentHandler } from './IPostMessageSentHandler';
+import { IPostMessageSent } from './IPostMessageSent';
 import { IPreMessageSentExtend } from './IPreMessageSentExtend';
 import { IPreMessageSentModify } from './IPreMessageSentModify';
 import { IPreMessageSentPrevent } from './IPreMessageSentPrevent';
@@ -14,7 +14,7 @@ export {
     IMessageAttachmentAuthor,
     IMessageAttachmentTitle,
     IMessageAttachmentField,
-    IPostMessageSentHandler,
+    IPostMessageSent,
     IPreMessageSentExtend,
     IPreMessageSentModify,
     IPreMessageSentPrevent,

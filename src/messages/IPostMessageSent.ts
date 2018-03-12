@@ -1,7 +1,7 @@
 import { IExecutionResult, IHttp, IPersistence, IRead } from '../accessors';
 import { IMessage } from './IMessage';
 
-export interface IPostMessageSentHandler {
+export interface IPostMessageSent {
     /**
      * Enables the handler to signal to the Apps framework whether
      * this handler should actually be executed for after the message
