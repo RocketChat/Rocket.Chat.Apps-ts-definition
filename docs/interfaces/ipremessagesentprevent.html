@@ -107,22 +107,39 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/6f3557e/src/messages/IPreMessageSentPrevent.ts#L8">messages/IPreMessageSentPrevent.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/8ddbeeb/src/messages/IPreMessageSentPrevent.ts#L18">messages/IPreMessageSentPrevent.ts:18</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Enables the handler to signal to the Apps framework whether
+										this handler should actually be executed for the message
+									about to be sent.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>message: <a href="imessage.html" class="tsd-signature-type">IMessage</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The message which is being sent</p>
+									</div>
 								</li>
 								<li>
 									<h5>read: <a href="iread.html" class="tsd-signature-type">IRead</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An accessor to the environment</p>
+									</div>
 								</li>
 								<li>
 									<h5>http: <a href="ihttp.html" class="tsd-signature-type">IHttp</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An accessor to the outside world</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>whether to run the prevent or not</p>
 						</li>
 					</ul>
 				</section>
@@ -136,25 +153,43 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/6f3557e/src/messages/IPreMessageSentPrevent.ts#L10">messages/IPreMessageSentPrevent.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/8ddbeeb/src/messages/IPreMessageSentPrevent.ts#L29">messages/IPreMessageSentPrevent.ts:29</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Method which is to be used to prevent a message from being sent.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>message: <a href="imessage.html" class="tsd-signature-type">IMessage</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The message about to be sent</p>
+									</div>
 								</li>
 								<li>
 									<h5>read: <a href="iread.html" class="tsd-signature-type">IRead</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An accessor to the environment</p>
+									</div>
 								</li>
 								<li>
 									<h5>http: <a href="ihttp.html" class="tsd-signature-type">IHttp</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An accessor to the outside world</p>
+									</div>
 								</li>
 								<li>
 									<h5>persistence: <a href="ipersistence.html" class="tsd-signature-type">IPersistence</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An accessor to the App&#39;s persistence storage</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>whether to prevent the message from being sent</p>
 						</li>
 					</ul>
 				</section>

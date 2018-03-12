@@ -18,3 +18,6 @@ Here is an explanation of what each of them means:
 * **Extend**: This is ran to allow extending the data without being destructive of the data (adding an attachment to a message for example).
 * **Modify**: This is ran and allows for destructive changes to the data (change any and everything).
 * Post**Event**: Is mostly for simple listening and no changes can be made to the data.
+
+## Generating/Updating Documentation
+To update or generate the documentation, please commit your changes first and then in a second commit provide the updated documentation.
