@@ -1,9 +1,7 @@
 import { IHttp, IPersistence, IRead } from '../accessors';
 import { IMessage } from './IMessage';
 
-/**
- * Handler which is called to determine whether a user is allowed to send a message or not.
- */
+/**  Handler which is called to determine whether a user is allowed to send a message or not. */
 export interface IPreMessageSentPrevent {
     /**
      * Enables the handler to signal to the Apps framework whether

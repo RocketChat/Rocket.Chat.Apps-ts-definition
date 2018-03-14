@@ -1,6 +1,7 @@
 import { IHttp, IPersistence, IRead } from '../accessors';
 import { IMessage } from './IMessage';
 
+/** Handler for after a message is sent. */
 export interface IPostMessageSent {
     /**
      * Enables the handler to signal to the Apps framework whether
@@ -20,6 +21,7 @@ export interface IPostMessageSent {
      * @param message The message which was sent
      * @param read An accessor to the environment
      * @param http An accessor to the outside world
+     * @param persistence An accessor to the App's persistence
      */
     executePostMessageSent(message: IMessage, read: IRead, http: IHttp, persistence: IPersistence): void;
 }

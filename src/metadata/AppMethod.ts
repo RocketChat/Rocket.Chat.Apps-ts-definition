@@ -6,4 +6,22 @@ export enum AppMethod {
     ONDISABLE = 'onDisable',
     ONSETTINGUPDATED = 'onSettingUpdated',
     SETSTATUS = 'setStatus',
+    // Message handlers
+    CHECKPREMESSAGESENTPREVENT = 'checkPreMessageSentPrevent',
+    EXECUTEPREMESSAGESENTPREVENT = 'executePreMessageSentPrevent',
+    CHECKPREMESSAGESENTEXTEND = 'checkPreMessageSentExtend',
+    EXECUTEPREMESSAGESENTEXTEND = 'executePreMessageSentExtend',
+    CHECKPREMESSAGESENTMODIFY = 'checkPreMessageSentModify',
+    EXECUTEPREMESSAGESENTMODIFY = 'executePreMessageSentModify',
+    CHECKPOSTMESSAGESENT = 'checkPostMessageSent',
+    EXECUTEPOSTMESSAGESENT = 'executePostMessageSent',
+    // Room handlers
+    CHECKPREROOMCREATEPREVENT = 'checkPreRoomCreatePrevent',
+    EXECUTEPREROOMCREATEPREVENT = 'executePreRoomCreatePrevent',
+    CHECKPREROOMCREATEEXTEND = 'checkPreRoomCreateExtend',
+    EXECUTEPREROOMCREATEEXTEND = 'executePreRoomCreateExtend',
+    CHECKPREROOMCREATEMODIFY = 'checkPreRoomCreateModify',
+    EXECUTEPREROOMCREATEMODIFY = 'executePreRoomCreateModify',
+    CHECKPOSTROOMCREATE = 'checkPostRoomCreate',
+    EXECUTEPOSTROOMCREATE = 'executePostRoomCreate',
 }

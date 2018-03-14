@@ -1,6 +1,7 @@
 import { IHttp, IMessageBuilder, IPersistence, IRead } from '../accessors';
 import { IMessage } from './IMessage';
 
+/** Handler called when an App wants to modify a message in a destructive way. */
 export interface IPreMessageSentModify {
     /**
      * Enables the handler to signal to the Apps framework whether
