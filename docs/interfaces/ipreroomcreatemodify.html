@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IPreRoomCreateHandler | Rocket.Chat Apps TypeScript Definition</title>
+	<title>IPreRoomCreateModify | Rocket.Chat Apps TypeScript Definition</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,21 +56,28 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="ipreroomcreatehandler.html">IPreRoomCreateHandler</a>
+					<a href="ipreroomcreatemodify.html">IPreRoomCreateModify</a>
 				</li>
 			</ul>
-			<h1>Interface IPreRoomCreateHandler</h1>
+			<h1>Interface IPreRoomCreateModify</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Handler called when an App wants to modify a room in a destructive way.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IPreRoomCreateHandler</span>
+						<span class="target">IPreRoomCreateModify</span>
 					</li>
 				</ul>
 			</section>
@@ -81,8 +88,8 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="ipreroomcreatehandler.html#checkpreroomcreate" class="tsd-kind-icon">check<wbr>Pre<wbr>Room<wbr>Create</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="ipreroomcreatehandler.html#preroomcreate" class="tsd-kind-icon">pre<wbr>Room<wbr>Create</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="ipreroomcreatemodify.html#checkpreroomcreatemodify" class="tsd-kind-icon">check<wbr>Pre<wbr>Room<wbr>Create<wbr>Modify</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="ipreroomcreatemodify.html#executepreroomcreatemodify" class="tsd-kind-icon">execute<wbr>Pre<wbr>Room<wbr>Create<wbr>Modify</a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,16 +98,16 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="checkpreroomcreate" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> check<wbr>Pre<wbr>Room<wbr>Create</h3>
+					<a name="checkpreroomcreatemodify" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> check<wbr>Pre<wbr>Room<wbr>Create<wbr>Modify</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">check<wbr>Pre<wbr>Room<wbr>Create<span class="tsd-signature-symbol">(</span>room<span class="tsd-signature-symbol">: </span><a href="iroom.html" class="tsd-signature-type">IRoom</a>, read<span class="tsd-signature-symbol">: </span><a href="iread.html" class="tsd-signature-type">IRead</a>, http<span class="tsd-signature-symbol">: </span><a href="ihttp.html" class="tsd-signature-type">IHttp</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">check<wbr>Pre<wbr>Room<wbr>Create<wbr>Modify<span class="tsd-signature-symbol">(</span>room<span class="tsd-signature-symbol">: </span><a href="iroom.html" class="tsd-signature-type">IRoom</a>, read<span class="tsd-signature-symbol">: </span><a href="iread.html" class="tsd-signature-type">IRead</a>, http<span class="tsd-signature-symbol">: </span><a href="ihttp.html" class="tsd-signature-type">IHttp</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/af67165/src/rooms/IPreRoomCreateHandler.ts#L14">rooms/IPreRoomCreateHandler.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/f11afd7/src/rooms/IPreRoomCreateModify.ts#L15">rooms/IPreRoomCreateModify.ts:15</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -114,7 +121,7 @@
 								<li>
 									<h5>room: <a href="iroom.html" class="tsd-signature-type">IRoom</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The room which was created</p>
+										<p>The room which was being created</p>
 									</div>
 								</li>
 								<li>
@@ -136,34 +143,55 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="preroomcreate" class="tsd-anchor"></a>
-					<h3>pre<wbr>Room<wbr>Create</h3>
+					<a name="executepreroomcreatemodify" class="tsd-anchor"></a>
+					<h3>execute<wbr>Pre<wbr>Room<wbr>Create<wbr>Modify</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">pre<wbr>Room<wbr>Create<span class="tsd-signature-symbol">(</span>room<span class="tsd-signature-symbol">: </span><a href="iroom.html" class="tsd-signature-type">IRoom</a>, read<span class="tsd-signature-symbol">: </span><a href="iread.html" class="tsd-signature-type">IRead</a>, http<span class="tsd-signature-symbol">: </span><a href="ihttp.html" class="tsd-signature-type">IHttp</a>, persistence<span class="tsd-signature-symbol">: </span><a href="ipersistence.html" class="tsd-signature-type">IPersistence</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">execute<wbr>Pre<wbr>Room<wbr>Create<wbr>Modify<span class="tsd-signature-symbol">(</span>room<span class="tsd-signature-symbol">: </span><a href="iroom.html" class="tsd-signature-type">IRoom</a>, builder<span class="tsd-signature-symbol">: </span><a href="iroombuilder.html" class="tsd-signature-type">IRoomBuilder</a>, read<span class="tsd-signature-symbol">: </span><a href="iread.html" class="tsd-signature-type">IRead</a>, http<span class="tsd-signature-symbol">: </span><a href="ihttp.html" class="tsd-signature-type">IHttp</a>, persistence<span class="tsd-signature-symbol">: </span><a href="ipersistence.html" class="tsd-signature-type">IPersistence</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="iroom.html" class="tsd-signature-type">IRoom</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/af67165/src/rooms/IPreRoomCreateHandler.ts#L16">rooms/IPreRoomCreateHandler.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/f11afd7/src/rooms/IPreRoomCreateModify.ts#L27">rooms/IPreRoomCreateModify.ts:27</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Method which is to be used to prevent a room from being created.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>room: <a href="iroom.html" class="tsd-signature-type">IRoom</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The room about to be created</p>
+									</div>
+								</li>
+								<li>
+									<h5>builder: <a href="iroombuilder.html" class="tsd-signature-type">IRoomBuilder</a></h5>
 								</li>
 								<li>
 									<h5>read: <a href="iread.html" class="tsd-signature-type">IRead</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An accessor to the environment</p>
+									</div>
 								</li>
 								<li>
 									<h5>http: <a href="ihttp.html" class="tsd-signature-type">IHttp</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An accessor to the outside world</p>
+									</div>
 								</li>
 								<li>
 									<h5>persistence: <a href="ipersistence.html" class="tsd-signature-type">IPersistence</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An accessor to the App&#39;s persistence storage</p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="iroom.html" class="tsd-signature-type">IRoom</a></h4>
+							<p>the resulting room</p>
 						</li>
 					</ul>
 				</section>
@@ -182,13 +210,13 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="ipreroomcreatehandler.html" class="tsd-kind-icon">IPre<wbr>Room<wbr>Create<wbr>Handler</a>
+						<a href="ipreroomcreatemodify.html" class="tsd-kind-icon">IPre<wbr>Room<wbr>Create<wbr>Modify</a>
 						<ul>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="ipreroomcreatehandler.html#checkpreroomcreate" class="tsd-kind-icon">check<wbr>Pre<wbr>Room<wbr>Create</a>
+								<a href="ipreroomcreatemodify.html#checkpreroomcreatemodify" class="tsd-kind-icon">check<wbr>Pre<wbr>Room<wbr>Create<wbr>Modify</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="ipreroomcreatehandler.html#preroomcreate" class="tsd-kind-icon">pre<wbr>Room<wbr>Create</a>
+								<a href="ipreroomcreatemodify.html#executepreroomcreatemodify" class="tsd-kind-icon">execute<wbr>Pre<wbr>Room<wbr>Create<wbr>Modify</a>
 							</li>
 						</ul>
 					</li>
