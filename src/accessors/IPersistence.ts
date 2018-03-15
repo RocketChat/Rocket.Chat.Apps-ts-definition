@@ -69,5 +69,5 @@ export interface IPersistence {
      * @param associations the information about the associations for the records to be removed
      * @return the data of the removed records
      */
-    removeByAssociations(associations: Array<RocketChatAssociationRecord>): Array<number>;
+    removeByAssociations(associations: Array<RocketChatAssociationRecord>): Array<object>;
 }
