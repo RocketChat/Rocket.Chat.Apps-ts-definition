@@ -1,5 +1,6 @@
 import { IEnvironmentRead } from './IEnvironmentRead';
 import { IMessageRead } from './IMessageRead';
+import { INotifier } from './IModify';
 import { IPersistenceRead } from './IPersistenceRead';
 import { IRoomRead } from './IRoomRead';
 import { IUserRead } from './IUserRead';
@@ -24,4 +25,7 @@ export interface IRead {
 
     /** Gets the IUserRead instance. */
     getUserReader(): IUserRead;
+
+    /** Gets the INotifier for notifying users/rooms. */
+    getNotifier(): INotifier;
 }

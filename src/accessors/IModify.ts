@@ -40,6 +40,9 @@ export interface INotifier {
      * @param message The message content to notify users about
      */
     notifyRoom(room: IRoom, message: IMessage): void;
+
+    /** Gets a new message builder for building a notification message. */
+    getMessageBuilder(): IMessageBuilder;
 }
 
 export interface IModifyUpdater {
