@@ -25,10 +25,10 @@ export interface INotifier {
      * **Note**: Notifications only are shown to the user if they are
      * online and it only stays around for the duration of their session.
      *
-     * @param room The room which to notify the users in
-     * @param message The message of which to notify users about (doesn't support i18n)
+     * @param user The user who should be notified
+     * @param message The message with the content to notify the user about
      */
-    notifyUser(user: IUser, message: string): void;
+    notifyUser(user: IUser, message: IMessage): void;
 
     /**
      * Notifies all of the users in the provided room.
@@ -37,9 +37,9 @@ export interface INotifier {
      * and it only stays around for the duration of their session.
      *
      * @param room The room which to notify the users in
-     * @param message The message of which to notify users about (doesn't support i18n)
+     * @param message The message content to notify users about
      */
-    notifyRoom(room: IRoom, message: string): void;
+    notifyRoom(room: IRoom, message: IMessage): void;
 }
 
 export interface IModifyUpdater {
