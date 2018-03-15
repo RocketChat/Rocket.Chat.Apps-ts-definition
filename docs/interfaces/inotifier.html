@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RequestMethod | Rocket.Chat Apps TypeScript Definition</title>
+	<title>INotifier | Rocket.Chat Apps TypeScript Definition</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,73 +56,114 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="requestmethod.html">RequestMethod</a>
+					<a href="inotifier.html">INotifier</a>
 				</li>
 			</ul>
-			<h1>Enumeration RequestMethod</h1>
+			<h1>Interface INotifier</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">INotifier</span>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Enumeration members</h3>
+							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="requestmethod.html#delete" class="tsd-kind-icon">DELETE</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="requestmethod.html#get" class="tsd-kind-icon">GET</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="requestmethod.html#post" class="tsd-kind-icon">POST</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="requestmethod.html#put" class="tsd-kind-icon">PUT</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="inotifier.html#notifyroom" class="tsd-kind-icon">notify<wbr>Room</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="inotifier.html#notifyuser" class="tsd-kind-icon">notify<wbr>User</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Enumeration members</h2>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="delete" class="tsd-anchor"></a>
-					<h3>DELETE</h3>
-					<div class="tsd-signature tsd-kind-icon">DELETE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;delete&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/7288a4d/src/accessors/IHttp.ts#L22">accessors/IHttp.ts:22</a></li>
-						</ul>
-					</aside>
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="notifyroom" class="tsd-anchor"></a>
+					<h3>notify<wbr>Room</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">notify<wbr>Room<span class="tsd-signature-symbol">(</span>room<span class="tsd-signature-symbol">: </span><a href="iroom.html" class="tsd-signature-type">IRoom</a>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/7288a4d/src/accessors/IModify.ts#L42">accessors/IModify.ts:42</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Notifies all of the users in the provided room.</p>
+								</div>
+								<p><strong>Note</strong>: Notifications only are shown to those online
+								and it only stays around for the duration of their session.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>room: <a href="iroom.html" class="tsd-signature-type">IRoom</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The room which to notify the users in</p>
+									</div>
+								</li>
+								<li>
+									<h5>message: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The message of which to notify users about (doesn&#39;t support i18n)</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="get" class="tsd-anchor"></a>
-					<h3>GET</h3>
-					<div class="tsd-signature tsd-kind-icon">GET<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;get&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/7288a4d/src/accessors/IHttp.ts#L19">accessors/IHttp.ts:19</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="post" class="tsd-anchor"></a>
-					<h3>POST</h3>
-					<div class="tsd-signature tsd-kind-icon">POST<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;post&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/7288a4d/src/accessors/IHttp.ts#L20">accessors/IHttp.ts:20</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="put" class="tsd-anchor"></a>
-					<h3>PUT</h3>
-					<div class="tsd-signature tsd-kind-icon">PUT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;put&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/7288a4d/src/accessors/IHttp.ts#L21">accessors/IHttp.ts:21</a></li>
-						</ul>
-					</aside>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="notifyuser" class="tsd-anchor"></a>
+					<h3>notify<wbr>User</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">notify<wbr>User<span class="tsd-signature-symbol">(</span>user<span class="tsd-signature-symbol">: </span><a href="iuser.html" class="tsd-signature-type">IUser</a>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/7288a4d/src/accessors/IModify.ts#L31">accessors/IModify.ts:31</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Notifies the provided user of the provided message.</p>
+								</div>
+								<p><strong>Note</strong>: Notifications only are shown to the user if they are
+								online and it only stays around for the duration of their session.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>user: <a href="iuser.html" class="tsd-signature-type">IUser</a></h5>
+								</li>
+								<li>
+									<h5>message: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The message of which to notify users about (doesn&#39;t support i18n)</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -138,20 +179,14 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-enum">
-						<a href="requestmethod.html" class="tsd-kind-icon">Request<wbr>Method</a>
+					<li class="current tsd-kind-interface">
+						<a href="inotifier.html" class="tsd-kind-icon">INotifier</a>
 						<ul>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="requestmethod.html#delete" class="tsd-kind-icon">DELETE</a>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="inotifier.html#notifyroom" class="tsd-kind-icon">notify<wbr>Room</a>
 							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="requestmethod.html#get" class="tsd-kind-icon">GET</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="requestmethod.html#post" class="tsd-kind-icon">POST</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="requestmethod.html#put" class="tsd-kind-icon">PUT</a>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="inotifier.html#notifyuser" class="tsd-kind-icon">notify<wbr>User</a>
 							</li>
 						</ul>
 					</li>
