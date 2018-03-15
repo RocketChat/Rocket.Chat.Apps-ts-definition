@@ -9,6 +9,37 @@ export interface IModify {
     getExtender(): IModifyExtender;
 
     getUpdater(): IModifyUpdater;
+
+    /**
+     * Gets the accessor for sending notifications to a user or users in a room.
+     *
+     * @returns the notifier accessor
+     */
+    getNotifer(): INotifier;
+}
+
+export interface INotifier {
+    /**
+     * Notifies the provided user of the provided message.
+     *
+     * **Note**: Notifications only are shown to the user if they are
+     * online and it only stays around for the duration of their session.
+     *
+     * @param room The room which to notify the users in
+     * @param message The message of which to notify users about (doesn't support i18n)
+     */
+    notifyUser(user: IUser, message: string): void;
+
+    /**
+     * Notifies all of the users in the provided room.
+     *
+     * **Note**: Notifications only are shown to those online
+     * and it only stays around for the duration of their session.
+     *
+     * @param room The room which to notify the users in
+     * @param message The message of which to notify users about (doesn't support i18n)
+     */
+    notifyRoom(room: IRoom, message: string): void;
 }
 
 export interface IModifyUpdater {

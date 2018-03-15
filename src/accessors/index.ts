@@ -24,6 +24,7 @@ import {
     IModifyCreator,
     IModifyExtender,
     IModifyUpdater,
+    INotifier,
     IRoomBuilder,
     IRoomExtender,
 } from './IModify';
@@ -63,6 +64,7 @@ export {
     IModifyCreator,
     IModifyExtender,
     IModifyUpdater,
+    INotifier,
     IPersistence,
     IPersistenceRead,
     IRead,
