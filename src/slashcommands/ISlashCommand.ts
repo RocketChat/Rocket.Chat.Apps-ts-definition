@@ -1,4 +1,4 @@
-import { IHttp, IModify, IRead } from '../accessors';
+import { IHttp, IModify, IPersistence, IRead } from '../accessors';
 import { SlashCommandContext } from './SlashCommandContext';
 
 /**
@@ -14,5 +14,5 @@ export interface ISlashCommand {
     /** Optional. Permission value required for the user to have to see/use it. */
     permission?: string;
     /** The function which gets called when a user enters the command. */
-    executor(context: SlashCommandContext, read: IRead, modify: IModify, http: IHttp): void;
+    executor(context: SlashCommandContext, read: IRead, modify: IModify, http: IHttp, persis: IPersistence): void;
 }
