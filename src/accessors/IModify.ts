@@ -294,7 +294,8 @@ export interface IMessageBuilder {
 
     /**
      * Gets the resulting message that has been built up to the point of calling it.
-     * Note: modifying the returned value will have no effect.
+     *
+     * *Note:* This will error out if the Room has not been defined.
      */
     getMessage(): IMessage;
 }

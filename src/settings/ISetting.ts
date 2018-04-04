@@ -17,6 +17,8 @@ export interface ISetting {
     hidden?: boolean;
     /** The selectable values when the setting's type is "select". */
     values?: Array<ISettingSelectValue>;
+    /** Whether the **string** type is several lines or just one line. */
+    multiline?: boolean;
     /** The name of the section where to put this setting under. */
     section?: string;
     /** Name of the setting in the form of a i18n string. */
