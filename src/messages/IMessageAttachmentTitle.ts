@@ -3,6 +3,6 @@ export interface IMessageAttachmentTitle {
     value?: string;
     /** Providing this makes the title clickable, pointing to this link. */
     link?: string;
-    /** When this is provided, a download icon appears and clicking this saves the link to file. */
-    downloadLink?: string;
+    /** When this is provided, a download icon appears and clicking this prompts a download. */
+    displayDownloadLink?: boolean;
 }
