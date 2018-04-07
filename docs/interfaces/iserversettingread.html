@@ -104,13 +104,13 @@
 					<a name="getall" class="tsd-anchor"></a>
 					<h3>get<wbr>All</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>All<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="isetting.html" class="tsd-signature-type">ISetting</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>All<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="iiterator.html" class="tsd-signature-type">IIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="isetting.html" class="tsd-signature-type">ISetting</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/d28b0db/src/accessors/IServerSettingRead.ts#L34">accessors/IServerSettingRead.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/c977d86/src/accessors/IServerSettingRead.ts#L35">accessors/IServerSettingRead.ts:35</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -119,8 +119,8 @@
 									to the Apps.</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="isetting.html" class="tsd-signature-type">ISetting</a><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>array of the exposed settings</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="iiterator.html" class="tsd-signature-type">IIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="isetting.html" class="tsd-signature-type">ISetting</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>an iterator of the exposed settings</p>
 						</li>
 					</ul>
 				</section>
@@ -128,13 +128,13 @@
 					<a name="getonebyid" class="tsd-anchor"></a>
 					<h3>get<wbr>One<wbr>ById</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>One<wbr>ById<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="isetting.html" class="tsd-signature-type">ISetting</a></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>One<wbr>ById<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="isetting.html" class="tsd-signature-type">ISetting</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/d28b0db/src/accessors/IServerSettingRead.ts#L16">accessors/IServerSettingRead.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/c977d86/src/accessors/IServerSettingRead.ts#L17">accessors/IServerSettingRead.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -153,7 +153,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="isetting.html" class="tsd-signature-type">ISetting</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="isetting.html" class="tsd-signature-type">ISetting</a><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>the setting</p>
 						</li>
 					</ul>
@@ -162,13 +162,13 @@
 					<a name="getvaluebyid" class="tsd-anchor"></a>
 					<h3>get<wbr>Value<wbr>ById</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Value<wbr>ById<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Value<wbr>ById<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/d28b0db/src/accessors/IServerSettingRead.ts#L26">accessors/IServerSettingRead.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/c977d86/src/accessors/IServerSettingRead.ts#L27">accessors/IServerSettingRead.ts:27</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -187,7 +187,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>the setting&#39;s value</p>
 						</li>
 					</ul>
@@ -196,13 +196,13 @@
 					<a name="isreadablebyid" class="tsd-anchor"></a>
 					<h3>is<wbr>Readable<wbr>ById</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Readable<wbr>ById<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Readable<wbr>ById<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/d28b0db/src/accessors/IServerSettingRead.ts#L42">accessors/IServerSettingRead.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/c977d86/src/accessors/IServerSettingRead.ts#L43">accessors/IServerSettingRead.ts:43</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -220,7 +220,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
