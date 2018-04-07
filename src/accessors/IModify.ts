@@ -28,7 +28,7 @@ export interface INotifier {
      * @param user The user who should be notified
      * @param message The message with the content to notify the user about
      */
-    notifyUser(user: IUser, message: IMessage): void;
+    notifyUser(user: IUser, message: IMessage): Promise<void>;
 
     /**
      * Notifies all of the users in the provided room.
@@ -39,7 +39,7 @@ export interface INotifier {
      * @param room The room which to notify the users in
      * @param message The message content to notify users about
      */
-    notifyRoom(room: IRoom, message: IMessage): void;
+    notifyRoom(room: IRoom, message: IMessage): Promise<void>;
 
     /** Gets a new message builder for building a notification message. */
     getMessageBuilder(): IMessageBuilder;
@@ -70,7 +70,7 @@ export interface IModifyUpdater {
      *
      * @param builder the builder instance
      */
-    finish(builder: IMessageBuilder | IRoomBuilder): void;
+    finish(builder: IMessageBuilder | IRoomBuilder): Promise<void>;
 }
 
 export interface IModifyExtender {
@@ -100,7 +100,7 @@ export interface IModifyExtender {
      *
      * @param extender the extender instance
      */
-    finish(extender: IRoomExtender | IMessageExtender): void;
+    finish(extender: IRoomExtender | IMessageExtender): Promise<void>;
 }
 
 export interface IModifyCreator {
@@ -128,7 +128,7 @@ export interface IModifyCreator {
      * @param builder the builder instance
      * @return the resulting `id` of the resulting object
      */
-    finish(builder: IMessageBuilder | IRoomBuilder): string;
+    finish(builder: IMessageBuilder | IRoomBuilder): Promise<string>;
 }
 
 export interface IMessageExtender {

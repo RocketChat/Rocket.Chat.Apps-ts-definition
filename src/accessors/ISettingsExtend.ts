@@ -13,5 +13,5 @@ export interface ISettingsExtend {
      *
      * @param setting the setting
      */
-    provideSetting(setting: ISetting): void;
+    provideSetting(setting: ISetting): Promise<void>;
 }

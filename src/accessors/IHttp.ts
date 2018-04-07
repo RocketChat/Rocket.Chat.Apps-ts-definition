@@ -6,13 +6,13 @@ import { IRead } from './IRead';
  * Based off of: https://github.com/meteor-typings/meteor/blob/master/1.4/main.d.ts#L869
  */
 export interface IHttp {
-    get(url: string, options?: IHttpRequest): IHttpResponse;
+    get(url: string, options?: IHttpRequest): Promise<IHttpResponse>;
 
-    post(url: string, options?: IHttpRequest): IHttpResponse;
+    post(url: string, options?: IHttpRequest): Promise<IHttpResponse>;
 
-    put(url: string, options?: IHttpRequest): IHttpResponse;
+    put(url: string, options?: IHttpRequest): Promise<IHttpResponse>;
 
-    del(url: string, options?: IHttpRequest): IHttpResponse;
+    del(url: string, options?: IHttpRequest): Promise<IHttpResponse>;
 }
 
 export enum RequestMethod {

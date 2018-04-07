@@ -13,7 +13,7 @@ export interface IPreMessageSentPrevent {
      * @param http An accessor to the outside world
      * @returns whether to run the prevent or not
      */
-    checkPreMessageSentPrevent?(message: IMessage, read: IRead, http: IHttp): boolean;
+    checkPreMessageSentPrevent?(message: IMessage, read: IRead, http: IHttp): Promise<boolean>;
 
     /**
      * Method which is to be used to prevent a message from being sent.
@@ -24,5 +24,5 @@ export interface IPreMessageSentPrevent {
      * @param persistence An accessor to the App's persistence storage
      * @returns whether to prevent the message from being sent
      */
-    executePreMessageSentPrevent(message: IMessage, read: IRead, http: IHttp, persistence: IPersistence): boolean;
+    executePreMessageSentPrevent(message: IMessage, read: IRead, http: IHttp, persistence: IPersistence): Promise<boolean>;
 }

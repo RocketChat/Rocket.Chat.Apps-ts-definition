@@ -1,4 +1,11 @@
-import { LogMessageSeverity } from './LogMessageSeverity';
+export enum LogMessageSeverity {
+    DEBUG = 'debug',
+    INFORMATION = 'info',
+    LOG = 'log',
+    WARNING = 'warning',
+    ERROR = 'error',
+    SUCCESS = 'success',
+}
 
 /**
  * Message which will be passed to a UI (either in a log or in the application's UI)

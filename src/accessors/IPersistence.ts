@@ -12,7 +12,7 @@ export interface IPersistence {
      * @param data the actual data to store, must be an object otherwise it will error out.
      * @return the resulting record's id
      */
-    create(data: object): string;
+    create(data: object): Promise<string>;
 
     /**
      * Creates a new record in the App's persistent storage with the associated information
@@ -22,7 +22,7 @@ export interface IPersistence {
      * @param association the association data which includes the model and record id
      * @return the resulting record's id
      */
-    createWithAssociation(data: object, association: RocketChatAssociationRecord): string;
+    createWithAssociation(data: object, association: RocketChatAssociationRecord): Promise<string>;
 
     /**
      * Creates a new record in the App's persistent storage with the data being
@@ -32,7 +32,7 @@ export interface IPersistence {
      * @param associations an array of association data which includes the model and record id
      * @return the resulting record's id
      */
-    createWithAssociations(data: object, associations: Array<RocketChatAssociationRecord>): string;
+    createWithAssociations(data: object, associations: Array<RocketChatAssociationRecord>): Promise<string>;
 
     /**
      * Updates an existing record with the data provided in the App's persistent storage.
@@ -43,7 +43,7 @@ export interface IPersistence {
      * @param upsert whether a record should be created if the id to be updated does not exist
      * @return the id of the updated/upserted record
      */
-    update(id: string, data: object, upsert?: boolean): string;
+    update(id: string, data: object, upsert?: boolean): Promise<string>;
 
     /**
      * Removes a record by the provided id and returns the removed record.
@@ -51,7 +51,7 @@ export interface IPersistence {
      * @param id of the record to remove
      * @return the data record which was removed
      */
-    remove(id: string): object;
+    remove(id: string): Promise<object>;
 
     /**
      * Removes all of the records in persistent storage which are associated with the provided information.
@@ -59,7 +59,7 @@ export interface IPersistence {
      * @param association the information about the association for the records to be removed
      * @return the data of the removed records
      */
-    removeByAssociation(association: RocketChatAssociationRecord): Array<object>;
+    removeByAssociation(association: RocketChatAssociationRecord): Promise<Array<object>>;
 
     /**
      * Removes all of the records in persistent storage which are associated with the provided information.
@@ -69,5 +69,5 @@ export interface IPersistence {
      * @param associations the information about the associations for the records to be removed
      * @return the data of the removed records
      */
-    removeByAssociations(associations: Array<RocketChatAssociationRecord>): Array<object>;
+    removeByAssociations(associations: Array<RocketChatAssociationRecord>): Promise<Array<object>>;
 }

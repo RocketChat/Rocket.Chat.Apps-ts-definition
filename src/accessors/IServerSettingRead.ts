@@ -1,4 +1,5 @@
 import { ISetting } from '../settings/ISetting';
+import { IIterator } from './IIterator';
 
 /**
  * Reader for the settings inside of the server (Rocket.Chat).
@@ -13,7 +14,7 @@ export interface IServerSettingRead {
      * @param id the id of the setting to get
      * @return the setting
      */
-    getOneById(id: string): ISetting;
+    getOneById(id: string): Promise<ISetting>;
 
     /**
      * Gets a server setting's value by id.
@@ -23,15 +24,15 @@ export interface IServerSettingRead {
      * @param id the id of the setting to get
      * @return the setting's value
      */
-    getValueById(id: string): any;
+    getValueById(id: string): Promise<any>;
 
     /**
      * Gets all of the server settings which are exposed
      * to the Apps.
      *
-     * @return array of the exposed settings
+     * @return an iterator of the exposed settings
      */
-    getAll(): Array<ISetting>;
+    getAll(): Promise<IIterator<ISetting>>;
 
     /**
      * Checks if the server setting for the id provided is readable,
@@ -39,5 +40,5 @@ export interface IServerSettingRead {
      *
      * @param id the server setting id
      */
-    isReadableById(id: string): boolean;
+    isReadableById(id: string): Promise<boolean>;
 }

@@ -119,8 +119,8 @@ export abstract class App implements IApp {
      * Method which will be called when the App is initialized. This is the recommended place
      * to add settings and slash commands. If an error is thrown, all commands will be unregistered.
      */
-    public initialize(configurationExtend: IConfigurationExtend, environmentRead: IEnvironmentRead): void {
-        this.extendConfiguration(configurationExtend, environmentRead);
+    public async initialize(configurationExtend: IConfigurationExtend, environmentRead: IEnvironmentRead): Promise<void> {
+        await this.extendConfiguration(configurationExtend, environmentRead);
     }
 
     /**
@@ -132,7 +132,7 @@ export abstract class App implements IApp {
      *
      * @return whether the App should be enabled or not
      */
-    public onEnable(environment: IEnvironmentRead, configurationModify: IConfigurationModify): boolean {
+    public async onEnable(environment: IEnvironmentRead, configurationModify: IConfigurationModify): Promise<boolean> {
         return true;
     }
 
@@ -140,7 +140,7 @@ export abstract class App implements IApp {
      * Method which is called when this App is disabled and it can be called several times.
      * If this App was enabled and then the user disabled it, this method will be called.
      */
-    public onDisable(configurationModify: IConfigurationModify): void {
+    public async onDisable(configurationModify: IConfigurationModify): Promise<void> {
         return;
     }
 
@@ -153,7 +153,7 @@ export abstract class App implements IApp {
      * @param reader the reader accessor
      * @param http an accessor to the outside world
      */
-    public onSettingUpdated(setting: ISetting, configurationModify: IConfigurationModify, read: IRead, http: IHttp): void {
+    public async onSettingUpdated(setting: ISetting, configurationModify: IConfigurationModify, read: IRead, http: IHttp): Promise<void> {
         return;
     }
 
@@ -161,7 +161,7 @@ export abstract class App implements IApp {
      * Method will be called during initialization. It allows for adding custom configuration options and defaults
      * @param configuration
      */
-    protected extendConfiguration(configuration: IConfigurationExtend, environmentRead: IEnvironmentRead): void {
+    protected async extendConfiguration(configuration: IConfigurationExtend, environmentRead: IEnvironmentRead): Promise<void> {
         return;
     }
 

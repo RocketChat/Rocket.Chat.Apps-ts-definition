@@ -8,11 +8,11 @@ import { IIterator } from './IIterator';
  * rooms in a read-only-fashion.
  */
 export interface IRoomRead {
-    getById(id: string): IRoom | undefined;
+    getById(id: string): Promise<IRoom | undefined>;
 
-    getByName(name: string): IRoom | undefined;
+    getByName(name: string): Promise<IRoom | undefined>;
 
-    getMessages(roomId: string): IIterator<IMessage>;
+    getMessages(roomId: string): Promise<IIterator<IMessage>>;
 
-    getMembers(roomId: string): IIterator<IUser>;
+    getMembers(roomId: string): Promise<IIterator<IUser>>;
 }

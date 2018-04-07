@@ -11,7 +11,7 @@ export interface IPreRoomCreatePrevent {
      * @param http An accessor to the outside world
      * @return whether to run the execute or not
      */
-    checkPreRoomCreatePrevent?(room: IRoom, read: IRead, http: IHttp): boolean;
+    checkPreRoomCreatePrevent?(room: IRoom, read: IRead, http: IHttp): Promise<boolean>;
 
     /**
      * Method which is to be used to prevent a room from being created.
@@ -22,5 +22,5 @@ export interface IPreRoomCreatePrevent {
      * @param persistence An accessor to the App's persistence storage
      * @returns whether to prevent the room from being created
      */
-    executePreRoomCreatePrevent(room: IRoom, read: IRead, http: IHttp, persistence: IPersistence): boolean;
+    executePreRoomCreatePrevent(room: IRoom, read: IRead, http: IHttp, persistence: IPersistence): Promise<boolean>;
 }

@@ -13,7 +13,7 @@ export interface IPreMessageSentModify {
      * @param http An accessor to the outside world
      * @returns whether to run the execute or not
      */
-    checkPreMessageSentModify?(message: IMessage, read: IRead, http: IHttp): boolean;
+    checkPreMessageSentModify?(message: IMessage, read: IRead, http: IHttp): Promise<boolean>;
 
     /**
      * Method which is to be used to destructively modify the message.
@@ -25,5 +25,5 @@ export interface IPreMessageSentModify {
      * @param persistence An accessor to the App's persistence
      * @returns the resulting message
      */
-    executePreMessageSentModify(message: IMessage, builder: IMessageBuilder, read: IRead, http: IHttp, persistence: IPersistence): IMessage;
+    executePreMessageSentModify(message: IMessage, builder: IMessageBuilder, read: IRead, http: IHttp, persistence: IPersistence): Promise<IMessage>;
 }
