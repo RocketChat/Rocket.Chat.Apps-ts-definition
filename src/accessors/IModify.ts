@@ -53,7 +53,7 @@ export interface IModifyUpdater {
      * @param messageId the id of the existing message to modfiy and build
      * @param updater the user who is updating the message
      */
-    message(messageId: string, updater: IUser): IMessageBuilder;
+    message(messageId: string, updater: IUser): Promise<IMessageBuilder>;
 
     /**
      * Modifies an existing room.
@@ -62,7 +62,7 @@ export interface IModifyUpdater {
      * @param roomId the id of the existing room to modify and build
      * @param updater the user who is updating the room
      */
-    room(roomId: string, updater: IUser): IRoomBuilder;
+    room(roomId: string, updater: IUser): Promise<IRoomBuilder>;
 
     /**
      * Finishes the updating process, saving the object to the database.
@@ -82,7 +82,7 @@ export interface IModifyExtender {
      * @param updater the user who is updating/extending the message
      * @return the extender instance for the message
      */
-    extendMessage(messageId: string, updater: IUser): IMessageExtender;
+    extendMessage(messageId: string, updater: IUser): Promise<IMessageExtender>;
 
     /**
      * Modifies a room in a non-destructive way: Properties can be added to it,
@@ -92,7 +92,7 @@ export interface IModifyExtender {
      * @param updater the user who is updating/extending the room
      * @return the extender instance for the room
      */
-    extendRoom(roomId: string, updater: IUser): IRoomExtender;
+    extendRoom(roomId: string, updater: IUser): Promise<IRoomExtender>;
 
     /**
      * Finishes the extending process, saving the object to the database.
