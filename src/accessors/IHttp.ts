@@ -122,11 +122,11 @@ export interface IHttpExtend {
 }
 
 export interface IHttpPreRequestHandler {
-    executePreHttpRequest(url: string, request: IHttpRequest, read: IRead, persistence: IPersistence): IHttpRequest;
+    executePreHttpRequest(url: string, request: IHttpRequest, read: IRead, persistence: IPersistence): Promise<IHttpRequest>;
 }
 
 export interface IHttpPreResponseHandler {
-    executePreHttpResponse(response: IHttpResponse, read: IRead, persistence: IPersistence): IHttpResponse;
+    executePreHttpResponse(response: IHttpResponse, read: IRead, persistence: IPersistence): Promise<IHttpResponse>;
 }
 
 export enum HttpStatusCode {
