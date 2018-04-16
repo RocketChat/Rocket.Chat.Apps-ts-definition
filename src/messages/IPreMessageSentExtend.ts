@@ -13,7 +13,7 @@ export interface IPreMessageSentExtend {
      * @param http An accessor to the outside world
      * @returns whether to run the execute or not
      */
-    checkPreMessageSentExtend?(message: IMessage, read: IRead, http: IHttp): boolean;
+    checkPreMessageSentExtend?(message: IMessage, read: IRead, http: IHttp): Promise<boolean>;
 
     /**
      * Method which is to be used to non-destructively enrich the message.
@@ -25,5 +25,5 @@ export interface IPreMessageSentExtend {
      * @param persistence An accessor to the App's persistence storage
      * @returns the resulting message
      */
-    executePreMessageSentExtend(message: IMessage, extend: IMessageExtender, read: IRead, http: IHttp, persistence: IPersistence): IMessage;
+    executePreMessageSentExtend(message: IMessage, extend: IMessageExtender, read: IRead, http: IHttp, persistence: IPersistence): Promise<IMessage>;
 }

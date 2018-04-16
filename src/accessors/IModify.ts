@@ -28,7 +28,7 @@ export interface INotifier {
      * @param user The user who should be notified
      * @param message The message with the content to notify the user about
      */
-    notifyUser(user: IUser, message: IMessage): void;
+    notifyUser(user: IUser, message: IMessage): Promise<void>;
 
     /**
      * Notifies all of the users in the provided room.
@@ -39,7 +39,7 @@ export interface INotifier {
      * @param room The room which to notify the users in
      * @param message The message content to notify users about
      */
-    notifyRoom(room: IRoom, message: IMessage): void;
+    notifyRoom(room: IRoom, message: IMessage): Promise<void>;
 
     /** Gets a new message builder for building a notification message. */
     getMessageBuilder(): IMessageBuilder;
@@ -53,7 +53,7 @@ export interface IModifyUpdater {
      * @param messageId the id of the existing message to modfiy and build
      * @param updater the user who is updating the message
      */
-    message(messageId: string, updater: IUser): IMessageBuilder;
+    message(messageId: string, updater: IUser): Promise<IMessageBuilder>;
 
     /**
      * Modifies an existing room.
@@ -62,7 +62,7 @@ export interface IModifyUpdater {
      * @param roomId the id of the existing room to modify and build
      * @param updater the user who is updating the room
      */
-    room(roomId: string, updater: IUser): IRoomBuilder;
+    room(roomId: string, updater: IUser): Promise<IRoomBuilder>;
 
     /**
      * Finishes the updating process, saving the object to the database.
@@ -70,7 +70,7 @@ export interface IModifyUpdater {
      *
      * @param builder the builder instance
      */
-    finish(builder: IMessageBuilder | IRoomBuilder): void;
+    finish(builder: IMessageBuilder | IRoomBuilder): Promise<void>;
 }
 
 export interface IModifyExtender {
@@ -82,7 +82,7 @@ export interface IModifyExtender {
      * @param updater the user who is updating/extending the message
      * @return the extender instance for the message
      */
-    extendMessage(messageId: string, updater: IUser): IMessageExtender;
+    extendMessage(messageId: string, updater: IUser): Promise<IMessageExtender>;
 
     /**
      * Modifies a room in a non-destructive way: Properties can be added to it,
@@ -92,7 +92,7 @@ export interface IModifyExtender {
      * @param updater the user who is updating/extending the room
      * @return the extender instance for the room
      */
-    extendRoom(roomId: string, updater: IUser): IRoomExtender;
+    extendRoom(roomId: string, updater: IUser): Promise<IRoomExtender>;
 
     /**
      * Finishes the extending process, saving the object to the database.
@@ -100,7 +100,7 @@ export interface IModifyExtender {
      *
      * @param extender the extender instance
      */
-    finish(extender: IRoomExtender | IMessageExtender): void;
+    finish(extender: IRoomExtender | IMessageExtender): Promise<void>;
 }
 
 export interface IModifyCreator {
@@ -128,7 +128,7 @@ export interface IModifyCreator {
      * @param builder the builder instance
      * @return the resulting `id` of the resulting object
      */
-    finish(builder: IMessageBuilder | IRoomBuilder): string;
+    finish(builder: IMessageBuilder | IRoomBuilder): Promise<string>;
 }
 
 export interface IMessageExtender {

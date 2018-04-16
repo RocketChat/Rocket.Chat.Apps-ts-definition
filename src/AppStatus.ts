@@ -9,6 +9,11 @@ export enum AppStatus {
     AUTO_ENABLED = 'auto_enabled',
     /** The App's `onEnable()` was called, returned true, and this was done by the user such as installing a new one. */
     MANUALLY_ENABLED = 'manually_enabled',
+    /**
+     * The App was disabled due to an error while attempting to compile it.
+     * An attempt to enable it again will fail, as it needs to be updated.
+     */
+    COMPILER_ERROR_DISABLED = 'compiler_error_disabled',
     /** The App was disabled due to an unrecoverable error being thrown. */
     ERROR_DISABLED = 'error_disabled',
     /** The App was manually disabled by a user. */
@@ -30,6 +35,7 @@ export class AppStatusUtilsDef {
 
     public isDisabled(status: AppStatus): boolean {
         switch (status) {
+            case AppStatus.COMPILER_ERROR_DISABLED:
             case AppStatus.ERROR_DISABLED:
             case AppStatus.MANUALLY_DISABLED:
             case AppStatus.DISABLED:

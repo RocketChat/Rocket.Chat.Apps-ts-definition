@@ -5,7 +5,7 @@ import { IUser } from '../users/index';
  * users in a read-only-fashion.
  */
 export interface IUserRead {
-    getById(id: string): IUser;
+    getById(id: string): Promise<IUser>;
 
-    getByUsername(username: string): IUser;
+    getByUsername(username: string): Promise<IUser>;
 }

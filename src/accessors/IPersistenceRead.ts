@@ -14,7 +14,7 @@ export interface IPersistenceRead {
      * @param id the record to get's id
      * @return the record if it exists, falsey if not
      */
-    read(id: string): object;
+    read(id: string): Promise<object>;
 
     /**
      * Retrieves a record from the App's persistent storage by the provided id.
@@ -24,7 +24,7 @@ export interface IPersistenceRead {
      * @param association the association record to query the persistent storage for
      * @return array of the records if any exists, empty array if none exist
      */
-    readByAssociation(association: RocketChatAssociationRecord): Array<object>;
+    readByAssociation(association: RocketChatAssociationRecord): Promise<Array<object>>;
 
     /**
      * Retrieves a record from the App's persistent storage by the provided id.
@@ -36,5 +36,5 @@ export interface IPersistenceRead {
      * @param associations the association records to query the persistent storage for
      * @return array of the records if any exists, empty array if none exist
      */
-    readByAssociations(associations: Array<RocketChatAssociationRecord>): Array<object>;
+    readByAssociations(associations: Array<RocketChatAssociationRecord>): Promise<Array<object>>;
 }

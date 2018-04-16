@@ -11,7 +11,7 @@ export interface IServerSettingsModify {
      *
      * @param name The technical name of the group
      */
-    hideGroup(name: string): void;
+    hideGroup(name: string): Promise<void>;
 
     /**
      * Hides a setting. This does not influence the actual functionality (the setting will still
@@ -19,7 +19,7 @@ export interface IServerSettingsModify {
      *
      * @param id the id of the setting to hide
      */
-    hideSetting(id: string): void;
+    hideSetting(id: string): Promise<void>;
 
     /**
      * Modifies the configured value of another setting, please use it with caution as an invalid
@@ -27,5 +27,5 @@ export interface IServerSettingsModify {
      *
      * @param setting the modified setting (id must be provided)
      */
-    modifySetting(setting: ISetting): void;
+    modifySetting(setting: ISetting): Promise<void>;
 }

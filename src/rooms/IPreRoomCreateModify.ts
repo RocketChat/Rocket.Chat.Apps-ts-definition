@@ -12,7 +12,7 @@ export interface IPreRoomCreateModify {
      * @param http An accessor to the outside world
      * @return whether to run the execute or not
      */
-    checkPreRoomCreateModify?(room: IRoom, read: IRead, http: IHttp): boolean;
+    checkPreRoomCreateModify?(room: IRoom, read: IRead, http: IHttp): Promise<boolean>;
 
     /**
      * Method which is to be used to prevent a room from being created.
@@ -24,5 +24,5 @@ export interface IPreRoomCreateModify {
      * @param persistence An accessor to the App's persistence storage
      * @returns the resulting room
      */
-    executePreRoomCreateModify(room: IRoom, builder: IRoomBuilder, read: IRead, http: IHttp, persistence: IPersistence): IRoom;
+    executePreRoomCreateModify(room: IRoom, builder: IRoomBuilder, read: IRead, http: IHttp, persistence: IPersistence): Promise<IRoom>;
 }

@@ -13,7 +13,7 @@ export interface IPostRoomCreate {
      * @param http An accessor to the outside world
      * @return whether to run the execute or not
      */
-    checkPostRoomCreate?(room: IRoom, read: IRead, http: IHttp): boolean;
+    checkPostRoomCreate?(room: IRoom, read: IRead, http: IHttp): Promise<boolean>;
 
     /**
      * Method called *after* the room has been created.
@@ -23,5 +23,5 @@ export interface IPostRoomCreate {
      * @param http An accessor to the outside world
      * @param persistence An accessor to the App's persistence
      */
-    executePostRoomCreate(room: IRoom, read: IRead, http: IHttp, persistence: IPersistence): void;
+    executePostRoomCreate(room: IRoom, read: IRead, http: IHttp, persistence: IPersistence): Promise<void>;
 }

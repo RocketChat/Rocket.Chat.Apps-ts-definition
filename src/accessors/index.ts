@@ -14,7 +14,7 @@ import {
 } from './IHttp';
 import { IIterator } from './IIterator';
 import { IIteratorResult } from './IIteratorResult';
-import { ILogEntry } from './ILogEntry';
+import { ILogEntry, LogMessageSeverity } from './ILogEntry';
 import { ILogger } from './ILogger';
 import { IMessageRead } from './IMessageRead';
 import {
@@ -39,7 +39,6 @@ import { ISettingsExtend } from './ISettingsExtend';
 import { ISlashCommandsExtend } from './ISlashCommandsExtend';
 import { ISlashCommandsModify } from './ISlashCommandsModify';
 import { IUserRead } from './IUserRead';
-import { LogMessageSeverity } from './LogMessageSeverity';
 
 export {
     HttpStatusCode,

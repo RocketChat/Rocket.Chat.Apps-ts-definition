@@ -12,5 +12,5 @@ export interface ISlashCommandsExtend {
      *
      * @param slashCommand the command information
      */
-    provideSlashCommand(slashCommand: ISlashCommand): void;
+    provideSlashCommand(slashCommand: ISlashCommand): Promise<void>;
 }

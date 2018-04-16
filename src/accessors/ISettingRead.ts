@@ -11,7 +11,7 @@ export interface ISettingRead {
      *
      * @param id the id of the setting
      */
-    getById(id: string): ISetting;
+    getById(id: string): Promise<ISetting>;
 
     /**
      * Gets the App's setting value by the provided id.
@@ -19,5 +19,5 @@ export interface ISettingRead {
      *
      * @param id the id of the setting value to get
      */
-    getValueById(id: string): any;
+    getValueById(id: string): Promise<any>;
 }

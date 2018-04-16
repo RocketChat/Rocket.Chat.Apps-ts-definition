@@ -12,19 +12,19 @@ export interface ISlashCommandsModify {
      *
      * @param slashCommand the modified slash command
      */
-    modifySlashCommand(slashCommand: ISlashCommand): void;
+    modifySlashCommand(slashCommand: ISlashCommand): Promise<void>;
 
     /**
      * Renders an existing slash command un-usable.
      *
      * @param command the command's usage without the slash
      */
-    disableSlashCommand(command: string): void;
+    disableSlashCommand(command: string): Promise<void>;
 
     /**
      * Enables an existing slash command to be usable again.
      *
      * @param command the command's usage without the slash
      */
-    enableSlashCommand(command: string): void;
+    enableSlashCommand(command: string): Promise<void>;
 }

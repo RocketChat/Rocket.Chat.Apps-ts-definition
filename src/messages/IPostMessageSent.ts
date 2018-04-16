@@ -13,7 +13,7 @@ export interface IPostMessageSent {
      * @param http An accessor to the outside world
      * @returns whether to run the executor function
      */
-    checkPostMessageSent?(message: IMessage, read: IRead, http: IHttp): boolean;
+    checkPostMessageSent?(message: IMessage, read: IRead, http: IHttp): Promise<boolean>;
 
     /**
      * Method called *after* the message is sent to the other clients.
@@ -23,5 +23,5 @@ export interface IPostMessageSent {
      * @param http An accessor to the outside world
      * @param persistence An accessor to the App's persistence
      */
-    executePostMessageSent(message: IMessage, read: IRead, http: IHttp, persistence: IPersistence): void;
+    executePostMessageSent(message: IMessage, read: IRead, http: IHttp, persistence: IPersistence): Promise<void>;
 }
