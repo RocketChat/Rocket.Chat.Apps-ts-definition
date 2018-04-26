@@ -4,4 +4,6 @@ export enum UserStatusConnection {
     AWAY = 'away',
     BUSY = 'busy',
     INVISIBLE = 'invisible',
+    /** This happens for livechat users and rocket.cat. */
+    UNDEFINED = 'undefined',
 }
