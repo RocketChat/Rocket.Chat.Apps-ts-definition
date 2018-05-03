@@ -436,7 +436,7 @@ export interface IRoomBuilder {
     /**
      * Gets whether this room is a default room or not.
      */
-    getDefault(): boolean;
+    getIsDefault(): boolean;
 
     /**
      * Sets whether this room should be in read only state or not.
@@ -451,7 +451,7 @@ export interface IRoomBuilder {
     /**
      * Gets whether this room is on read only state or not.
      */
-    getReadOnly(): boolean;
+    getIsReadOnly(): boolean;
 
     /**
      * Sets whether this room should display the system messages (like user join, etc)
