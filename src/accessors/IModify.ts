@@ -216,6 +216,11 @@ export interface IMessageBuilder {
     setRoom(room: IRoom): IMessageBuilder;
 
     /**
+     * Gets the room where this message was sent to.
+     */
+    getRoom(): IRoom;
+
+    /**
      * Sets the sender of this message.
      *
      * @param sender the user sending the message
@@ -223,11 +228,21 @@ export interface IMessageBuilder {
     setSender(sender: IUser): IMessageBuilder;
 
     /**
+     * Gets the User which sent the message.
+     */
+    getSender(): IUser;
+
+    /**
      * Sets the text of the message.
      *
      * @param text the actual text
      */
     setText(text: string): IMessageBuilder;
+
+    /**
+     * Gets the message text.
+     */
+    getText(): string;
 
     /**
      * Sets the emoji to use for the avatar, this overwrites the current avatar
@@ -238,6 +253,11 @@ export interface IMessageBuilder {
     setEmojiAvatar(emoji: string): IMessageBuilder;
 
     /**
+     * Gets the emoji used for the avatar.
+     */
+    getEmojiAvatar(): string;
+
+    /**
      * Sets the url which to display for the avatar, this overwrites the current
      * avatar whether it be the user's or an emoji one.
      *
@@ -246,11 +266,21 @@ export interface IMessageBuilder {
     setAvatarUrl(avatarUrl: string): IMessageBuilder;
 
     /**
+     * Gets the url used for the avatar.
+     */
+    getAvatarUrl(): string;
+
+    /**
      * Sets the display text of the sender's username that is visible.
      *
      * @param alias the username alias to display
      */
     setUsernameAlias(alias: string): IMessageBuilder;
+
+    /**
+     * Gets the display text of the sender's username that is visible.
+     */
+    getUsernameAlias(): string;
 
     /**
      * Adds one attachment to the message's list of attachments, this will not
@@ -266,6 +296,11 @@ export interface IMessageBuilder {
      * @param attachments array of the attachments
      */
     setAttachments(attachments: Array<IMessageAttachment>): IMessageBuilder;
+
+    /**
+     * Gets the attachments array for the message
+     */
+    getAttachments(): Array<IMessageAttachment>;
 
     /**
      * Replaces an attachment at the given position (index).
@@ -291,6 +326,11 @@ export interface IMessageBuilder {
      * @param user the editor
      */
     setEditor(user: IUser): IMessageBuilder;
+
+    /**
+     * Gets the user who edited the message
+     */
+    getEditor(): IUser;
 
     /**
      * Gets the resulting message that has been built up to the point of calling it.
@@ -324,12 +364,22 @@ export interface IRoomBuilder {
     setDisplayName(name: string): IRoomBuilder;
 
     /**
+     * Gets the display name of this room.
+     */
+    getDisplayName(): string;
+
+    /**
      * Sets the slugified name of this room, it must align to the rules of Rocket.Chat room
      * names otherwise there will be an error thrown (no spaces, special characters, etc).
      *
      * @param name the slugified name
      */
     setSlugifiedName(name: string): IRoomBuilder;
+
+    /**
+     * Gets the slugified name of this room.
+     */
+    getSlugifiedName(): string;
 
     /**
      * Sets the room's type.
@@ -339,11 +389,21 @@ export interface IRoomBuilder {
     setType(type: RoomType): IRoomBuilder;
 
     /**
+     * Gets the room's type.
+     */
+    getType(): RoomType;
+
+    /**
      * Sets the creator of the room.
      *
      * @param creator the user who created the room
      */
     setCreator(creator: IUser): IRoomBuilder;
+
+    /**
+     * Gets the room's creator.
+     */
+    getCreator(): IUser;
 
     /**
      * Adds a user to the room, these are by username until further notice.
@@ -360,6 +420,11 @@ export interface IRoomBuilder {
     setUsernames(usernames: Array<string>): IRoomBuilder;
 
     /**
+     * Gets the usernames of users in the room.
+     */
+    getUsernames(): Array<string>;
+
+    /**
      * Sets whether this room should be a default room or not.
      * This means that new users will automatically join this room
      * when they join the server.
@@ -367,6 +432,11 @@ export interface IRoomBuilder {
      * @param isDefault room should be default or not
      */
     setDefault(isDefault: boolean): IRoomBuilder;
+
+    /**
+     * Gets whether this room is a default room or not.
+     */
+    getIsDefault(): boolean;
 
     /**
      * Sets whether this room should be in read only state or not.
@@ -379,6 +449,11 @@ export interface IRoomBuilder {
     setReadOnly(isReadOnly: boolean): IRoomBuilder;
 
     /**
+     * Gets whether this room is on read only state or not.
+     */
+    getIsReadOnly(): boolean;
+
+    /**
      * Sets whether this room should display the system messages (like user join, etc)
      * or not. This means that whenever a system event, such as joining or leaving, happens
      * then Rocket.Chat won't send the message to the channel.
@@ -386,6 +461,11 @@ export interface IRoomBuilder {
      * @param displaySystemMessages whether the messages should display or not
      */
     setDisplayingOfSystemMessages(displaySystemMessages: boolean): IRoomBuilder;
+
+    /**
+     * Gets whether this room should display the system messages or not.
+     */
+    getDisplayingOfSystemMessages(): boolean;
 
     /**
      * Adds a custom field to the room.
@@ -403,6 +483,11 @@ export interface IRoomBuilder {
      * @param fields the data to set
      */
     setCustomFields(fields: { [key: string]: object }): IRoomBuilder;
+
+    /**
+     * Gets the custom field property of the room.
+     */
+    getCustomFields(): { [key: string]: object };
 
     /**
      * Gets the resulting room that has been built up to the point of calling this method.
