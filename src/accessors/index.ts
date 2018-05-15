@@ -12,8 +12,6 @@ import {
     IHttpResponse,
     RequestMethod,
 } from './IHttp';
-import { IIterator } from './IIterator';
-import { IIteratorResult } from './IIteratorResult';
 import { ILogEntry, LogMessageSeverity } from './ILogEntry';
 import { ILogger } from './ILogger';
 import { IMessageRead } from './IMessageRead';
@@ -52,8 +50,6 @@ export {
     IHttpPreResponseHandler,
     IHttpRequest,
     IHttpResponse,
-    IIterator,
-    IIteratorResult,
     ILogEntry,
     ILogger,
     IMessageBuilder,
