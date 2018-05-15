@@ -1,7 +1,6 @@
 import { IMessage } from '../messages/index';
 import { IRoom } from '../rooms/index';
 import { IUser } from '../users/index';
-import { IIterator } from './IIterator';
 
 /**
  * This accessor provides methods for accessing
@@ -12,7 +11,7 @@ export interface IRoomRead {
 
     getByName(name: string): Promise<IRoom | undefined>;
 
-    getMessages(roomId: string): Promise<IIterator<IMessage>>;
+    getMessages(roomId: string): Promise<IterableIterator<IMessage>>;
 
-    getMembers(roomId: string): Promise<IIterator<IUser>>;
+    getMembers(roomId: string): Promise<IterableIterator<IUser>>;
 }
