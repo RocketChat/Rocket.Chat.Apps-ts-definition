@@ -1,7 +1,6 @@
 import { IMessage } from '../messages/index';
 import { IRoom } from '../rooms/index';
 import { IUser } from '../users/index';
-import { IIterator } from './IIterator';
 
 /**
  * This accessor provides methods for accessing
@@ -46,7 +45,7 @@ export interface IRoomRead {
      * @param roomId the room's id
      * @returns an iterator for messages
      */
-    getMessages(roomId: string): Promise<IIterator<IMessage>>;
+    getMessages(roomId: string): Promise<IterableIterator<IMessage>>;
 
     /**
      * Gets an iterator for all of the users in the provided room.
@@ -54,5 +53,5 @@ export interface IRoomRead {
      * @param roomId the room's id
      * @returns an iterator for the users in the room
      */
-    getMembers(roomId: string): Promise<IIterator<IUser>>;
+    getMembers(roomId: string): Promise<IterableIterator<IUser>>;
 }

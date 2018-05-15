@@ -1,5 +1,4 @@
 import { ISetting } from '../settings/ISetting';
-import { IIterator } from './IIterator';
 
 /**
  * Reader for the settings inside of the server (Rocket.Chat).
@@ -32,7 +31,7 @@ export interface IServerSettingRead {
      *
      * @return an iterator of the exposed settings
      */
-    getAll(): Promise<IIterator<ISetting>>;
+    getAll(): Promise<IterableIterator<ISetting>>;
 
     /**
      * Checks if the server setting for the id provided is readable,
