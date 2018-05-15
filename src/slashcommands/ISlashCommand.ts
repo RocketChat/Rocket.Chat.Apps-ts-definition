@@ -8,7 +8,7 @@ export interface ISlashCommand {
     /** The value which determines what the user types. */
     command: string;
     /** Example of the parameters or an i18n string. */
-    paramsExample: string;
+    i18nParamsExample: string;
     /** i18n string for the description of the command. */
     i18nDescription: string;
     /** Optional. Permission value required for the user to have to see/use it. */
