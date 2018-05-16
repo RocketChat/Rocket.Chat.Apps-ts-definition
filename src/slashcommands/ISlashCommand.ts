@@ -16,7 +16,13 @@ export interface ISlashCommand {
     permission?: string;
     /** Lets the clients know that this command does provide preview results. */
     providesPreview: boolean;
-    /** The function which gets called when a user enters the command. */
+    /**
+     * The function which gets called when a user enters the command.
+     *
+     * *Note*: This will not get called if a preview is defined and
+     * presented to the user and the user interacts with the preview.
+     * When that happens, the `executePreviewItem` function will be called.
+     */
     executor(context: SlashCommandContext, read: IRead, modify: IModify, http: IHttp, persis: IPersistence): Promise<void>;
     /** The function which gets called whenever a user starts typing the command and the `providesPreview` is set to true. */
     previewer?(context: SlashCommandContext, read: IRead, modify: IModify, http: IHttp, persis: IPersistence): Promise<ISlashCommandPreview>;

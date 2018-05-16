@@ -1,5 +1,5 @@
 import { ISlashCommand } from './ISlashCommand';
-import { ISlashCommandPreview, ISlashCommandPreviewItem } from './ISlashCommandPreview';
+import { ISlashCommandPreview, ISlashCommandPreviewItem, SlashCommandPreviewItemType } from './ISlashCommandPreview';
 import { SlashCommandContext } from './SlashCommandContext';
 
 export {
@@ -7,4 +7,5 @@ export {
     ISlashCommandPreview,
     ISlashCommandPreviewItem,
     SlashCommandContext,
+    SlashCommandPreviewItemType,
 };
