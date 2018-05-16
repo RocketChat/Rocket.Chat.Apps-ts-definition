@@ -28,6 +28,10 @@ export interface IMessageAttachment {
     audioUrl?: string;
     /** Video file to play, only supports what html's <video> does. */
     videoUrl?: string;
+    /** The type of attachment this is, although hardly used and only used for `file`s. */
+    type?: string;
+    /** Allows users to describe what the attachment is. */
+    description?: string;
     /** The field property of the attachments allows for "tables" or "columns" to be displayed on messages. */
     fields?: Array<IMessageAttachmentField>;
 }
