@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IPreRoomCreatePrevent | Rocket.Chat Apps TypeScript Definition</title>
+	<title>IPostRoomDeleted | Rocket.Chat Apps TypeScript Definition</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,21 +56,28 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="ipreroomcreateprevent.html">IPreRoomCreatePrevent</a>
+					<a href="ipostroomdeleted.html">IPostRoomDeleted</a>
 				</li>
 			</ul>
-			<h1>Interface IPreRoomCreatePrevent</h1>
+			<h1>Interface IPostRoomDeleted</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Handler for after a room is deleted.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IPreRoomCreatePrevent</span>
+						<span class="target">IPostRoomDeleted</span>
 					</li>
 				</ul>
 			</section>
@@ -81,8 +88,8 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="ipreroomcreateprevent.html#checkpreroomcreateprevent" class="tsd-kind-icon">check<wbr>Pre<wbr>Room<wbr>Create<wbr>Prevent</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="ipreroomcreateprevent.html#executepreroomcreateprevent" class="tsd-kind-icon">execute<wbr>Pre<wbr>Room<wbr>Create<wbr>Prevent</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="ipostroomdeleted.html#checkpostroomdeleted" class="tsd-kind-icon">check<wbr>Post<wbr>Room<wbr>Deleted</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="ipostroomdeleted.html#executepostroomdeleted" class="tsd-kind-icon">execute<wbr>Post<wbr>Room<wbr>Deleted</a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,22 +98,23 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="checkpreroomcreateprevent" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> check<wbr>Pre<wbr>Room<wbr>Create<wbr>Prevent</h3>
+					<a name="checkpostroomdeleted" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> check<wbr>Post<wbr>Room<wbr>Deleted</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">check<wbr>Pre<wbr>Room<wbr>Create<wbr>Prevent<span class="tsd-signature-symbol">(</span>room<span class="tsd-signature-symbol">: </span><a href="iroom.html" class="tsd-signature-type">IRoom</a>, read<span class="tsd-signature-symbol">: </span><a href="iread.html" class="tsd-signature-type">IRead</a>, http<span class="tsd-signature-symbol">: </span><a href="ihttp.html" class="tsd-signature-type">IHttp</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">check<wbr>Post<wbr>Room<wbr>Deleted<span class="tsd-signature-symbol">(</span>room<span class="tsd-signature-symbol">: </span><a href="iroom.html" class="tsd-signature-type">IRoom</a>, read<span class="tsd-signature-symbol">: </span><a href="iread.html" class="tsd-signature-type">IRead</a>, http<span class="tsd-signature-symbol">: </span><a href="ihttp.html" class="tsd-signature-type">IHttp</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/e7fda27/src/rooms/IPreRoomCreatePrevent.ts#L14">rooms/IPreRoomCreatePrevent.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/e7fda27/src/rooms/IPostRoomDeleted.ts#L16">rooms/IPostRoomDeleted.ts:16</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Checks whether the handler actually shall execute.
-									This method can basically implement a filter.</p>
+									<p>Enables the handler to signal to the Apps framework whether
+										this handler should actually be executed for after the room
+									has been deleted.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -114,7 +122,7 @@
 								<li>
 									<h5>room: <a href="iroom.html" class="tsd-signature-type">IRoom</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The room which was being created</p>
+										<p>The room which was deleted</p>
 									</div>
 								</li>
 								<li>
@@ -136,21 +144,21 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="executepreroomcreateprevent" class="tsd-anchor"></a>
-					<h3>execute<wbr>Pre<wbr>Room<wbr>Create<wbr>Prevent</h3>
+					<a name="executepostroomdeleted" class="tsd-anchor"></a>
+					<h3>execute<wbr>Post<wbr>Room<wbr>Deleted</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">execute<wbr>Pre<wbr>Room<wbr>Create<wbr>Prevent<span class="tsd-signature-symbol">(</span>room<span class="tsd-signature-symbol">: </span><a href="iroom.html" class="tsd-signature-type">IRoom</a>, read<span class="tsd-signature-symbol">: </span><a href="iread.html" class="tsd-signature-type">IRead</a>, http<span class="tsd-signature-symbol">: </span><a href="ihttp.html" class="tsd-signature-type">IHttp</a>, persistence<span class="tsd-signature-symbol">: </span><a href="ipersistence.html" class="tsd-signature-type">IPersistence</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">execute<wbr>Post<wbr>Room<wbr>Deleted<span class="tsd-signature-symbol">(</span>room<span class="tsd-signature-symbol">: </span><a href="iroom.html" class="tsd-signature-type">IRoom</a>, read<span class="tsd-signature-symbol">: </span><a href="iread.html" class="tsd-signature-type">IRead</a>, http<span class="tsd-signature-symbol">: </span><a href="ihttp.html" class="tsd-signature-type">IHttp</a>, persistence<span class="tsd-signature-symbol">: </span><a href="ipersistence.html" class="tsd-signature-type">IPersistence</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/e7fda27/src/rooms/IPreRoomCreatePrevent.ts#L25">rooms/IPreRoomCreatePrevent.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/e7fda27/src/rooms/IPostRoomDeleted.ts#L26">rooms/IPostRoomDeleted.ts:26</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Method which is to be used to prevent a room from being created.</p>
+									<p>Method called <em>after</em> the room has been deleted.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -158,7 +166,7 @@
 								<li>
 									<h5>room: <a href="iroom.html" class="tsd-signature-type">IRoom</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The room about to be created</p>
+										<p>The room which was deleted</p>
 									</div>
 								</li>
 								<li>
@@ -176,12 +184,11 @@
 								<li>
 									<h5>persistence: <a href="ipersistence.html" class="tsd-signature-type">IPersistence</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>An accessor to the App&#39;s persistence storage</p>
+										<p>An accessor to the App&#39;s persistence</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>whether to prevent the room from being created</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -200,13 +207,13 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="ipreroomcreateprevent.html" class="tsd-kind-icon">IPre<wbr>Room<wbr>Create<wbr>Prevent</a>
+						<a href="ipostroomdeleted.html" class="tsd-kind-icon">IPost<wbr>Room<wbr>Deleted</a>
 						<ul>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="ipreroomcreateprevent.html#checkpreroomcreateprevent" class="tsd-kind-icon">check<wbr>Pre<wbr>Room<wbr>Create<wbr>Prevent</a>
+								<a href="ipostroomdeleted.html#checkpostroomdeleted" class="tsd-kind-icon">check<wbr>Post<wbr>Room<wbr>Deleted</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="ipreroomcreateprevent.html#executepreroomcreateprevent" class="tsd-kind-icon">execute<wbr>Pre<wbr>Room<wbr>Create<wbr>Prevent</a>
+								<a href="ipostroomdeleted.html#executepostroomdeleted" class="tsd-kind-icon">execute<wbr>Post<wbr>Room<wbr>Deleted</a>
 							</li>
 						</ul>
 					</li>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IPreRoomCreatePrevent | Rocket.Chat Apps TypeScript Definition</title>
+	<title>ISlashCommandPreviewItem | Rocket.Chat Apps TypeScript Definition</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="ipreroomcreateprevent.html">IPreRoomCreatePrevent</a>
+					<a href="islashcommandpreviewitem.html">ISlashCommandPreviewItem</a>
 				</li>
 			</ul>
-			<h1>Interface IPreRoomCreatePrevent</h1>
+			<h1>Interface ISlashCommandPreviewItem</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IPreRoomCreatePrevent</span>
+						<span class="target">ISlashCommandPreviewItem</span>
 					</li>
 				</ul>
 			</section>
@@ -79,111 +79,62 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Methods</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="ipreroomcreateprevent.html#checkpreroomcreateprevent" class="tsd-kind-icon">check<wbr>Pre<wbr>Room<wbr>Create<wbr>Prevent</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="ipreroomcreateprevent.html#executepreroomcreateprevent" class="tsd-kind-icon">execute<wbr>Pre<wbr>Room<wbr>Create<wbr>Prevent</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="islashcommandpreviewitem.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="islashcommandpreviewitem.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="islashcommandpreviewitem.html#value" class="tsd-kind-icon">value</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="checkpreroomcreateprevent" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> check<wbr>Pre<wbr>Room<wbr>Create<wbr>Prevent</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">check<wbr>Pre<wbr>Room<wbr>Create<wbr>Prevent<span class="tsd-signature-symbol">(</span>room<span class="tsd-signature-symbol">: </span><a href="iroom.html" class="tsd-signature-type">IRoom</a>, read<span class="tsd-signature-symbol">: </span><a href="iread.html" class="tsd-signature-type">IRead</a>, http<span class="tsd-signature-symbol">: </span><a href="ihttp.html" class="tsd-signature-type">IHttp</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/e7fda27/src/rooms/IPreRoomCreatePrevent.ts#L14">rooms/IPreRoomCreatePrevent.ts:14</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Checks whether the handler actually shall execute.
-									This method can basically implement a filter.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>room: <a href="iroom.html" class="tsd-signature-type">IRoom</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The room which was being created</p>
-									</div>
-								</li>
-								<li>
-									<h5>read: <a href="iread.html" class="tsd-signature-type">IRead</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An accessor to the environment</p>
-									</div>
-								</li>
-								<li>
-									<h5>http: <a href="ihttp.html" class="tsd-signature-type">IHttp</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An accessor to the outside world</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>whether to run the execute or not</p>
-						</li>
-					</ul>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/e7fda27/src/slashcommands/ISlashCommandPreview.ts#L10">slashcommands/ISlashCommandPreview.ts:10</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An internal id value of the preview item.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="executepreroomcreateprevent" class="tsd-anchor"></a>
-					<h3>execute<wbr>Pre<wbr>Room<wbr>Create<wbr>Prevent</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">execute<wbr>Pre<wbr>Room<wbr>Create<wbr>Prevent<span class="tsd-signature-symbol">(</span>room<span class="tsd-signature-symbol">: </span><a href="iroom.html" class="tsd-signature-type">IRoom</a>, read<span class="tsd-signature-symbol">: </span><a href="iread.html" class="tsd-signature-type">IRead</a>, http<span class="tsd-signature-symbol">: </span><a href="ihttp.html" class="tsd-signature-type">IHttp</a>, persistence<span class="tsd-signature-symbol">: </span><a href="ipersistence.html" class="tsd-signature-type">IPersistence</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/e7fda27/src/rooms/IPreRoomCreatePrevent.ts#L25">rooms/IPreRoomCreatePrevent.ts:25</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Method which is to be used to prevent a room from being created.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>room: <a href="iroom.html" class="tsd-signature-type">IRoom</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The room about to be created</p>
-									</div>
-								</li>
-								<li>
-									<h5>read: <a href="iread.html" class="tsd-signature-type">IRead</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An accessor to the environment</p>
-									</div>
-								</li>
-								<li>
-									<h5>http: <a href="ihttp.html" class="tsd-signature-type">IHttp</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An accessor to the outside world</p>
-									</div>
-								</li>
-								<li>
-									<h5>persistence: <a href="ipersistence.html" class="tsd-signature-type">IPersistence</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An accessor to the App&#39;s persistence storage</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>whether to prevent the room from being created</p>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/slashcommandpreviewitemtype.html" class="tsd-signature-type">SlashCommandPreviewItemType</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/e7fda27/src/slashcommands/ISlashCommandPreview.ts#L12">slashcommands/ISlashCommandPreview.ts:12</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The type of preview item this is.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="value" class="tsd-anchor"></a>
+					<h3>value</h3>
+					<div class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/RocketChat/Rocket.Chat.Apps-ts-definition/blob/e7fda27/src/slashcommands/ISlashCommandPreview.ts#L14">slashcommands/ISlashCommandPreview.ts:14</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The value of this preview item, url or text (could even be base64).</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -200,13 +151,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="ipreroomcreateprevent.html" class="tsd-kind-icon">IPre<wbr>Room<wbr>Create<wbr>Prevent</a>
+						<a href="islashcommandpreviewitem.html" class="tsd-kind-icon">ISlash<wbr>Command<wbr>Preview<wbr>Item</a>
 						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="ipreroomcreateprevent.html#checkpreroomcreateprevent" class="tsd-kind-icon">check<wbr>Pre<wbr>Room<wbr>Create<wbr>Prevent</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="islashcommandpreviewitem.html#id" class="tsd-kind-icon">id</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="ipreroomcreateprevent.html#executepreroomcreateprevent" class="tsd-kind-icon">execute<wbr>Pre<wbr>Room<wbr>Create<wbr>Prevent</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="islashcommandpreviewitem.html#type" class="tsd-kind-icon">type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="islashcommandpreviewitem.html#value" class="tsd-kind-icon">value</a>
 							</li>
 						</ul>
 					</li>
