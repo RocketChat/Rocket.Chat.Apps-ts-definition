@@ -2,6 +2,7 @@ export enum RocketChatAssociationModel {
     ROOM = 'room',
     MESSAGE = 'message',
     USER = 'user',
+    FILE = 'file',
     MISC = 'misc',
 }
 
