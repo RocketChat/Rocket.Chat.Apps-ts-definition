@@ -15,6 +15,10 @@ export enum AppMethod {
     EXECUTEPREMESSAGESENTMODIFY = 'executePreMessageSentModify',
     CHECKPOSTMESSAGESENT = 'checkPostMessageSent',
     EXECUTEPOSTMESSAGESENT = 'executePostMessageSent',
+    CHECKPREMESSAGEDELETEPREVENT = 'checkPreMessageDeletePrevent',
+    EXECUTEPREMESSAGEDELETEPREVENT = 'executePreMessageDeletePrevent',
+    CHECKPOSTMESSAGEDELETED = 'checkPostMessageDeleted',
+    EXECUTEPOSTMESSAGEDELETED = 'executePostMessageDeleted',
     // Room handlers
     CHECKPREROOMCREATEPREVENT = 'checkPreRoomCreatePrevent',
     EXECUTEPREROOMCREATEPREVENT = 'executePreRoomCreatePrevent',
@@ -24,4 +28,8 @@ export enum AppMethod {
     EXECUTEPREROOMCREATEMODIFY = 'executePreRoomCreateModify',
     CHECKPOSTROOMCREATE = 'checkPostRoomCreate',
     EXECUTEPOSTROOMCREATE = 'executePostRoomCreate',
+    CHECKPREROOMDELETEPREVENT = 'checkPreRoomDeletePrevent',
+    EXECUTEPREROOMDELETEPREVENT = 'executePreRoomDeletePrevent',
+    CHECKPOSTROOMDELETED = 'checkPostRoomDeleted',
+    EXECUTEPOSTROOMDELETED = 'executePostRoomDeleted',
 }
