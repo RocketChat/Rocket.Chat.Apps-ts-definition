@@ -18,6 +18,7 @@ export enum AppStatus {
     ERROR_DISABLED = 'error_disabled',
     /** The App was manually disabled by a user. */
     MANUALLY_DISABLED = 'manually_disabled',
+    INVALID_SETTINGS_DISABLED = 'invalid_settings_disabled',
     /** The App was disabled due to other circumstances. */
     DISABLED = 'disabled',
 }
@@ -38,6 +39,7 @@ export class AppStatusUtilsDef {
             case AppStatus.COMPILER_ERROR_DISABLED:
             case AppStatus.ERROR_DISABLED:
             case AppStatus.MANUALLY_DISABLED:
+            case AppStatus.INVALID_SETTINGS_DISABLED:
             case AppStatus.DISABLED:
                 return true;
             default:
