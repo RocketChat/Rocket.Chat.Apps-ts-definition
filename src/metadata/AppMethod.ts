@@ -1,8 +1,8 @@
 export enum AppMethod {
     _CONSTRUCTOR = 'constructor',
-    _COMMAND_EXECUTOR = 'commandExecutor',
-    _COMMAND_PREVIEWER = 'commandPreviewer',
-    _COMMAND_PREVIEW_EXECUTOR = 'commandPreviewExecutor',
+    _COMMAND_EXECUTOR = 'executor',
+    _COMMAND_PREVIEWER = 'previewer',
+    _COMMAND_PREVIEW_EXECUTOR = 'executePreviewItem',
     INITIALIZE = 'initialize',
     ONENABLE = 'onEnable',
     ONDISABLE = 'onDisable',
