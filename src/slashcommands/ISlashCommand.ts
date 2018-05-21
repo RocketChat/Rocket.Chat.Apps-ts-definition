@@ -24,7 +24,10 @@ export interface ISlashCommand {
      * When that happens, the `executePreviewItem` function will be called.
      */
     executor(context: SlashCommandContext, read: IRead, modify: IModify, http: IHttp, persis: IPersistence): Promise<void>;
-    /** The function which gets called whenever a user starts typing the command and the `providesPreview` is set to true. */
+    /**
+     * The function which gets called whenever a user starts typing the command and the `providesPreview` is set to true.
+     * Max amount returned to the client is 10 and no more, period.
+     */
     previewer?(context: SlashCommandContext, read: IRead, modify: IModify, http: IHttp, persis: IPersistence): Promise<ISlashCommandPreview>;
     /** The function which gets executed whenever a user selects a preview item. */
     executePreviewItem?(item: ISlashCommandPreviewItem, context: SlashCommandContext,
