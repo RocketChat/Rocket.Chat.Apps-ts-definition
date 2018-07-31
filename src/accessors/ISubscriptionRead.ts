@@ -11,5 +11,5 @@ export interface ISubscriptionRead {
      * @param roomId the id of the room
      * @returns the subscription
      */
-    getByRoomId(roomId: string): Promise<ISubscription | undefined>;
+    getByRoomId(roomId: string): Promise<IterableIterator<ISubscription>>;
 }
