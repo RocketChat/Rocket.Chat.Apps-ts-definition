@@ -9,7 +9,7 @@ export interface ISubscriptionRead {
      * Gets a subscription by a room id.
      *
      * @param roomId the id of the room
-     * @returns the subscription
+     * @returns an iterator of subscriptions
      */
     getByRoomId(roomId: string): Promise<IterableIterator<ISubscription>>;
 }
