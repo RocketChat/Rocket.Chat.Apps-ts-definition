@@ -3,6 +3,7 @@ import { IMessageRead } from './IMessageRead';
 import { INotifier } from './IModify';
 import { IPersistenceRead } from './IPersistenceRead';
 import { IRoomRead } from './IRoomRead';
+import { ISubscriptionRead } from './ISubscriptionRead';
 import { IUserRead } from './IUserRead';
 
 /**
@@ -22,6 +23,9 @@ export interface IRead {
 
     /** Gets the IRoomRead instance. */
     getRoomReader(): IRoomRead;
+
+    /** Gets the ISubscriptionRead instance */
+    getSubscriptionReader(): ISubscriptionRead;
 
     /** Gets the IUserRead instance. */
     getUserReader(): IUserRead;

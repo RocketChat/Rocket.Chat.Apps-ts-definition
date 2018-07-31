@@ -36,6 +36,7 @@ import { ISettingRead } from './ISettingRead';
 import { ISettingsExtend } from './ISettingsExtend';
 import { ISlashCommandsExtend } from './ISlashCommandsExtend';
 import { ISlashCommandsModify } from './ISlashCommandsModify';
+import { ISubscriptionRead } from './ISubscriptionRead';
 import { IUserRead } from './IUserRead';
 
 export {
@@ -72,6 +73,7 @@ export {
     ISettingsExtend,
     ISlashCommandsExtend,
     ISlashCommandsModify,
+    ISubscriptionRead,
     IUserRead,
     LogMessageSeverity,
     RequestMethod,
