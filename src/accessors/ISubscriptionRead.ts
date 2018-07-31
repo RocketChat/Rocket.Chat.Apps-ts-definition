@@ -6,7 +6,7 @@ import { ISubscription } from '../subscriptions/ISubscription';
  */
 export interface ISubscriptionRead {
     /**
-     * Gets a subscription by a room id.
+     * Gets a list of subscriptions by a room id.
      *
      * @param roomId the id of the room
      * @returns an iterator of subscriptions
