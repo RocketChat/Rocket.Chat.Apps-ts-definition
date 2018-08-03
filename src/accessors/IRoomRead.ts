@@ -40,6 +40,14 @@ export interface IRoomRead {
     getCreatorUserByName(name: string): Promise<IUser | undefined>;
 
     /**
+     * Gets a direct room by the usernames.
+     *
+     * @param usernames an array of usernames
+     * @returns the room
+     */
+    getDirectByUsernames(usernames: Array<string>): Promise<IRoom | undefined>;
+
+    /**
      * Gets an iterator for all of the messages in the provided room.
      *
      * @param roomId the room's id
