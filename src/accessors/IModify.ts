@@ -285,7 +285,7 @@ export interface IMessageBuilder {
     /**
      * Set whether urls should be parsed or not.
      *
-     * @param alias the username alias to display
+     * @param parseUrls value determines whether urls should be parsed or not  
      */
     setParseUrls(parseUrls: boolean): IMessageBuilder;
 
