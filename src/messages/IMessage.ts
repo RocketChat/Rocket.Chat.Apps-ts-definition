@@ -14,6 +14,7 @@ export interface IMessage {
     emoji?: string;
     avatarUrl?: string;
     alias?: string;
+    parseUrls?: boolean;
     attachments?: Array<IMessageAttachment>;
     customFields?: { [key: string]: any };
 }
