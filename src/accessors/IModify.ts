@@ -283,6 +283,18 @@ export interface IMessageBuilder {
     getUsernameAlias(): string;
 
     /**
+     * Set whether urls should be parsed or not.
+     *
+     * @param parseUrls value determines whether urls should be parsed or not  
+     */
+    setParseUrls(parseUrls: boolean): IMessageBuilder;
+
+    /**
+     * Gets whether urls should be parsed or not.
+     */
+    getParseUrls(): boolean;
+
+    /**
      * Adds one attachment to the message's list of attachments, this will not
      * overwrite any existing ones but just adds.
      *

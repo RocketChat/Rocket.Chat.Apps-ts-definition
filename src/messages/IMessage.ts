@@ -16,4 +16,5 @@ export interface IMessage {
     alias?: string;
     attachments?: Array<IMessageAttachment>;
     customFields?: { [key: string]: any };
+    parseUrls?: boolean;
 }
